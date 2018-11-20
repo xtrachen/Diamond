@@ -71,9 +71,13 @@
             
             [XDUser defaultManager].uid = uid;
             
-            XDHomeViewController *vc = [[XDHomeViewController alloc] initWithNibName:@"XDHomeViewController" bundle:nil];
+//            XDHomeViewController *vc = [[XDHomeViewController alloc] initWithNibName:@"XDHomeViewController" bundle:nil];
+//
+//            [self.navigationController pushViewController:vc animated:YES];
+
             
-            [self.navigationController pushViewController:vc animated:YES];
+            [self.delegate XDLoginViewControllerLoginFinish];
+            
             
         }
         

@@ -8,8 +8,15 @@
 
 #import "AppDelegate.h"
 #import "XDLoginViewController.h"
+#import "XDSearchViewController.h"
+#import "XDHomeViewController.h"
+#import "XDMyViewController.h"
+#import "XDSettingViewController.h"
 
-@interface AppDelegate ()
+
+
+
+@interface AppDelegate () <XDLoginViewControllerDelegate>
 
 @end
 
@@ -19,13 +26,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+    ///////////
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     XDLoginViewController *vc = [[XDLoginViewController alloc] init];
-    
+    vc.delegate = self;
     UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:vc];
     
     self.window.rootViewController = rootNavi;
+    
     [self.window makeKeyAndVisible];
     
     
@@ -57,6 +67,20 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (void)XDLoginViewControllerLoginFinish
+{
+    XDMyViewController *myVC = [[XDMyViewController alloc] initWithNibName:@"XDMyViewController" bundle:nil];
+    XDSearchViewController *searchVC = [[XDSearchViewController alloc] initWithNibName:@"XDSearchViewController" bundle:nil];
+    XDSettingViewController *settingVC = [[XDSettingViewController alloc] initWithNibName:@"XDSettingViewController" bundle:nil];
+    XDHomeViewController *homeVC = [[XDHomeViewController alloc] initWithNibName:@"XDHomeViewController" bundle:nil];
+    
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    tabbar.viewControllers = @[homeVC,searchVC,myVC,settingVC];
+    
+    self.window.rootViewController = tabbar;
 }
 
 

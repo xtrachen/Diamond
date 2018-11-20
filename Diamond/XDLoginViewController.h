@@ -10,7 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol XDLoginViewControllerDelegate <NSObject>
+- (void)XDLoginViewControllerLoginFinish;
+
+@end
+
 @interface XDLoginViewController : UIViewController
+@property (nonatomic, weak) id<XDLoginViewControllerDelegate> delegate;
+
 
 @end
 
