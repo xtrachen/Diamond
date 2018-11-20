@@ -10,5 +10,6 @@ target 'Diamond' do
     pod 'AFNetworking'
     pod 'HXWeiboPhotoPicker'
     pod 'SDWebImage'
+    pod 'Qiniu'
 
 end

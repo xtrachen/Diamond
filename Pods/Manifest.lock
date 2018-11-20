@@ -14,8 +14,11 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - HappyDNS (0.3.14)
   - HXWeiboPhotoPicker (2.1.5):
     - SDWebImage (~> 4.0)
+  - Qiniu (7.2.5):
+    - HappyDNS (~> 0.3)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
@@ -23,19 +26,24 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - HXWeiboPhotoPicker
+  - Qiniu
   - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - HappyDNS
     - HXWeiboPhotoPicker
+    - Qiniu
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  HappyDNS: dc6a164ee81979093123c241c6353bcf0218add6
   HXWeiboPhotoPicker: b389ed6a2f854270aa391c55591d0616a519c881
+  Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: e2a42b4d0118e87d5334b2a2a91c77dc7255c424
+PODFILE CHECKSUM: 18f5013a33f5840ebdae45a9e7620ddc1445d9ef
 
 COCOAPODS: 1.5.3
