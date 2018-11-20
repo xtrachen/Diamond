@@ -8,5 +8,7 @@ target 'Diamond' do
   # Pods for Diamond
 
     pod 'AFNetworking'
+    pod 'HXWeiboPhotoPicker'
+    pod 'SDWebImage'
 
 end

@@ -14,17 +14,28 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - HXWeiboPhotoPicker (2.1.5):
+    - SDWebImage (~> 4.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - HXWeiboPhotoPicker
+  - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - HXWeiboPhotoPicker
+    - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  HXWeiboPhotoPicker: b389ed6a2f854270aa391c55591d0616a519c881
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 9788b411e6a1dac1f79aa99d8507e25d09164bc5
+PODFILE CHECKSUM: e2a42b4d0118e87d5334b2a2a91c77dc7255c424
 
 COCOAPODS: 1.5.3
