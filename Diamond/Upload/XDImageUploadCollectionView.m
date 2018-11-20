@@ -8,6 +8,13 @@
 
 #import "XDImageUploadCollectionView.h"
 
+
+@interface XDImageUploadCollectionView () <UICollectionViewDelegate,UICollectionViewDataSource>
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *array;
+
+@end
+
 @implementation XDImageUploadCollectionView
 
 /*
@@ -17,5 +24,27 @@
     // Drawing code
 }
 */
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds];
+        [self addSubview:self.collectionView];
+        self.array = [NSMutableArray array];
+    }
+    return self;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.array count];
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+}
 
 @end

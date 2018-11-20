@@ -34,6 +34,8 @@
 		31C2A7BB21940EF900F7EBAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7BA21940EF900F7EBAA /* main.m */; };
 		31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7C2219411A200F7EBAA /* XDNetworkManager.m */; };
 		31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */; };
+		31D4DE8421A41B92008FDC34 /* XDImageUploadCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */; };
+		31D4DE8521A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,9 @@
 		31C2A7C42194161F00F7EBAA /* Diamond.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diamond.entitlements; sourceTree = "<group>"; };
 		31D4DE7E21A419BC008FDC34 /* XDImageUploadCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDImageUploadCollectionView.h; sourceTree = "<group>"; };
 		31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDImageUploadCollectionView.m; sourceTree = "<group>"; };
+		31D4DE8121A41B92008FDC34 /* XDImageUploadCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDImageUploadCollectionViewCell.h; sourceTree = "<group>"; };
+		31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDImageUploadCollectionViewCell.m; sourceTree = "<group>"; };
+		31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDImageUploadCollectionViewCell.xib; sourceTree = "<group>"; };
 		47D410365FC4C46A23000B27 /* Pods-Diamond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.release.xcconfig"; sourceTree = "<group>"; };
 		E05B0BF099EAD528F9CF8DDF /* Pods-Diamond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +110,9 @@
 				3169B88F21A3C5AB0095A417 /* XDUploadViewController.xib */,
 				31D4DE7E21A419BC008FDC34 /* XDImageUploadCollectionView.h */,
 				31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */,
+				31D4DE8121A41B92008FDC34 /* XDImageUploadCollectionViewCell.h */,
+				31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */,
+				31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 				3169B88721A3BDFE0095A417 /* XDSettingViewController.xib in Resources */,
 				3169B88C21A3BE110095A417 /* XDSearchViewController.xib in Resources */,
 				31598851219D8189009A764A /* XDLoginViewController.xib in Resources */,
+				31D4DE8521A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib in Resources */,
 				31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */,
 				3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */,
 				3169B89121A3C5AB0095A417 /* XDUploadViewController.xib in Resources */,
@@ -329,6 +338,7 @@
 				31C2A7BB21940EF900F7EBAA /* main.m in Sources */,
 				31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */,
 				31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */,
+				31D4DE8421A41B92008FDC34 /* XDImageUploadCollectionViewCell.m in Sources */,
 				3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */,
 				3169B88121A3BDEB0095A417 /* XDMyViewController.m in Sources */,
 				3169B88621A3BDFE0095A417 /* XDSettingViewController.m in Sources */,
