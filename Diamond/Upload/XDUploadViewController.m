@@ -7,9 +7,13 @@
 //
 
 #import "XDUploadViewController.h"
+#import "XDImageUploadCollectionView.h"
 
 @interface XDUploadViewController () <UITextViewDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
+@property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
+@property (nonatomic, strong) XDImageUploadCollectionView *imgSelectView;
+
 
 @end
 
@@ -17,7 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    self.imgSelectView = [[XDImageUploadCollectionView alloc] initWithFrame:self.imgSelectWrapView.bounds];
+    [self.imgSelectWrapView addSubview:self.imgSelectView];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

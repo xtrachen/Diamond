@@ -7,6 +7,7 @@
 //
 
 #import "XDImageUploadCollectionView.h"
+#import "XDImageUploadCollectionViewCell.h"
 
 
 @interface XDImageUploadCollectionView () <UICollectionViewDelegate,UICollectionViewDataSource>
@@ -29,7 +30,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds];
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(50, 50);
+
+        self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+        
         [self addSubview:self.collectionView];
         self.array = [NSMutableArray array];
     }
@@ -38,13 +43,18 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.array count];
+    if ([self.array count] < 4) {
+        return [self.array count]+1;
+    } else {
+        return 4;
+    }
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    XDImageUploadCollectionViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDImageUploadCollectionViewCell" owner:self options:nil] lastObject];
     
-    
+    return cell;
 }
 
 @end
