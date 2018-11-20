@@ -33,6 +33,7 @@
 		31C2A7B821940EF900F7EBAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C2A7B621940EF900F7EBAA /* LaunchScreen.storyboard */; };
 		31C2A7BB21940EF900F7EBAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7BA21940EF900F7EBAA /* main.m */; };
 		31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7C2219411A200F7EBAA /* XDNetworkManager.m */; };
+		31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,8 @@
 		31C2A7C1219411A200F7EBAA /* XDNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDNetworkManager.h; sourceTree = "<group>"; };
 		31C2A7C2219411A200F7EBAA /* XDNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDNetworkManager.m; sourceTree = "<group>"; };
 		31C2A7C42194161F00F7EBAA /* Diamond.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diamond.entitlements; sourceTree = "<group>"; };
+		31D4DE7E21A419BC008FDC34 /* XDImageUploadCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDImageUploadCollectionView.h; sourceTree = "<group>"; };
+		31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDImageUploadCollectionView.m; sourceTree = "<group>"; };
 		47D410365FC4C46A23000B27 /* Pods-Diamond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.release.xcconfig"; sourceTree = "<group>"; };
 		E05B0BF099EAD528F9CF8DDF /* Pods-Diamond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +103,8 @@
 				3169B88D21A3C5AB0095A417 /* XDUploadViewController.h */,
 				3169B88E21A3C5AB0095A417 /* XDUploadViewController.m */,
 				3169B88F21A3C5AB0095A417 /* XDUploadViewController.xib */,
+				31D4DE7E21A419BC008FDC34 /* XDImageUploadCollectionView.h */,
+				31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				31C2A7B021940EF700F7EBAA /* ViewController.m in Sources */,
 				3169B89021A3C5AB0095A417 /* XDUploadViewController.m in Sources */,
 				31C2A7BB21940EF900F7EBAA /* main.m in Sources */,
+				31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */,
 				31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */,
 				3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */,
 				3169B88121A3BDEB0095A417 /* XDMyViewController.m in Sources */,

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XDUploadViewController">
             <connections>
+                <outlet property="textViewNoticeLabel" destination="8fv-Jv-IVs" id="q8e-eM-Amp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,10 +36,12 @@
                         <constraint firstAttribute="height" constant="1" id="SvT-p1-ATz"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wpA-Ak-TFi">
-                    <rect key="frame" x="16" y="95" width="343" height="190"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpA-Ak-TFi">
+                    <rect key="frame" x="16" y="95" width="343" height="158"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="158" id="u4P-Et-BEf"/>
+                    </constraints>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -46,13 +49,28 @@
                         <outlet property="delegate" destination="-1" id="2N7-fC-twQ"/>
                     </connections>
                 </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入描述内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fv-Jv-IVs">
+                    <rect key="frame" x="21" y="102" width="162" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="WIR-ze-51D"/>
+                        <constraint firstAttribute="width" constant="162" id="XdN-rn-VaS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6RA-gd-bJs" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="36" id="9bp-ur-ciB"/>
                 <constraint firstItem="KBQ-z1-886" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Fbl-0Z-jKa"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="wpA-Ak-TFi" secondAttribute="trailing" constant="16" id="U0q-Wh-24F"/>
                 <constraint firstItem="6RA-gd-bJs" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="VyF-tY-idt"/>
+                <constraint firstItem="wpA-Ak-TFi" firstAttribute="top" secondItem="KBQ-z1-886" secondAttribute="bottom" constant="8" id="W6x-Y5-diy"/>
+                <constraint firstItem="wpA-Ak-TFi" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="fif-vp-gf2"/>
+                <constraint firstItem="8fv-Jv-IVs" firstAttribute="top" secondItem="KBQ-z1-886" secondAttribute="bottom" constant="15" id="gau-pu-5vk"/>
                 <constraint firstItem="KBQ-z1-886" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="66" id="hzf-9j-Vmf"/>
+                <constraint firstItem="8fv-Jv-IVs" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="21" id="sdW-vo-Jns"/>
                 <constraint firstAttribute="trailing" secondItem="KBQ-z1-886" secondAttribute="trailing" id="uan-fo-4bP"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="6RA-gd-bJs" secondAttribute="trailing" constant="16" id="vY0-a5-YmU"/>
             </constraints>

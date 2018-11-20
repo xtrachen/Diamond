@@ -9,6 +9,7 @@
 #import "XDUploadViewController.h"
 
 @interface XDUploadViewController () <UITextViewDelegate>
+@property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 
 @end
 
@@ -17,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if (textView.text.length+text.length > 0) {
+        self.textViewNoticeLabel.hidden = YES;
+    } else {
+        self.textViewNoticeLabel.hidden = NO;
+    }
+    return YES;
 }
 
 /*
