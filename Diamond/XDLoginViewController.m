@@ -19,7 +19,6 @@
 @property (nonatomic, weak) IBOutlet UITextField *pwdField;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
-
 @end
 
 @implementation XDLoginViewController
