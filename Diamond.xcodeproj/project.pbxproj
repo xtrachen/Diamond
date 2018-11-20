@@ -18,6 +18,8 @@
 		31598868219DABBE009A764A /* XDProductDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 31598867219DABBE009A764A /* XDProductDetailInfo.m */; };
 		3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159886A219DAE05009A764A /* XDProductListTableViewCell.m */; };
 		3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3159886B219DAE05009A764A /* XDProductListTableViewCell.xib */; };
+		3169B87C21A3BC690095A417 /* XCUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3169B87A21A3BC690095A417 /* XCUploadViewController.m */; };
+		3169B87D21A3BC690095A417 /* XCUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169B87B21A3BC690095A417 /* XCUploadViewController.xib */; };
 		31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AC21940EF700F7EBAA /* AppDelegate.m */; };
 		31C2A7B021940EF700F7EBAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AF21940EF700F7EBAA /* ViewController.m */; };
 		31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C2A7B121940EF700F7EBAA /* Main.storyboard */; };
@@ -45,6 +47,9 @@
 		31598869219DAE05009A764A /* XDProductListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDProductListTableViewCell.h; sourceTree = "<group>"; };
 		3159886A219DAE05009A764A /* XDProductListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDProductListTableViewCell.m; sourceTree = "<group>"; };
 		3159886B219DAE05009A764A /* XDProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDProductListTableViewCell.xib; sourceTree = "<group>"; };
+		3169B87921A3BC690095A417 /* XCUploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCUploadViewController.h; sourceTree = "<group>"; };
+		3169B87A21A3BC690095A417 /* XCUploadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCUploadViewController.m; sourceTree = "<group>"; };
+		3169B87B21A3BC690095A417 /* XCUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XCUploadViewController.xib; sourceTree = "<group>"; };
 		31C2A7A821940EF700F7EBAA /* Diamond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diamond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C2A7AB21940EF700F7EBAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31C2A7AC21940EF700F7EBAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +79,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3169B87821A3BC280095A417 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				3169B87921A3BC690095A417 /* XCUploadViewController.h */,
+				3169B87A21A3BC690095A417 /* XCUploadViewController.m */,
+				3169B87B21A3BC690095A417 /* XCUploadViewController.xib */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
 		31C2A79F21940EF700F7EBAA = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +110,7 @@
 		31C2A7AA21940EF700F7EBAA /* Diamond */ = {
 			isa = PBXGroup;
 			children = (
+				3169B87821A3BC280095A417 /* Upload */,
 				31C2A7C42194161F00F7EBAA /* Diamond.entitlements */,
 				31C2A7AB21940EF700F7EBAA /* AppDelegate.h */,
 				31C2A7AC21940EF700F7EBAA /* AppDelegate.m */,
@@ -213,6 +229,7 @@
 			files = (
 				31C2A7B821940EF900F7EBAA /* LaunchScreen.storyboard in Resources */,
 				3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */,
+				3169B87D21A3BC690095A417 /* XCUploadViewController.xib in Resources */,
 				31C2A7B521940EF900F7EBAA /* Assets.xcassets in Resources */,
 				31598851219D8189009A764A /* XDLoginViewController.xib in Resources */,
 				31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */,
@@ -285,6 +302,7 @@
 				3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */,
 				31598865219D9FA1009A764A /* XDUser.m in Sources */,
 				31598861219D9CCA009A764A /* XDDetailViewController.m in Sources */,
+				3169B87C21A3BC690095A417 /* XCUploadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
