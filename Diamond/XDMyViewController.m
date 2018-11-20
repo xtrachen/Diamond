@@ -7,8 +7,10 @@
 //
 
 #import "XDMyViewController.h"
+#import "XDUploadViewController.h"
 
-@interface XDMyViewController ()
+@interface XDMyViewController () <UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UITableView* tableView;
 
 @end
 
@@ -28,5 +30,23 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (IBAction)addButtonClicked:(id)sender
+{
+    XDUploadViewController *vc = [[XDUploadViewController alloc] initWithNibName:@"XDUploadViewController" bundle:nil];
+    [self presentViewController:vc animated:YES completion:^{
+        ;
+    }];
+}
 
 @end

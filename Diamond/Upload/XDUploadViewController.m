@@ -1,18 +1,18 @@
 //
-//  XCUploadViewController.m
+//  XDUploadViewController.m
 //  Diamond
 //
 //  Created by Xtra on 2018/11/20.
 //  Copyright © 2018年 XtraSoft. All rights reserved.
 //
 
-#import "XCUploadViewController.h"
+#import "XDUploadViewController.h"
 
-@interface XCUploadViewController ()
+@interface XDUploadViewController ()
 
 @end
 
-@implementation XCUploadViewController
+@implementation XDUploadViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

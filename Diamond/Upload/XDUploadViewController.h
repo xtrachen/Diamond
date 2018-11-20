@@ -1,5 +1,5 @@
 //
-//  XCUploadViewController.h
+//  XDUploadViewController.h
 //  Diamond
 //
 //  Created by Xtra on 2018/11/20.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XCUploadViewController : UIViewController
+@interface XDUploadViewController : UIViewController
 
 @end
 
