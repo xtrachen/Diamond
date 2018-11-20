@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05CCF65CC7CDE290BC67389E /* libPods-Diamond.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 280B86257A637AE9B35DCB28 /* libPods-Diamond.a */; };
+		31598850219D8189009A764A /* XDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159884E219D8189009A764A /* XDLoginViewController.m */; };
+		31598851219D8189009A764A /* XDLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3159884F219D8189009A764A /* XDLoginViewController.xib */; };
+		3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159885A219D9CB3009A764A /* XDHomeViewController.m */; };
+		3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3159885B219D9CB3009A764A /* XDHomeViewController.xib */; };
+		31598861219D9CCA009A764A /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159885F219D9CCA009A764A /* XDDetailViewController.m */; };
+		31598862219D9CCA009A764A /* XDDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31598860219D9CCA009A764A /* XDDetailViewController.xib */; };
+		31598865219D9FA1009A764A /* XDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 31598864219D9FA1009A764A /* XDUser.m */; };
+		31598868219DABBE009A764A /* XDProductDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 31598867219DABBE009A764A /* XDProductDetailInfo.m */; };
+		3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159886A219DAE05009A764A /* XDProductListTableViewCell.m */; };
+		3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3159886B219DAE05009A764A /* XDProductListTableViewCell.xib */; };
+		31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AC21940EF700F7EBAA /* AppDelegate.m */; };
+		31C2A7B021940EF700F7EBAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AF21940EF700F7EBAA /* ViewController.m */; };
+		31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C2A7B121940EF700F7EBAA /* Main.storyboard */; };
+		31C2A7B521940EF900F7EBAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C2A7B421940EF900F7EBAA /* Assets.xcassets */; };
+		31C2A7B821940EF900F7EBAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C2A7B621940EF900F7EBAA /* LaunchScreen.storyboard */; };
+		31C2A7BB21940EF900F7EBAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7BA21940EF900F7EBAA /* main.m */; };
+		31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7C2219411A200F7EBAA /* XDNetworkManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		280B86257A637AE9B35DCB28 /* libPods-Diamond.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Diamond.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3159884D219D8189009A764A /* XDLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDLoginViewController.h; sourceTree = "<group>"; };
+		3159884E219D8189009A764A /* XDLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDLoginViewController.m; sourceTree = "<group>"; };
+		3159884F219D8189009A764A /* XDLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDLoginViewController.xib; sourceTree = "<group>"; };
+		31598859219D9CB3009A764A /* XDHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDHomeViewController.h; sourceTree = "<group>"; };
+		3159885A219D9CB3009A764A /* XDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDHomeViewController.m; sourceTree = "<group>"; };
+		3159885B219D9CB3009A764A /* XDHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDHomeViewController.xib; sourceTree = "<group>"; };
+		3159885E219D9CCA009A764A /* XDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDDetailViewController.h; sourceTree = "<group>"; };
+		3159885F219D9CCA009A764A /* XDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDDetailViewController.m; sourceTree = "<group>"; };
+		31598860219D9CCA009A764A /* XDDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDDetailViewController.xib; sourceTree = "<group>"; };
+		31598863219D9FA1009A764A /* XDUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDUser.h; sourceTree = "<group>"; };
+		31598864219D9FA1009A764A /* XDUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDUser.m; sourceTree = "<group>"; };
+		31598866219DABBE009A764A /* XDProductDetailInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDProductDetailInfo.h; sourceTree = "<group>"; };
+		31598867219DABBE009A764A /* XDProductDetailInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDProductDetailInfo.m; sourceTree = "<group>"; };
+		31598869219DAE05009A764A /* XDProductListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDProductListTableViewCell.h; sourceTree = "<group>"; };
+		3159886A219DAE05009A764A /* XDProductListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDProductListTableViewCell.m; sourceTree = "<group>"; };
+		3159886B219DAE05009A764A /* XDProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDProductListTableViewCell.xib; sourceTree = "<group>"; };
+		31C2A7A821940EF700F7EBAA /* Diamond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diamond.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31C2A7AB21940EF700F7EBAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		31C2A7AC21940EF700F7EBAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		31C2A7AE21940EF700F7EBAA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		31C2A7AF21940EF700F7EBAA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31C2A7B221940EF700F7EBAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31C2A7B421940EF900F7EBAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31C2A7B721940EF900F7EBAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		31C2A7B921940EF900F7EBAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31C2A7BA21940EF900F7EBAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31C2A7C1219411A200F7EBAA /* XDNetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDNetworkManager.h; sourceTree = "<group>"; };
+		31C2A7C2219411A200F7EBAA /* XDNetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDNetworkManager.m; sourceTree = "<group>"; };
+		31C2A7C42194161F00F7EBAA /* Diamond.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Diamond.entitlements; sourceTree = "<group>"; };
+		47D410365FC4C46A23000B27 /* Pods-Diamond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.release.xcconfig"; sourceTree = "<group>"; };
+		E05B0BF099EAD528F9CF8DDF /* Pods-Diamond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31C2A7A521940EF700F7EBAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05CCF65CC7CDE290BC67389E /* libPods-Diamond.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31C2A79F21940EF700F7EBAA = {
+			isa = PBXGroup;
+			children = (
+				31C2A7AA21940EF700F7EBAA /* Diamond */,
+				31C2A7A921940EF700F7EBAA /* Products */,
+				E39B36D1E35C614B52E7F9A2 /* Pods */,
+				3FE87E6460B3AF4432AF4B62 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		31C2A7A921940EF700F7EBAA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31C2A7A821940EF700F7EBAA /* Diamond.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31C2A7AA21940EF700F7EBAA /* Diamond */ = {
+			isa = PBXGroup;
+			children = (
+				31C2A7C42194161F00F7EBAA /* Diamond.entitlements */,
+				31C2A7AB21940EF700F7EBAA /* AppDelegate.h */,
+				31C2A7AC21940EF700F7EBAA /* AppDelegate.m */,
+				31C2A7AE21940EF700F7EBAA /* ViewController.h */,
+				31C2A7AF21940EF700F7EBAA /* ViewController.m */,
+				31C2A7B121940EF700F7EBAA /* Main.storyboard */,
+				31C2A7B421940EF900F7EBAA /* Assets.xcassets */,
+				31C2A7B621940EF900F7EBAA /* LaunchScreen.storyboard */,
+				31C2A7B921940EF900F7EBAA /* Info.plist */,
+				31C2A7BA21940EF900F7EBAA /* main.m */,
+				31C2A7C1219411A200F7EBAA /* XDNetworkManager.h */,
+				31C2A7C2219411A200F7EBAA /* XDNetworkManager.m */,
+				3159884D219D8189009A764A /* XDLoginViewController.h */,
+				3159884E219D8189009A764A /* XDLoginViewController.m */,
+				3159884F219D8189009A764A /* XDLoginViewController.xib */,
+				31598859219D9CB3009A764A /* XDHomeViewController.h */,
+				3159885A219D9CB3009A764A /* XDHomeViewController.m */,
+				3159885B219D9CB3009A764A /* XDHomeViewController.xib */,
+				3159885E219D9CCA009A764A /* XDDetailViewController.h */,
+				3159885F219D9CCA009A764A /* XDDetailViewController.m */,
+				31598860219D9CCA009A764A /* XDDetailViewController.xib */,
+				31598863219D9FA1009A764A /* XDUser.h */,
+				31598864219D9FA1009A764A /* XDUser.m */,
+				31598866219DABBE009A764A /* XDProductDetailInfo.h */,
+				31598867219DABBE009A764A /* XDProductDetailInfo.m */,
+				31598869219DAE05009A764A /* XDProductListTableViewCell.h */,
+				3159886A219DAE05009A764A /* XDProductListTableViewCell.m */,
+				3159886B219DAE05009A764A /* XDProductListTableViewCell.xib */,
+			);
+			path = Diamond;
+			sourceTree = "<group>";
+		};
+		3FE87E6460B3AF4432AF4B62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				280B86257A637AE9B35DCB28 /* libPods-Diamond.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E39B36D1E35C614B52E7F9A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E05B0BF099EAD528F9CF8DDF /* Pods-Diamond.debug.xcconfig */,
+				47D410365FC4C46A23000B27 /* Pods-Diamond.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31C2A7A721940EF700F7EBAA /* Diamond */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31C2A7BE21940EF900F7EBAA /* Build configuration list for PBXNativeTarget "Diamond" */;
+			buildPhases = (
+				882D912FD2783534D9545059 /* [CP] Check Pods Manifest.lock */,
+				31C2A7A421940EF700F7EBAA /* Sources */,
+				31C2A7A521940EF700F7EBAA /* Frameworks */,
+				31C2A7A621940EF700F7EBAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Diamond;
+			productName = Diamond;
+			productReference = 31C2A7A821940EF700F7EBAA /* Diamond.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31C2A7A021940EF700F7EBAA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = XtraSoft;
+				TargetAttributes = {
+					31C2A7A721940EF700F7EBAA = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 0;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 31C2A7A321940EF700F7EBAA /* Build configuration list for PBXProject "Diamond" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31C2A79F21940EF700F7EBAA;
+			productRefGroup = 31C2A7A921940EF700F7EBAA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31C2A7A721940EF700F7EBAA /* Diamond */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31C2A7A621940EF700F7EBAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C2A7B821940EF900F7EBAA /* LaunchScreen.storyboard in Resources */,
+				3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */,
+				31C2A7B521940EF900F7EBAA /* Assets.xcassets in Resources */,
+				31598851219D8189009A764A /* XDLoginViewController.xib in Resources */,
+				31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */,
+				3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */,
+				31598862219D9CCA009A764A /* XDDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		882D912FD2783534D9545059 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Diamond-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31C2A7A421940EF700F7EBAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C2A7B021940EF700F7EBAA /* ViewController.m in Sources */,
+				31C2A7BB21940EF900F7EBAA /* main.m in Sources */,
+				31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */,
+				3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */,
+				31598868219DABBE009A764A /* XDProductDetailInfo.m in Sources */,
+				31598850219D8189009A764A /* XDLoginViewController.m in Sources */,
+				31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */,
+				3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */,
+				31598865219D9FA1009A764A /* XDUser.m in Sources */,
+				31598861219D9CCA009A764A /* XDDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		31C2A7B121940EF700F7EBAA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31C2A7B221940EF700F7EBAA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		31C2A7B621940EF900F7EBAA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31C2A7B721940EF900F7EBAA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		31C2A7BC21940EF900F7EBAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		31C2A7BD21940EF900F7EBAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31C2A7BF21940EF900F7EBAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05B0BF099EAD528F9CF8DDF /* Pods-Diamond.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U58RB22LH9;
+				INFOPLIST_FILE = Diamond/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XtraSoft.Diamond;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		31C2A7C021940EF900F7EBAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47D410365FC4C46A23000B27 /* Pods-Diamond.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U58RB22LH9;
+				INFOPLIST_FILE = Diamond/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = XtraSoft.Diamond;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31C2A7A321940EF700F7EBAA /* Build configuration list for PBXProject "Diamond" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31C2A7BC21940EF900F7EBAA /* Debug */,
+				31C2A7BD21940EF900F7EBAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31C2A7BE21940EF900F7EBAA /* Build configuration list for PBXNativeTarget "Diamond" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31C2A7BF21940EF900F7EBAA /* Debug */,
+				31C2A7C021940EF900F7EBAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31C2A7A021940EF700F7EBAA /* Project object */;
+}
