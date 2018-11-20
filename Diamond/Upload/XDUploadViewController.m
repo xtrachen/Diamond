@@ -8,7 +8,7 @@
 
 #import "XDUploadViewController.h"
 
-@interface XDUploadViewController ()
+@interface XDUploadViewController () <UITextViewDelegate>
 
 @end
 
