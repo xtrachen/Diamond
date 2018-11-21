@@ -67,8 +67,22 @@
 {
 //    XDImageUploadCollectionViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDImageUploadCollectionViewCell" owner:self options:nil] lastObject];
     XDImageUploadCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"XDImageUploadCollectionViewCell" forIndexPath:indexPath];
-
+    cell.index = indexPath.row;
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+{
+    if (indexPath.row == [self.array count]) {
+        [self addImage];
+    } else {
+        
+    }
+}
+
+- (void)addImage
+{
+    
 }
 
 @end
