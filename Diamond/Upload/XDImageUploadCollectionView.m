@@ -35,7 +35,20 @@
 
         self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
         
+        self.collectionView.dataSource = self;
+        self.collectionView.delegate = self;
+        
+        [self.collectionView registerClass:[XDImageUploadCollectionViewCell class] forCellWithReuseIdentifier:@"XDImageUploadCollectionViewCell"];
+        [self.collectionView registerNib:[UINib nibWithNibName:@"XDImageUploadCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"XDImageUploadCollectionViewCell"];
+//        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"XDImageUploadCollectionViewCell"];
+//        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
+        
+
+        
+        
+        
         [self addSubview:self.collectionView];
+        self.collectionView.backgroundColor = [UIColor whiteColor];
         self.array = [NSMutableArray array];
     }
     return self;
@@ -52,8 +65,9 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    XDImageUploadCollectionViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDImageUploadCollectionViewCell" owner:self options:nil] lastObject];
-    
+//    XDImageUploadCollectionViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDImageUploadCollectionViewCell" owner:self options:nil] lastObject];
+    XDImageUploadCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"XDImageUploadCollectionViewCell" forIndexPath:indexPath];
+
     return cell;
 }
 

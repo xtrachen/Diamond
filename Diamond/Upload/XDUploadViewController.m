@@ -13,6 +13,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 @property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
 @property (nonatomic, strong) XDImageUploadCollectionView *imgSelectView;
+@property (nonatomic, weak) IBOutlet UIButton *pubButton;
 
 
 @end
@@ -24,6 +25,7 @@
 
     self.imgSelectView = [[XDImageUploadCollectionView alloc] initWithFrame:self.imgSelectWrapView.bounds];
     [self.imgSelectWrapView addSubview:self.imgSelectView];
+    self.pubButton.layer.cornerRadius = 3;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -45,5 +47,19 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)cancelButtonClicked:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+- (IBAction)pubButtonClicked:(id)sender
+{
+    
+}
+
+
+
 
 @end
