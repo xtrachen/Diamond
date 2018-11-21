@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol XDImageUploadCollectionViewDelegate <NSObject>
+- (void)XDImageUploadCollectionViewAddImage;
+
+
+@end
+
+
+@class HXPhotoManager;
 @interface XDImageUploadCollectionView : UIView
+@property (nonatomic, weak) id<XDImageUploadCollectionViewDelegate> delegate;
+
+- (void)addImages:(NSArray *)array;
 
 @end
 

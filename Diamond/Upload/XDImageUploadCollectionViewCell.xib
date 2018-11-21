@@ -25,6 +25,9 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="image" destination="5PE-MH-QJR" id="p6x-k2-WIK"/>
+            </connections>
         </collectionViewCell>
     </objects>
     <resources>

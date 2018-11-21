@@ -43,9 +43,6 @@
 //        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"XDImageUploadCollectionViewCell"];
 //        [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId];
         
-
-        
-        
         
         [self addSubview:self.collectionView];
         self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -67,6 +64,13 @@
 {
 //    XDImageUploadCollectionViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDImageUploadCollectionViewCell" owner:self options:nil] lastObject];
     XDImageUploadCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"XDImageUploadCollectionViewCell" forIndexPath:indexPath];
+    
+    if (indexPath.row < [self.array count]) {
+        UIImage *image = [self.array objectAtIndex:indexPath.row];
+        [cell setupWithImage:image];
+    }
+
+    
     cell.index = indexPath.row;
     return cell;
 }
@@ -74,15 +78,22 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     if (indexPath.row == [self.array count]) {
-        [self addImage];
+        [self.delegate XDImageUploadCollectionViewAddImage];
     } else {
         
     }
 }
 
-- (void)addImage
+- (void)addImages:(NSArray *)array
 {
+    if ([self.array count] > 0) {
+        [self.array removeAllObjects];
+    }
     
+    [self.array addObjectsFromArray:array];
+    [self.collectionView reloadData];
 }
+
+
 
 @end

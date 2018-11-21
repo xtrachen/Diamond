@@ -8,6 +8,12 @@
 
 #import "XDImageUploadCollectionViewCell.h"
 
+@interface XDImageUploadCollectionViewCell ()
+@property (nonatomic, weak) IBOutlet UIImageView *image;
+
+
+@end
+
 @implementation XDImageUploadCollectionViewCell
 
 - (void)awakeFromNib {
@@ -15,5 +21,11 @@
     // Initialization code
     self.backgroundColor = [UIColor blackColor];
 }
+
+- (void)setupWithImage:(UIImage *)image
+{
+    [self.image setImage:image];
+}
+
 
 @end

@@ -8,12 +8,15 @@
 
 #import "XDUploadViewController.h"
 #import "XDImageUploadCollectionView.h"
+#import <HXWeiboPhotoPicker/HXPhotoPicker.h>
 
-@interface XDUploadViewController () <UITextViewDelegate>
+
+@interface XDUploadViewController () <UITextViewDelegate,HXAlbumListViewControllerDelegate,XDImageUploadCollectionViewDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 @property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
 @property (nonatomic, strong) XDImageUploadCollectionView *imgSelectView;
 @property (nonatomic, weak) IBOutlet UIButton *pubButton;
+@property (nonatomic, strong) HXPhotoManager *manager;
 
 
 @end
@@ -24,6 +27,7 @@
     [super viewDidLoad];
 
     self.imgSelectView = [[XDImageUploadCollectionView alloc] initWithFrame:self.imgSelectWrapView.bounds];
+    self.imgSelectView.delegate = self;
     [self.imgSelectWrapView addSubview:self.imgSelectView];
     self.pubButton.layer.cornerRadius = 3;
 }
@@ -59,7 +63,36 @@
     
 }
 
+- (HXPhotoManager *)manager {
+    if (!_manager) {
+        _manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
+    }
+    return _manager;
+}
 
+- (void)addImage
+{
+    // 照片选择控制器
+    HXAlbumListViewController *vc = [[HXAlbumListViewController alloc] init];
+    vc.delegate = self;
+    vc.manager = self.manager;
+    [self presentViewController:[[HXCustomNavigationController alloc] initWithRootViewController:vc] animated:YES completion:nil];
+}
+
+- (void)XDImageUploadCollectionViewAddImage
+{
+    [self addImage];
+}
+
+- (void)albumListViewController:(HXAlbumListViewController *)albumListViewController didDoneAllList:(NSArray<HXPhotoModel *> *)allList photos:(NSArray<HXPhotoModel *> *)photoList videos:(NSArray<HXPhotoModel *> *)videoList original:(BOOL)original
+{
+    NSMutableArray *array = [NSMutableArray array];
+    for (HXPhotoModel *model in allList) {
+        [array addObject:model.thumbPhoto];
+    }
+    
+    [self.imgSelectView addImages:array];
+}
 
 
 @end

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XDImageUploadCollectionViewCell : UICollectionViewCell
 @property (nonatomic, assign) NSInteger index;
 
+- (void)setupWithImage:(UIImage *)image;
+
 @end
 
 NS_ASSUME_NONNULL_END
