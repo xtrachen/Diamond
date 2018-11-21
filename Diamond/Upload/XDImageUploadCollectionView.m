@@ -68,6 +68,8 @@
     if (indexPath.row < [self.array count]) {
         UIImage *image = [self.array objectAtIndex:indexPath.row];
         [cell setupWithImage:image];
+    } else {
+        [cell setupWithImage:[UIImage imageNamed:@"xd_img_photo_add"]];
     }
 
     
