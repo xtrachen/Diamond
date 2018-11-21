@@ -24,13 +24,13 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="scrollIndicatorInsets" minX="0.0" minY="40" maxX="0.0" maxY="50"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbX-QD-g5e">
-                    <rect key="frame" x="329" y="49" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbX-QD-g5e">
+                    <rect key="frame" x="325" y="49" width="25" height="25"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="978-8m-Lql"/>
-                        <constraint firstAttribute="height" constant="30" id="E8K-xe-ea7"/>
+                        <constraint firstAttribute="width" constant="25" id="978-8m-Lql"/>
+                        <constraint firstAttribute="height" constant="25" id="E8K-xe-ea7"/>
                     </constraints>
-                    <state key="normal" title="+"/>
+                    <state key="normal" backgroundImage="xd_img_product_add"/>
                     <connections>
                         <action selector="addButtonClicked:" destination="-1" eventType="touchUpInside" id="qOs-Av-Z94"/>
                     </connections>
@@ -40,7 +40,7 @@
             <constraints>
                 <constraint firstItem="hTB-zh-VrN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bcz-Sk-6wS"/>
                 <constraint firstItem="hTB-zh-VrN" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="OpR-wp-FLS"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="KbX-QD-g5e" secondAttribute="trailing" constant="16" id="Sy1-NG-IQu"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="KbX-QD-g5e" secondAttribute="trailing" constant="25" id="Sy1-NG-IQu"/>
                 <constraint firstItem="hTB-zh-VrN" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="VYu-tF-k2k"/>
                 <constraint firstItem="KbX-QD-g5e" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="29" id="XSU-od-hKV"/>
                 <constraint firstItem="hTB-zh-VrN" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="onp-yY-lHB"/>
@@ -49,4 +49,7 @@
             <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>
         </view>
     </objects>
+    <resources>
+        <image name="xd_img_product_add" width="25" height="25"/>
+    </resources>
 </document>
