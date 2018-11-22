@@ -78,22 +78,7 @@
 
 - (void)queryUploadToken
 {
-    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/qiniuauth" parameters:nil progress:^(NSProgress * _Nullable progress) {
-        ;
-    } success:^(BOOL isSuccess, id  _Nullable responseObject) {
-        NSLog(@"%@",responseObject);
-        
-        NSString *token = [responseObject objectForKey:@"token"];
-        NSString *uuid = [responseObject objectForKey:@"uuid"];
-        
-        if (token && uuid) {
-            
-        }
-        
-        
-    } failure:^(NSString * _Nullable errorMessage) {
-        NSLog(@"%@",errorMessage);
-    }];
+
 }
 
 

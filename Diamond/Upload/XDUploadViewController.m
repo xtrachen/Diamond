@@ -8,7 +8,11 @@
 
 #import "XDUploadViewController.h"
 #import "XDImageUploadCollectionView.h"
+#import "XDNetworkManager.h"
+
 #import <HXWeiboPhotoPicker/HXPhotoPicker.h>
+#import <Qiniu/QiniuSDK.h>
+
 
 
 @interface XDUploadViewController () <UITextViewDelegate,HXAlbumListViewControllerDelegate,XDImageUploadCollectionViewDelegate>
@@ -17,6 +21,8 @@
 @property (nonatomic, strong) XDImageUploadCollectionView *imgSelectView;
 @property (nonatomic, weak) IBOutlet UIButton *pubButton;
 @property (nonatomic, strong) HXPhotoManager *manager;
+@property (nonatomic, strong) NSArray *imageArray;
+@property (nonatomic, strong) NSMutableArray *uploadImageArray;
 
 
 @end
@@ -30,6 +36,7 @@
     self.imgSelectView.delegate = self;
     [self.imgSelectWrapView addSubview:self.imgSelectView];
     self.pubButton.layer.cornerRadius = 3;
+    self.uploadImageArray = [NSMutableArray array];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -60,6 +67,9 @@
 
 - (IBAction)pubButtonClicked:(id)sender
 {
+    
+    [self uploadImages];
+    
     
 }
 
@@ -92,6 +102,72 @@
     }
     
     [self.imgSelectView addImages:array];
+    self.imageArray = allList;
+}
+
+- (UIImage *)image:(UIImage *)originalImage ByCropToRect:(CGRect)rect {
+    rect.origin.x *= originalImage.scale;
+    rect.origin.y *= originalImage.scale;
+    rect.size.width *= originalImage.scale;
+    rect.size.height *= originalImage.scale; // pt -> px (point -> pixel)
+    if (rect.size.width <= 0 || rect.size.height <= 0) return nil;
+    CGImageRef imageRef = CGImageCreateWithImageInRect(originalImage.CGImage, rect);
+    UIImage *image = [UIImage imageWithCGImage:imageRef scale:originalImage.scale orientation:originalImage.imageOrientation];
+    CGImageRelease(imageRef);
+    return image;
+}
+
+- (void)uploadImages
+{
+    
+    [self.uploadImageArray removeAllObjects];
+    
+    
+    for (HXPhotoModel *model in self.imageArray) {
+        
+        UIImage *oriImg = model.thumbPhoto;
+        CGFloat sw = oriImg.size.width;
+        CGFloat sh = oriImg.size.height;
+        
+        CGRect centerRect = CGRectZero;
+        
+        if (sw>sh) {
+            centerRect = CGRectMake((sw-sh)/2, 0, sh, sh);
+        } else {
+            centerRect = CGRectMake(0, (sh-sw)/2, sw, sw);
+        }
+        
+        // 剪裁中间区域，大小为原图片尺寸的一半
+        UIImage *result = [self image:oriImg ByCropToRect:centerRect];
+        
+        [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/qiniuauth" parameters:nil progress:^(NSProgress * _Nullable progress) {
+            ;
+        } success:^(BOOL isSuccess, id  _Nullable responseObject) {
+            NSLog(@"%@",responseObject);
+            
+            NSString *token = [responseObject objectForKey:@"token"];
+            NSString *uuid = [responseObject objectForKey:@"uuid"];
+            
+            if (token && uuid) {
+                
+                
+                QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
+                    builder.zone = [QNFixedZone zone2];
+                }];
+                
+                QNUploadManager *upManager = [[QNUploadManager alloc] initWithConfiguration:config];
+                NSData *data = UIImageJPEGRepresentation(result, 0.8);
+                [upManager putData:data key:[NSString stringWithFormat:@"%@.jpg",uuid] token:token
+                          complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
+                              NSLog(@"%@", info);
+                              NSLog(@"%@", resp);
+                          } option:nil];
+            }
+            
+        } failure:^(NSString * _Nullable errorMessage) {
+            NSLog(@"%@",errorMessage);
+        }];
+    }
 }
 
 
