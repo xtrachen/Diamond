@@ -23,6 +23,8 @@
 @property (nonatomic, strong) HXPhotoManager *manager;
 @property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) NSMutableArray *uploadImageArray;
+@property (nonatomic, weak) IBOutlet UITextField *titleField;
+@property (nonatomic, weak) IBOutlet UITextView *textView;
 
 
 @end
@@ -67,6 +69,14 @@
 
 - (IBAction)pubButtonClicked:(id)sender
 {
+    
+    if ([self.titleField.text length] == 0) {
+        
+        return;
+    }
+    
+    
+    
     
     [self uploadImages];
     
@@ -169,6 +179,9 @@
         }];
     }
 }
+
+
+
 
 
 @end
