@@ -22,12 +22,14 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
   - HXWeiboPhotoPicker
   - Qiniu
   - SDWebImage
+  - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - HXWeiboPhotoPicker
     - Qiniu
     - SDWebImage
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -43,7 +46,8 @@ SPEC CHECKSUMS:
   HXWeiboPhotoPicker: b389ed6a2f854270aa391c55591d0616a519c881
   Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 18f5013a33f5840ebdae45a9e7620ddc1445d9ef
+PODFILE CHECKSUM: 271d1cbc8d324c6f0ac22e788c6438fb27008cf3
 
 COCOAPODS: 1.5.3

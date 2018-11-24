@@ -72,6 +72,36 @@
     
     if ([self.titleField.text length] == 0) {
         
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请填写标题" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"点击了取消");
+        }];
+        [actionSheet addAction:action1];
+
+        [self presentViewController:actionSheet animated:YES completion:nil];
+        
+        return;
+    }
+    
+    if ([self.textView.text length] == 0) {
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请填写描述内容" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"点击了取消");
+        }];
+        [actionSheet addAction:action1];
+        
+        [self presentViewController:actionSheet animated:YES completion:nil];
+        return;
+    }
+    
+    if ([self.imageArray count] == 0) {
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请至少选择一张图片" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            NSLog(@"点击了取消");
+        }];
+        [actionSheet addAction:action1];
+        
+        [self presentViewController:actionSheet animated:YES completion:nil];
         return;
     }
     
