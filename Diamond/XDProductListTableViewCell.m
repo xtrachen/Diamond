@@ -7,6 +7,17 @@
 //
 
 #import "XDProductListTableViewCell.h"
+#import "XDProductDetailInfo.h"
+#import "UIImageView+WebCache.h"
+
+
+@interface XDProductListTableViewCell ()
+@property (nonatomic, weak) IBOutlet UIImageView *icon;
+@property (nonatomic, weak) IBOutlet UILabel *label1;
+@property (nonatomic,weak) IBOutlet UILabel *label2;
+
+@end
+
 
 @implementation XDProductListTableViewCell
 
@@ -19,6 +30,17 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setupWith:(XDProductDetailInfo *)info
+{
+    
+    if (info.imageArray && [info.imageArray count] > 0) {
+        NSString *urlStr = [NSString stringWithFormat:@"http://phpdo3tsg.bkt.clouddn.com/%@.jpg",[info.imageArray firstObject]];
+        [self.icon sd_setImageWithURL:[NSURL URLWithString:urlStr]];
+    }
+    [self.label1 setText:info.title];
+    [self.label2 setText:info.markdown];
 }
 
 @end

@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class XDProductDetailInfo;
+
 @interface XDProductListTableViewCell : UITableViewCell
+
+- (void)setupWith:(XDProductDetailInfo *)info;
 
 @end
 

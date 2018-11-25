@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *html;
 @property (nonatomic, strong) NSString *markdown;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSArray *imageArray;
 
 + (XDProductDetailInfo *)infoFromDict:(NSDictionary *)dict;
 

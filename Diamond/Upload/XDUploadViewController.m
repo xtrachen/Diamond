@@ -105,11 +105,7 @@
         return;
     }
     
-    
-    
-    
     [self uploadImages];
-    
     
 }
 
@@ -163,8 +159,8 @@
     [self.uploadImageArray removeAllObjects];
     
     
-    for (HXPhotoModel *model in self.imageArray) {
-        
+    for (int i = 0; i< [self.imageArray count] ; i++) {
+        HXPhotoModel *model = [self.imageArray objectAtIndex:i];
         UIImage *oriImg = model.thumbPhoto;
         CGFloat sw = oriImg.size.width;
         CGFloat sh = oriImg.size.height;
@@ -179,6 +175,8 @@
         
         // 剪裁中间区域，大小为原图片尺寸的一半
         UIImage *result = [self image:oriImg ByCropToRect:centerRect];
+        
+        __weak XDUploadViewController *weakself = self;
         
         [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/qiniuauth" parameters:nil progress:^(NSProgress * _Nullable progress) {
             ;
@@ -201,6 +199,11 @@
                           complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
                               NSLog(@"%@", info);
                               NSLog(@"%@", resp);
+                              [self.uploadImageArray addObject:uuid];
+                              if (i == [weakself.imageArray count]-1) {
+                                  [self handleImageUploaded];
+                              }
+                              
                           } option:nil];
             }
             
@@ -209,6 +212,29 @@
         }];
     }
 }
+
+- (void)handleImageUploaded
+{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    [dict setObject:self.titleField.text forKey:@"title"];
+    [dict setObject:self.textView.text forKey:@"markdown"];
+    
+    NSString *imgStr =[self.uploadImageArray componentsJoinedByString:@","];
+    [dict setObject:imgStr forKey:@"imgstr"];
+    
+    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/addproduct" parameters:dict progress:^(NSProgress * _Nullable progress) {
+        ;
+    } success:^(BOOL isSuccess, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    } failure:^(NSString * _Nullable errorMessage) {
+        NSLog(@"%@",errorMessage);
+    }];
+}
+
 
 
 
