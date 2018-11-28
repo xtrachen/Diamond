@@ -12,6 +12,7 @@
 #import "XDUser.h"
 #import "XDProductDetailInfo.h"
 #import "XDProductListTableViewCell.h"
+#import "XDDetailViewController.h"
 
 
 
@@ -89,6 +90,17 @@
 - (IBAction)addButtonClicked:(id)sender
 {
     XDUploadViewController *vc = [[XDUploadViewController alloc] initWithNibName:@"XDUploadViewController" bundle:nil];
+    [self presentViewController:vc animated:YES completion:^{
+        ;
+    }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XDProductDetailInfo *detailInfo = [self.array objectAtIndex:indexPath.row];
+    
+    XDDetailViewController *vc = [[XDDetailViewController alloc] initWithNibName:@"XDDetailViewController" bundle:nil];
+    [vc setupWithInfo:detailInfo];
     [self presentViewController:vc animated:YES completion:^{
         ;
     }];

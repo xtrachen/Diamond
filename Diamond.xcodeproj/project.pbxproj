@@ -12,14 +12,10 @@
 		31598851219D8189009A764A /* XDLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3159884F219D8189009A764A /* XDLoginViewController.xib */; };
 		3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159885A219D9CB3009A764A /* XDHomeViewController.m */; };
 		3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3159885B219D9CB3009A764A /* XDHomeViewController.xib */; };
-		31598861219D9CCA009A764A /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159885F219D9CCA009A764A /* XDDetailViewController.m */; };
-		31598862219D9CCA009A764A /* XDDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31598860219D9CCA009A764A /* XDDetailViewController.xib */; };
 		31598865219D9FA1009A764A /* XDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 31598864219D9FA1009A764A /* XDUser.m */; };
 		31598868219DABBE009A764A /* XDProductDetailInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 31598867219DABBE009A764A /* XDProductDetailInfo.m */; };
 		3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3159886A219DAE05009A764A /* XDProductListTableViewCell.m */; };
 		3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3159886B219DAE05009A764A /* XDProductListTableViewCell.xib */; };
-		3164B73121AEFD3A00921896 /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3164B72F21AEFD3A00921896 /* XDDetailViewController.m */; };
-		3164B73221AEFD3A00921896 /* XDDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3164B73021AEFD3A00921896 /* XDDetailViewController.xib */; };
 		3169B88121A3BDEB0095A417 /* XDMyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3169B87F21A3BDEB0095A417 /* XDMyViewController.m */; };
 		3169B88221A3BDEB0095A417 /* XDMyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169B88021A3BDEB0095A417 /* XDMyViewController.xib */; };
 		3169B88621A3BDFE0095A417 /* XDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3169B88421A3BDFE0095A417 /* XDSettingViewController.m */; };
@@ -38,6 +34,10 @@
 		31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */; };
 		31D4DE8421A41B92008FDC34 /* XDImageUploadCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */; };
 		31D4DE8521A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */; };
+		31FE758C21AF035600FF9155 /* XDDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE758621AF035400FF9155 /* XDDetailViewController.xib */; };
+		31FE758F21AF035600FF9155 /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE758B21AF035500FF9155 /* XDDetailViewController.m */; };
+		31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE759021AF052500FF9155 /* UIDetailImageTableViewCell.xib */; };
+		31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE759221AF052600FF9155 /* UIDetailImageTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +48,6 @@
 		31598859219D9CB3009A764A /* XDHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDHomeViewController.h; sourceTree = "<group>"; };
 		3159885A219D9CB3009A764A /* XDHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDHomeViewController.m; sourceTree = "<group>"; };
 		3159885B219D9CB3009A764A /* XDHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDHomeViewController.xib; sourceTree = "<group>"; };
-		3159885E219D9CCA009A764A /* XDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDDetailViewController.h; sourceTree = "<group>"; };
-		3159885F219D9CCA009A764A /* XDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDDetailViewController.m; sourceTree = "<group>"; };
-		31598860219D9CCA009A764A /* XDDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDDetailViewController.xib; sourceTree = "<group>"; };
 		31598863219D9FA1009A764A /* XDUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDUser.h; sourceTree = "<group>"; };
 		31598864219D9FA1009A764A /* XDUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDUser.m; sourceTree = "<group>"; };
 		31598866219DABBE009A764A /* XDProductDetailInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDProductDetailInfo.h; sourceTree = "<group>"; };
@@ -59,9 +56,6 @@
 		3159886A219DAE05009A764A /* XDProductListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDProductListTableViewCell.m; sourceTree = "<group>"; };
 		3159886B219DAE05009A764A /* XDProductListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDProductListTableViewCell.xib; sourceTree = "<group>"; };
 		3164B72C21AEFBF600921896 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		3164B72E21AEFD3A00921896 /* XDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDDetailViewController.h; sourceTree = "<group>"; };
-		3164B72F21AEFD3A00921896 /* XDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDDetailViewController.m; sourceTree = "<group>"; };
-		3164B73021AEFD3A00921896 /* XDDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDDetailViewController.xib; sourceTree = "<group>"; };
 		3169B87E21A3BDEB0095A417 /* XDMyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDMyViewController.h; sourceTree = "<group>"; };
 		3169B87F21A3BDEB0095A417 /* XDMyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDMyViewController.m; sourceTree = "<group>"; };
 		3169B88021A3BDEB0095A417 /* XDMyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDMyViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +86,12 @@
 		31D4DE8121A41B92008FDC34 /* XDImageUploadCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDImageUploadCollectionViewCell.h; sourceTree = "<group>"; };
 		31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDImageUploadCollectionViewCell.m; sourceTree = "<group>"; };
 		31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDImageUploadCollectionViewCell.xib; sourceTree = "<group>"; };
+		31FE758621AF035400FF9155 /* XDDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDDetailViewController.xib; sourceTree = "<group>"; };
+		31FE758821AF035500FF9155 /* XDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDDetailViewController.h; sourceTree = "<group>"; };
+		31FE758B21AF035500FF9155 /* XDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDDetailViewController.m; sourceTree = "<group>"; };
+		31FE759021AF052500FF9155 /* UIDetailImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIDetailImageTableViewCell.xib; sourceTree = "<group>"; };
+		31FE759121AF052500FF9155 /* UIDetailImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDetailImageTableViewCell.h; sourceTree = "<group>"; };
+		31FE759221AF052600FF9155 /* UIDetailImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDetailImageTableViewCell.m; sourceTree = "<group>"; };
 		47D410365FC4C46A23000B27 /* Pods-Diamond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.release.xcconfig"; sourceTree = "<group>"; };
 		E05B0BF099EAD528F9CF8DDF /* Pods-Diamond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,9 +111,12 @@
 		3164B72D21AEFD1F00921896 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				3164B72E21AEFD3A00921896 /* XDDetailViewController.h */,
-				3164B72F21AEFD3A00921896 /* XDDetailViewController.m */,
-				3164B73021AEFD3A00921896 /* XDDetailViewController.xib */,
+				31FE759121AF052500FF9155 /* UIDetailImageTableViewCell.h */,
+				31FE759221AF052600FF9155 /* UIDetailImageTableViewCell.m */,
+				31FE759021AF052500FF9155 /* UIDetailImageTableViewCell.xib */,
+				31FE758821AF035500FF9155 /* XDDetailViewController.h */,
+				31FE758B21AF035500FF9155 /* XDDetailViewController.m */,
+				31FE758621AF035400FF9155 /* XDDetailViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -174,9 +177,6 @@
 				31598859219D9CB3009A764A /* XDHomeViewController.h */,
 				3159885A219D9CB3009A764A /* XDHomeViewController.m */,
 				3159885B219D9CB3009A764A /* XDHomeViewController.xib */,
-				3159885E219D9CCA009A764A /* XDDetailViewController.h */,
-				3159885F219D9CCA009A764A /* XDDetailViewController.m */,
-				31598860219D9CCA009A764A /* XDDetailViewController.xib */,
 				31598863219D9FA1009A764A /* XDUser.h */,
 				31598864219D9FA1009A764A /* XDUser.m */,
 				31598866219DABBE009A764A /* XDProductDetailInfo.h */,
@@ -284,7 +284,8 @@
 			files = (
 				31C2A7B821940EF900F7EBAA /* LaunchScreen.storyboard in Resources */,
 				3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */,
-				3164B73221AEFD3A00921896 /* XDDetailViewController.xib in Resources */,
+				31FE758C21AF035600FF9155 /* XDDetailViewController.xib in Resources */,
+				31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */,
 				31C2A7B521940EF900F7EBAA /* Assets.xcassets in Resources */,
 				3169B88221A3BDEB0095A417 /* XDMyViewController.xib in Resources */,
 				3169B88721A3BDFE0095A417 /* XDSettingViewController.xib in Resources */,
@@ -294,7 +295,6 @@
 				31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */,
 				3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */,
 				3169B89121A3C5AB0095A417 /* XDUploadViewController.xib in Resources */,
-				31598862219D9CCA009A764A /* XDDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,14 +363,14 @@
 				3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */,
 				3169B88121A3BDEB0095A417 /* XDMyViewController.m in Sources */,
 				3169B88621A3BDFE0095A417 /* XDSettingViewController.m in Sources */,
+				31FE758F21AF035600FF9155 /* XDDetailViewController.m in Sources */,
 				31598868219DABBE009A764A /* XDProductDetailInfo.m in Sources */,
 				31598850219D8189009A764A /* XDLoginViewController.m in Sources */,
 				3169B88B21A3BE110095A417 /* XDSearchViewController.m in Sources */,
-				3164B73121AEFD3A00921896 /* XDDetailViewController.m in Sources */,
 				31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */,
+				31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */,
 				3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */,
 				31598865219D9FA1009A764A /* XDUser.m in Sources */,
-				31598861219D9CCA009A764A /* XDDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

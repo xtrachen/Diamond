@@ -1,5 +1,5 @@
 //
-//  XDDetailViewController.h
+//  UIDetailImageTableViewCell.h
 //  Diamond
 //
 //  Created by 陈国贤 on 2018/11/29.
@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+
 @class XDProductDetailInfo;
 
-@interface XDDetailViewController : UIViewController
+@interface UIDetailImageTableViewCell : UITableViewCell
 
 
-- (void)setupWithInfo:(XDProductDetailInfo *)info;
+
+- (void)setupWith:(XDProductDetailInfo *)detail;
 
 @end
 

@@ -7,9 +7,15 @@
 //
 
 #import "XDDetailViewController.h"
+#import "UIDetailImageTableViewCell.h"
+#import "XDProductDetailInfo.h"
 
-@interface XDDetailViewController ()
 
+
+
+@interface XDDetailViewController () <UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) XDProductDetailInfo *detailInfo;
 @end
 
 @implementation XDDetailViewController
@@ -28,5 +34,24 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    UIDetailImageTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"UIDetailImageTableViewCell" owner:self options:nil] lastObject];
+    
+    [cell setupWith:self.detailInfo];
+    
+    return cell;
+}
+
+- (void)setupWithInfo:(XDProductDetailInfo *)info
+{
+    self.detailInfo = info;
+}
 
 @end
