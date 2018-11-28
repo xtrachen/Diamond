@@ -72,16 +72,24 @@
 
 - (void)XDLoginViewControllerLoginFinish
 {
-    XDMyViewController *myVC = [[XDMyViewController alloc] initWithNibName:@"XDMyViewController" bundle:nil];
-    myVC.title = @"我的";
-    XDSearchViewController *searchVC = [[XDSearchViewController alloc] initWithNibName:@"XDSearchViewController" bundle:nil];
-    searchVC.title = @"查找";
-    XDSettingViewController *settingVC = [[XDSettingViewController alloc] initWithNibName:@"XDSettingViewController" bundle:nil];
-    settingVC.title = @"设置";
+
     XDHomeViewController *homeVC = [[XDHomeViewController alloc] initWithNibName:@"XDHomeViewController" bundle:nil];
-    homeVC.title = @"广场";
+    homeVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"广场" image:[UIImage imageNamed:@"xd_img_bottombar_ground"] tag:1];
+    
+    XDSearchViewController *searchVC = [[XDSearchViewController alloc] initWithNibName:@"XDSearchViewController" bundle:nil];
+    searchVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"查找" image:[UIImage imageNamed:@"xd_img_bottombar_search"] tag:2];
+    
+    XDMyViewController *myVC = [[XDMyViewController alloc] initWithNibName:@"XDMyViewController" bundle:nil];
+    myVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"xd_img_bottombar_my"] tag:3];
+    
+    XDSettingViewController *settingVC = [[XDSettingViewController alloc] initWithNibName:@"XDSettingViewController" bundle:nil];
+    settingVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:[UIImage imageNamed:@"xd_img_bottombar_setting"] tag:4];
+
     UITabBarController *tabbar = [[UITabBarController alloc] init];
+
     tabbar.viewControllers = @[homeVC,searchVC,myVC,settingVC];
+    
+    [[UITabBar appearance] setBarTintColor:RGBCOLOR(169, 199, 161)];
     
     self.window.rootViewController = tabbar;
 }
