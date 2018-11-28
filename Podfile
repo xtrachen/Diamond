@@ -11,5 +11,5 @@ target 'Diamond' do
     pod 'HXWeiboPhotoPicker'
     pod 'SDWebImage'
     pod 'Qiniu'
-
+    pod 'SVProgressHUD'
 end

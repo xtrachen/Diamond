@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="imgSelectWrapView" destination="n5L-23-r2N" id="dsb-cs-tV8"/>
                 <outlet property="pubButton" destination="IRl-6V-arQ" id="WGL-iC-HaP"/>
+                <outlet property="textView" destination="wpA-Ak-TFi" id="oXl-TO-mPH"/>
                 <outlet property="textViewNoticeLabel" destination="8fv-Jv-IVs" id="q8e-eM-Amp"/>
+                <outlet property="titleField" destination="6RA-gd-bJs" id="tef-to-yTi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

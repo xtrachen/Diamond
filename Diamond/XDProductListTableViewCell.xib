@@ -25,21 +25,43 @@
                             <constraint firstAttribute="width" constant="46" id="EUZ-WW-IBr"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIm-Nm-7kn">
-                        <rect key="frame" x="59" y="7" width="214" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7P-eO-aCM">
+                        <rect key="frame" x="59" y="7" width="245" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="BX4-rE-XF8"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.63137254899999995" green="0.78039215689999997" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMC-qk-mZd">
+                        <rect key="frame" x="59" y="30" width="245" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="YpR-KH-Np5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="e7P-eO-aCM" secondAttribute="trailing" constant="16" id="0tx-UO-FUl"/>
                     <constraint firstItem="acj-pa-LMM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="5kN-C6-WPl"/>
                     <constraint firstItem="acj-pa-LMM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="JHE-u6-j4b"/>
+                    <constraint firstItem="pMC-qk-mZd" firstAttribute="leading" secondItem="acj-pa-LMM" secondAttribute="trailing" constant="8" id="Jc5-hP-ouj"/>
+                    <constraint firstItem="e7P-eO-aCM" firstAttribute="leading" secondItem="acj-pa-LMM" secondAttribute="trailing" constant="8" id="Ub5-45-qqT"/>
+                    <constraint firstItem="e7P-eO-aCM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="WEg-0j-6g8"/>
                     <constraint firstAttribute="bottom" secondItem="acj-pa-LMM" secondAttribute="bottom" constant="4.5" id="b6s-Hj-1Rg"/>
+                    <constraint firstAttribute="trailing" secondItem="pMC-qk-mZd" secondAttribute="trailing" constant="16" id="ctO-Uz-Z7g"/>
+                    <constraint firstItem="pMC-qk-mZd" firstAttribute="top" secondItem="e7P-eO-aCM" secondAttribute="bottom" constant="2" id="uYW-eA-28N"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="icon" destination="acj-pa-LMM" id="qhU-hT-c2K"/>
+                <outlet property="label1" destination="e7P-eO-aCM" id="nvf-rK-Xh4"/>
+                <outlet property="label2" destination="pMC-qk-mZd" id="EcN-W4-rSP"/>
+            </connections>
             <point key="canvasLocation" x="132.80000000000001" y="154.72263868065968"/>
         </tableViewCell>
     </objects>

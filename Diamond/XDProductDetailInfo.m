@@ -16,11 +16,17 @@
 {
     XDProductDetailInfo *detail = [[XDProductDetailInfo alloc] init];
     
+    
     detail.html = [dict objectForKey:@"html"];
     detail.uid = [dict objectForKey:@"user_id"];
     detail.markdown = [dict objectForKey:@"markdown"];
     detail.title = [dict objectForKey:@"title"];
     detail.pid = [dict objectForKey:@"id"];
+    
+    NSString *imagesStr = [dict objectForKey:@"imgstr"];
+    if ([imagesStr length] > 0) {
+        detail.imageArray = [imagesStr componentsSeparatedByString:@","];
+    }
     
     return detail;
 }

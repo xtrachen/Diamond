@@ -8,9 +8,16 @@
 
 #import "XDMyViewController.h"
 #import "XDUploadViewController.h"
+#import "XDNetworkManager.h"
+#import "XDUser.h"
+#import "XDProductDetailInfo.h"
+#import "XDProductListTableViewCell.h"
+
+
 
 @interface XDMyViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView* tableView;
+@property (nonatomic, strong) NSMutableArray *array;
 
 @end
 
@@ -19,6 +26,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+
+    self.array = [NSMutableArray array];
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[[XDUser defaultManager] uid] forKey:@"user_id"];
+    
+    [self.tableView registerClass:[XDProductListTableViewCell class] forCellReuseIdentifier:@"XDProductListTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"XDProductListTableViewCell" bundle:nil] forCellReuseIdentifier:@"XDProductListTableViewCell"];
+    
+    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/mylist" parameters:dict progress:^(NSProgress * _Nullable progress) {
+        ;
+    } success:^(BOOL isSuccess, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSArray *array = [responseObject objectForKey:@"list"];
+        
+        if ([array isKindOfClass:[NSArray class]] && [array count] > 0) {
+            
+            for (NSDictionary *dict in array) {
+                XDProductDetailInfo *info = [XDProductDetailInfo infoFromDict:dict];
+                [self.array addObject:info];
+            }
+            [self.tableView reloadData];
+        }
+    } failure:^(NSString * _Nullable errorMessage) {
+        NSLog(@"%@",errorMessage);
+    }];
 }
 
 /*
@@ -33,12 +67,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    
+    XDProductListTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"XDProductListTableViewCell" forIndexPath:indexPath];
+    
+    XDProductDetailInfo *info = [self.array objectAtIndex:indexPath.row];
+    [cell setupWith:info];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 56;
 }
 
 - (IBAction)addButtonClicked:(id)sender
