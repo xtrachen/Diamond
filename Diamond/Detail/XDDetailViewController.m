@@ -49,6 +49,16 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.row) {
+        case 0:
+            return self.view.frame.size.width*3/4;            
+        default:
+            return 0;
+    }
+}
+
 - (void)setupWithInfo:(XDProductDetailInfo *)info
 {
     self.detailInfo = info;

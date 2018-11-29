@@ -30,6 +30,30 @@
 
     self.array = [NSMutableArray array];
     
+
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+    [super viewDidAppear:animated];
+    
+    if ([self.array count] > 0){
+        return;
+    }
+    
+ 
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:[[XDUser defaultManager] uid] forKey:@"user_id"];
     
@@ -54,17 +78,9 @@
     } failure:^(NSString * _Nullable errorMessage) {
         NSLog(@"%@",errorMessage);
     }];
+    
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
