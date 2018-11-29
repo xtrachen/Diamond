@@ -55,13 +55,13 @@
     } success:^(BOOL isSuccess, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
         
-        NSArray *cookie = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL: [NSURL URLWithString:@"http://www.xtra.ltd:8888"]];//得到cookie
-        
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:cookie];
-        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"cookie"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        NSLog(@"cookies:%@",cookie);
+//        NSArray *cookie = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL: [NSURL URLWithString:@"http://www.xtra.ltd:8888"]];//得到cookie
+//        
+//        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:cookie];
+//        [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"cookie"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//
+//        NSLog(@"cookies:%@",cookie);
 
         NSDictionary *dict = responseObject;
         

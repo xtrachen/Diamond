@@ -12,7 +12,7 @@
 #import "XDHomeViewController.h"
 #import "XDMyViewController.h"
 #import "XDSettingViewController.h"
-
+#import "XDUser.h"
 
 
 
@@ -28,16 +28,21 @@
     
     
     ///////////
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    XDLoginViewController *vc = [[XDLoginViewController alloc] init];
-    vc.delegate = self;
-    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:vc];
-    
-    self.window.rootViewController = rootNavi;
-    
     [self.window makeKeyAndVisible];
+
     
+    BOOL isLogin = [self loadSavedCookies];
+    
+    if (isLogin) {
+        [self XDLoginViewControllerLoginFinish];
+    } else {
+        XDLoginViewController *vc = [[XDLoginViewController alloc] init];
+        vc.delegate = self;
+        UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:vc];
+        self.window.rootViewController = rootNavi;
+    }
     
     return YES;
 }
@@ -92,6 +97,36 @@
     [[UITabBar appearance] setBarTintColor:RGBCOLOR(169, 199, 161)];
     
     self.window.rootViewController = tabbar;
+    
+    [self saveCookies];
+}
+
+
+
+- (void)saveCookies
+{
+    NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject: cookiesData forKey:@"diamond.xtra.com"];
+    [defaults setObject:[[XDUser defaultManager] uid] forKey:@"uid.diamond"];
+    [defaults synchronize];
+}
+// 合适的时机加载持久化后Cookie 一般都是app刚刚启动的时候
+- (BOOL)loadSavedCookies
+{
+    NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData: [[NSUserDefaults standardUserDefaults] objectForKey: @"diamond.xtra.com"]];
+    [XDUser defaultManager].uid = [[NSUserDefaults standardUserDefaults] objectForKey:@"uid.diamond"];
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in cookies){
+        NSLog(@"cookie,name:= %@,valuie = %@",cookie.name,cookie.value);
+    }
+    
+    if (cookies) {
+        return YES;
+    } else {
+        return NO;
+    }
+    
 }
 
 
