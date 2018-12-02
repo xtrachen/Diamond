@@ -219,7 +219,29 @@
     
     [dict setObject:self.titleField.text forKey:@"title"];
     [dict setObject:self.textView.text forKey:@"markdown"];
+    [dict setObject:@" " forKey:@"category"];
+    [dict setObject:@" " forKey:@"ptype"];
+    [dict setObject:[NSNumber numberWithInt:0] forKey:@"price"];
+    [dict setObject:@" " forKey:@"color"];
     
+    [dict setObject:[NSNumber numberWithInt:0] forKey:@"length"];
+    [dict setObject:[NSNumber numberWithInt:0] forKey:@"width"];
+    [dict setObject:[NSNumber numberWithInt:0] forKey:@"height"];
+    [dict setObject:@" " forKey:@"weight"];
+
+    [dict setObject:[NSNumber numberWithDouble:0] forKey:@"lat"];
+    [dict setObject:[NSNumber numberWithDouble:0] forKey:@"lng"];
+    
+    [dict setObject:@" " forKey:@"city"];
+    [dict setObject:@" " forKey:@"region"];
+    [dict setObject:@" " forKey:@"tag"];
+    [dict setObject:@" " forKey:@"sidestone"];
+    [dict setObject:@" " forKey:@"gold"];
+    [dict setObject:@" " forKey:@"designby"];
+    [dict setObject:[NSNumber numberWithInt:0] forKey:@"storage"];
+    [dict setObject:@" " forKey:@"store"];
+    [dict setObject:@" " forKey:@"remarks"];
+
     NSString *imgStr =[self.uploadImageArray componentsJoinedByString:@","];
     [dict setObject:imgStr forKey:@"imgstr"];
     
