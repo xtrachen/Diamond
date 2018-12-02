@@ -17,9 +17,23 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uRY-zn-cbm">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                    </imageView>
+                </subviews>
             </view>
             <color key="backgroundColor" red="0.63137254899999995" green="0.78039215689999997" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="uRY-zn-cbm" secondAttribute="bottom" id="A4c-kC-IFc"/>
+                <constraint firstAttribute="trailing" secondItem="uRY-zn-cbm" secondAttribute="trailing" id="RVY-EE-Diw"/>
+                <constraint firstItem="uRY-zn-cbm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YoE-cI-gYK"/>
+                <constraint firstItem="uRY-zn-cbm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zbn-TE-9bd"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <connections>
+                <outlet property="image" destination="uRY-zn-cbm" id="yic-s0-eaR"/>
+            </connections>
             <point key="canvasLocation" x="40" y="46.776611694152926"/>
         </collectionViewCell>
     </objects>

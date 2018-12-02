@@ -23,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self.tableView registerClass:[UIDetailImageTableViewCell class] forCellReuseIdentifier:@"UIDetailImageTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"UIDetailImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"UIDetailImageTableViewCell"];
 }
 
 /*

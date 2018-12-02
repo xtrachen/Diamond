@@ -10,7 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface UIImageGalleryViewCell ()
-@property (nonatomic, strong) UIImageView *image;
+@property (nonatomic, strong) IBOutlet UIImageView *image;
 
 @end
 
@@ -20,8 +20,8 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.image = [[UIImageView alloc] initWithFrame:self.bounds];
-    [self.contentView addSubview:self.image];
+//    self.image = [[UIImageView alloc] initWithFrame:self.bounds];
+//    [self.contentView addSubview:self.image];
     
 }
 

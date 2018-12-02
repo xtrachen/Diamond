@@ -75,7 +75,9 @@
     self.collectionView.dataSource = self;
 
     [self.collectionView registerClass:[UIImageGalleryViewCell class] forCellWithReuseIdentifier:@"UIImageGalleryViewCell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"UIImageGalleryViewCell" bundle:nil] forCellWithReuseIdentifier:@"UIImageGalleryViewCell"];
 
+    
     [self.contentView addSubview:self.collectionView];
     if ([self.imageArray count] > 0) {
         [self.collectionView reloadData];
@@ -91,6 +93,7 @@
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
+    [self.collectionView setFrame:self.bounds];
 }
 
 - (void)setupWith:(XDProductDetailInfo *)detail
