@@ -17,6 +17,25 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *markdown;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSArray *imageArray;
+@property (nonatomic, strong) NSString *category;
+@property (nonatomic, strong) NSString *ptype;
+@property (nonatomic, assign) int price;
+@property (nonatomic, strong) NSString *color;
+@property (nonatomic, assign) int length;
+@property (nonatomic, assign) int width;
+@property (nonatomic, assign) int height;
+@property (nonatomic, assign) double lat;
+@property (nonatomic, assign) double lng;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *region;
+@property (nonatomic, strong) NSString *tag;
+@property (nonatomic, strong) NSString *sideStone;
+@property (nonatomic, strong) NSString *gold;
+@property (nonatomic, strong) NSString *designBy;
+@property (nonatomic, assign) int storage;
+@property (nonatomic, strong) NSString *store;
+@property (nonatomic, strong) NSString *remarks;
+
 
 + (XDProductDetailInfo *)infoFromDict:(NSDictionary *)dict;
 
