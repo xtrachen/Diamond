@@ -11,6 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XDTextSetTableViewCell : UITableViewCell
+@property (nonatomic, strong) IBOutlet UILabel *label;
+@property (nonatomic, strong) IBOutlet UITextField *textField;
+
+
 
 @end
 

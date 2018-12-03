@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,10 +15,50 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gma-Ji-h55">
+                        <rect key="frame" x="16" y="11" width="35" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="Ntr-s2-0j7"/>
+                            <constraint firstAttribute="height" constant="21" id="uwP-xo-ays"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入商品价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLC-gK-VVu">
+                        <rect key="frame" x="59" y="7" width="218" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tij-12-4wN">
+                        <rect key="frame" x="285" y="7" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="OBJ-uS-dyU"/>
+                            <constraint firstAttribute="height" constant="30" id="VPx-lr-gGy"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SLC-gK-VVu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="3tt-jt-uA8"/>
+                    <constraint firstAttribute="trailing" secondItem="tij-12-4wN" secondAttribute="trailing" constant="5" id="5ji-pg-f5y"/>
+                    <constraint firstItem="Gma-Ji-h55" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="FGd-rl-zat"/>
+                    <constraint firstItem="SLC-gK-VVu" firstAttribute="leading" secondItem="Gma-Ji-h55" secondAttribute="trailing" constant="8" id="Sut-zp-U8o"/>
+                    <constraint firstItem="tij-12-4wN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="ZXB-ZE-z9E"/>
+                    <constraint firstAttribute="bottom" secondItem="SLC-gK-VVu" secondAttribute="bottom" constant="6.5" id="cpu-Jp-MbP"/>
+                    <constraint firstItem="tij-12-4wN" firstAttribute="leading" secondItem="SLC-gK-VVu" secondAttribute="trailing" constant="8" id="hmk-lB-ssO"/>
+                    <constraint firstItem="Gma-Ji-h55" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pVL-JE-zEI"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="label" destination="Gma-Ji-h55" id="ZCT-sE-m52"/>
+                <outlet property="textField" destination="SLC-gK-VVu" id="w7W-f1-8sh"/>
+            </connections>
+            <point key="canvasLocation" x="129.59999999999999" y="149.32533733133434"/>
         </tableViewCell>
     </objects>
 </document>
