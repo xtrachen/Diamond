@@ -26,6 +26,8 @@
 		3169B89121A3C5AB0095A417 /* XDUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169B88F21A3C5AB0095A417 /* XDUploadViewController.xib */; };
 		31AF53BE21B03ED8007238FC /* UIImageGalleryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */; };
 		31AF53BF21B03ED8007238FC /* UIImageGalleryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */; };
+		31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */; };
+		31C0606F21B54091008EC22B /* XDTextSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */; };
 		31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AC21940EF700F7EBAA /* AppDelegate.m */; };
 		31C2A7B021940EF700F7EBAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AF21940EF700F7EBAA /* ViewController.m */; };
 		31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C2A7B121940EF700F7EBAA /* Main.storyboard */; };
@@ -73,6 +75,9 @@
 		31AF53BB21B03ED8007238FC /* UIImageGalleryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageGalleryViewCell.h; sourceTree = "<group>"; };
 		31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageGalleryViewCell.m; sourceTree = "<group>"; };
 		31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIImageGalleryViewCell.xib; sourceTree = "<group>"; };
+		31C0606B21B54091008EC22B /* XDTextSetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDTextSetTableViewCell.h; sourceTree = "<group>"; };
+		31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDTextSetTableViewCell.m; sourceTree = "<group>"; };
+		31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDTextSetTableViewCell.xib; sourceTree = "<group>"; };
 		31C2A7A821940EF700F7EBAA /* Diamond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diamond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C2A7AB21940EF700F7EBAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31C2A7AC21940EF700F7EBAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -140,6 +145,9 @@
 				31D4DE8121A41B92008FDC34 /* XDImageUploadCollectionViewCell.h */,
 				31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */,
 				31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */,
+				31C0606B21B54091008EC22B /* XDTextSetTableViewCell.h */,
+				31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */,
+				31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 				31D4DE8521A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib in Resources */,
 				31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */,
 				3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */,
+				31C0606F21B54091008EC22B /* XDTextSetTableViewCell.xib in Resources */,
 				3169B89121A3C5AB0095A417 /* XDUploadViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +387,7 @@
 				31598850219D8189009A764A /* XDLoginViewController.m in Sources */,
 				3169B88B21A3BE110095A417 /* XDSearchViewController.m in Sources */,
 				31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */,
+				31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */,
 				31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */,
 				3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */,
 				31598865219D9FA1009A764A /* XDUser.m in Sources */,
