@@ -118,6 +118,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		310B877221B5794B00ACD12D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3164B72D21AEFD1F00921896 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +180,7 @@
 		31C2A7AA21940EF700F7EBAA /* Diamond */ = {
 			isa = PBXGroup;
 			children = (
+				310B877221B5794B00ACD12D /* Model */,
 				3164B72D21AEFD1F00921896 /* Detail */,
 				3169B87821A3BC280095A417 /* Upload */,
 				31C2A7C42194161F00F7EBAA /* Diamond.entitlements */,
