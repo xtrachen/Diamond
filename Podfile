@@ -12,4 +12,5 @@ target 'Diamond' do
     pod 'SDWebImage'
     pod 'Qiniu'
     pod 'SVProgressHUD'
+    pod 'YYKit'
 end

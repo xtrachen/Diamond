@@ -23,6 +23,9 @@ PODS:
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
   - SVProgressHUD (2.2.5)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - AFNetworking
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - Qiniu
   - SDWebImage
   - SVProgressHUD
+  - YYKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -39,6 +43,7 @@ SPEC REPOS:
     - Qiniu
     - SDWebImage
     - SVProgressHUD
+    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -47,7 +52,8 @@ SPEC CHECKSUMS:
   Qiniu: 909b408ee489ea54827e9717be90b94bc9dfbc48
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 271d1cbc8d324c6f0ac22e788c6438fb27008cf3
+PODFILE CHECKSUM: 88de7f9a9821a036d78137511f8ddb2f90d05334
 
 COCOAPODS: 1.5.3
