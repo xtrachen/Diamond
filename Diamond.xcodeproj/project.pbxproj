@@ -26,6 +26,7 @@
 		3169B89121A3C5AB0095A417 /* XDUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169B88F21A3C5AB0095A417 /* XDUploadViewController.xib */; };
 		31AF53BE21B03ED8007238FC /* UIImageGalleryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */; };
 		31AF53BF21B03ED8007238FC /* UIImageGalleryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */; };
+		31AF7EEF21B5907C009A841D /* XDTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF7EEE21B5907C009A841D /* XDTagView.m */; };
 		31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */; };
 		31C0606F21B54091008EC22B /* XDTextSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */; };
 		31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AC21940EF700F7EBAA /* AppDelegate.m */; };
@@ -75,6 +76,8 @@
 		31AF53BB21B03ED8007238FC /* UIImageGalleryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageGalleryViewCell.h; sourceTree = "<group>"; };
 		31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageGalleryViewCell.m; sourceTree = "<group>"; };
 		31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIImageGalleryViewCell.xib; sourceTree = "<group>"; };
+		31AF7EED21B5907C009A841D /* XDTagView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDTagView.h; sourceTree = "<group>"; };
+		31AF7EEE21B5907C009A841D /* XDTagView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDTagView.m; sourceTree = "<group>"; };
 		31C0606B21B54091008EC22B /* XDTextSetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDTextSetTableViewCell.h; sourceTree = "<group>"; };
 		31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDTextSetTableViewCell.m; sourceTree = "<group>"; };
 		31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDTextSetTableViewCell.xib; sourceTree = "<group>"; };
@@ -118,13 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		310B877221B5794B00ACD12D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		3164B72D21AEFD1F00921896 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +155,15 @@
 			path = Upload;
 			sourceTree = "<group>";
 		};
+		31AF7EEC21B58FC8009A841D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31AF7EED21B5907C009A841D /* XDTagView.h */,
+				31AF7EEE21B5907C009A841D /* XDTagView.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		31C2A79F21940EF700F7EBAA = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +185,7 @@
 		31C2A7AA21940EF700F7EBAA /* Diamond */ = {
 			isa = PBXGroup;
 			children = (
-				310B877221B5794B00ACD12D /* Model */,
+				31AF7EEC21B58FC8009A841D /* Model */,
 				3164B72D21AEFD1F00921896 /* Detail */,
 				3169B87821A3BC280095A417 /* Upload */,
 				31C2A7C42194161F00F7EBAA /* Diamond.entitlements */,
@@ -385,6 +390,7 @@
 				31C2A7BB21940EF900F7EBAA /* main.m in Sources */,
 				31AF53BE21B03ED8007238FC /* UIImageGalleryViewCell.m in Sources */,
 				31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */,
+				31AF7EEF21B5907C009A841D /* XDTagView.m in Sources */,
 				31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */,
 				31D4DE8421A41B92008FDC34 /* XDImageUploadCollectionViewCell.m in Sources */,
 				3159886C219DAE05009A764A /* XDProductListTableViewCell.m in Sources */,
