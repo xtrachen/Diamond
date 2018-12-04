@@ -9,6 +9,7 @@
 #import "XDUploadViewController.h"
 #import "XDImageUploadCollectionView.h"
 #import "XDNetworkManager.h"
+#import "XDTextSetTableViewCell.h"
 
 #import <HXWeiboPhotoPicker/HXPhotoPicker.h>
 #import <Qiniu/QiniuSDK.h>
@@ -18,6 +19,8 @@
 @interface XDUploadViewController () <UITextViewDelegate,HXAlbumListViewControllerDelegate,XDImageUploadCollectionViewDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 @property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
+@property (nonatomic, strong) IBOutlet UIView *priceWrapView;
+@property (nonatomic, strong) IBOutlet UIView *tagWrapView;
 @property (nonatomic, strong) XDImageUploadCollectionView *imgSelectView;
 @property (nonatomic, weak) IBOutlet UIButton *pubButton;
 @property (nonatomic, strong) HXPhotoManager *manager;
@@ -26,6 +29,8 @@
 @property (nonatomic, weak) IBOutlet UITextField *titleField;
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 
+@property (nonatomic, strong) XDTextSetTableViewCell *priceCell;
+@property (nonatomic, strong) XDTextSetTableViewCell *tagCell;
 
 @end
 
@@ -39,6 +44,28 @@
     [self.imgSelectWrapView addSubview:self.imgSelectView];
     self.pubButton.layer.cornerRadius = 3;
     self.uploadImageArray = [NSMutableArray array];
+    
+    // price
+    self.priceCell = [[[NSBundle mainBundle] loadNibNamed:@"XDTextSetTableViewCell" owner:self options:nil] lastObject];
+    self.priceCell.label.text = @"价格";
+    [self.priceCell setFrame:self.priceWrapView.bounds];
+    [self.priceWrapView addSubview:self.priceCell];
+    
+    // tag
+    self.tagCell = [[[NSBundle mainBundle] loadNibNamed:@"XDTextSetTableViewCell" owner:self options:nil] lastObject];
+    self.tagCell.label.text = @"标签";
+//    self.tagCell.textField.placeholder = @"点击选择标签";
+    self.tagCell.frame = self.tagWrapView.bounds;
+    [self.tagWrapView addSubview:self.tagCell];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.priceCell setFrame:self.priceWrapView.bounds];
+    [self.tagCell setFrame:self.tagWrapView.bounds];
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

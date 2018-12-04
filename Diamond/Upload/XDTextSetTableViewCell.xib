@@ -18,39 +18,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gma-Ji-h55">
-                        <rect key="frame" x="16" y="11" width="35" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gma-Ji-h55">
+                        <rect key="frame" x="11" y="12" width="35" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="35" id="Ntr-s2-0j7"/>
-                            <constraint firstAttribute="height" constant="21" id="uwP-xo-ays"/>
+                            <constraint firstAttribute="height" constant="21" id="9rh-0d-28f"/>
+                            <constraint firstAttribute="width" constant="35" id="MUj-bY-BOz"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入商品价格" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLC-gK-VVu">
-                        <rect key="frame" x="59" y="7" width="218" height="30"/>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tij-12-4wN">
-                        <rect key="frame" x="285" y="7" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xd_img_upload_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="tij-12-4wN">
+                        <rect key="frame" x="296" y="11" width="24" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="OBJ-uS-dyU"/>
-                            <constraint firstAttribute="height" constant="30" id="VPx-lr-gGy"/>
+                            <constraint firstAttribute="width" constant="24" id="3mU-2n-KIl"/>
+                            <constraint firstAttribute="height" constant="24" id="i7R-th-PfB"/>
                         </constraints>
                     </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SLC-gK-VVu">
+                        <rect key="frame" x="51" y="8" width="229" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="SLC-gK-VVu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="3tt-jt-uA8"/>
-                    <constraint firstAttribute="trailing" secondItem="tij-12-4wN" secondAttribute="trailing" constant="5" id="5ji-pg-f5y"/>
-                    <constraint firstItem="Gma-Ji-h55" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="FGd-rl-zat"/>
-                    <constraint firstItem="SLC-gK-VVu" firstAttribute="leading" secondItem="Gma-Ji-h55" secondAttribute="trailing" constant="8" id="Sut-zp-U8o"/>
-                    <constraint firstItem="tij-12-4wN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="ZXB-ZE-z9E"/>
-                    <constraint firstAttribute="bottom" secondItem="SLC-gK-VVu" secondAttribute="bottom" constant="6.5" id="cpu-Jp-MbP"/>
-                    <constraint firstItem="tij-12-4wN" firstAttribute="leading" secondItem="SLC-gK-VVu" secondAttribute="trailing" constant="8" id="hmk-lB-ssO"/>
-                    <constraint firstItem="Gma-Ji-h55" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pVL-JE-zEI"/>
+                    <constraint firstItem="Gma-Ji-h55" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="2kQ-gu-Bjw"/>
+                    <constraint firstAttribute="bottom" secondItem="SLC-gK-VVu" secondAttribute="bottom" constant="5.5" id="9ZF-U0-rWz"/>
+                    <constraint firstItem="Gma-Ji-h55" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="JGU-M9-EqR"/>
+                    <constraint firstItem="SLC-gK-VVu" firstAttribute="leading" secondItem="Gma-Ji-h55" secondAttribute="trailing" constant="5" id="WtI-cs-fDX"/>
+                    <constraint firstItem="tij-12-4wN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="XlM-Yj-YGP"/>
+                    <constraint firstItem="tij-12-4wN" firstAttribute="leading" secondItem="SLC-gK-VVu" secondAttribute="trailing" constant="16" id="afb-Ta-fdb"/>
+                    <constraint firstAttribute="trailing" secondItem="tij-12-4wN" secondAttribute="trailing" id="akM-R9-xif"/>
+                    <constraint firstItem="SLC-gK-VVu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="uO2-yj-01F"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
@@ -61,4 +61,7 @@
             <point key="canvasLocation" x="129.59999999999999" y="149.32533733133434"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="xd_img_upload_arrow" width="32" height="32"/>
+    </resources>
 </document>
