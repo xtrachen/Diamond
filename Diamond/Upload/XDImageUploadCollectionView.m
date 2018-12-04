@@ -30,6 +30,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        
+        self.backgroundColor = [UIColor clearColor];
+        
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.itemSize = CGSizeMake(50, 50);
 
@@ -45,7 +48,7 @@
         
         
         [self addSubview:self.collectionView];
-        self.collectionView.backgroundColor = [UIColor whiteColor];
+        self.collectionView.backgroundColor = [UIColor clearColor];
         self.array = [NSMutableArray array];
     }
     return self;

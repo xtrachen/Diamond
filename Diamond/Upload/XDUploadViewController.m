@@ -32,6 +32,9 @@
 @property (nonatomic, strong) XDTextSetTableViewCell *priceCell;
 @property (nonatomic, strong) XDTextSetTableViewCell *tagCell;
 
+@property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
+@property (nonatomic, weak) IBOutlet UILabel *typeLabel;
+
 @end
 
 @implementation XDUploadViewController
@@ -284,7 +287,15 @@
     }];
 }
 
+- (IBAction)cateButtonClicked:(id)sender
+{
+    
+}
 
+- (IBAction)typeButtonClicked:(id)sender
+{
+    
+}
 
 
 
