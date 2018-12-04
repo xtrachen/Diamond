@@ -10,6 +10,7 @@
 #import "XDImageUploadCollectionView.h"
 #import "XDNetworkManager.h"
 #import "XDTextSetTableViewCell.h"
+#import "XDTagSelectView.h"
 
 #import <HXWeiboPhotoPicker/HXPhotoPicker.h>
 #import <Qiniu/QiniuSDK.h>
@@ -34,6 +35,8 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
 @property (nonatomic, weak) IBOutlet UILabel *typeLabel;
+
+@property (nonatomic, strong) XDTagSelectView *tagSelectView;
 
 @end
 
@@ -289,6 +292,26 @@
 
 - (IBAction)cateButtonClicked:(id)sender
 {
+    if (self.tagSelectView) {
+        [self.tagSelectView removeFromSuperview];
+    }
+    
+    NSArray *array = [NSArray arrayWithObjects:@"蓝宝石",@"钻石",@"翡翠",@"红宝石",@"水晶",@"珍珠",@"珊瑚", nil];
+    
+    
+    self.tagSelectView  = [[XDTagSelectView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*3/4)];
+    [self.tagSelectView setupWith:array];
+    self.tagSelectView.backgroundColor = RGBCOLOR(245, 245, 245);
+    [self.view addSubview:self.tagSelectView];
+    [UIView animateWithDuration:0.3 animations:^{
+       
+        self.tagSelectView.top = self.view.height-self.tagSelectView.height;
+        
+    } completion:^(BOOL finished) {
+        ;
+    }];
+    
+    
     
 }
 
