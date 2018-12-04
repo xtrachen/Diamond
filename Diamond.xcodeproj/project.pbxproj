@@ -24,6 +24,10 @@
 		3169B88C21A3BE110095A417 /* XDSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169B88A21A3BE110095A417 /* XDSearchViewController.xib */; };
 		3169B89021A3C5AB0095A417 /* XDUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3169B88E21A3C5AB0095A417 /* XDUploadViewController.m */; };
 		3169B89121A3C5AB0095A417 /* XDUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169B88F21A3C5AB0095A417 /* XDUploadViewController.xib */; };
+		319F698B21B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F698721B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m */; };
+		319F698C21B63C3800775E36 /* YJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F698821B63C3800775E36 /* YJTagCollectionViewCell.m */; };
+		319F698D21B63C3800775E36 /* YJTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319F698921B63C3800775E36 /* YJTagCollectionViewCell.xib */; };
+		319F698E21B63C3800775E36 /* YJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F698A21B63C3800775E36 /* YJTagView.m */; };
 		31AF53BE21B03ED8007238FC /* UIImageGalleryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */; };
 		31AF53BF21B03ED8007238FC /* UIImageGalleryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */; };
 		31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */; };
@@ -72,6 +76,14 @@
 		3169B88D21A3C5AB0095A417 /* XDUploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDUploadViewController.h; sourceTree = "<group>"; };
 		3169B88E21A3C5AB0095A417 /* XDUploadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDUploadViewController.m; sourceTree = "<group>"; };
 		3169B88F21A3C5AB0095A417 /* XDUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDUploadViewController.xib; sourceTree = "<group>"; };
+		319F698321B63C3700775E36 /* YJTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTagView.h; sourceTree = "<group>"; };
+		319F698421B63C3800775E36 /* YJTagCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTagCollectionViewCell.h; sourceTree = "<group>"; };
+		319F698521B63C3800775E36 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		319F698621B63C3800775E36 /* YJTagViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTagViewProtocol.h; sourceTree = "<group>"; };
+		319F698721B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
+		319F698821B63C3800775E36 /* YJTagCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJTagCollectionViewCell.m; sourceTree = "<group>"; };
+		319F698921B63C3800775E36 /* YJTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJTagCollectionViewCell.xib; sourceTree = "<group>"; };
+		319F698A21B63C3800775E36 /* YJTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJTagView.m; sourceTree = "<group>"; };
 		31AF53BB21B03ED8007238FC /* UIImageGalleryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageGalleryViewCell.h; sourceTree = "<group>"; };
 		31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageGalleryViewCell.m; sourceTree = "<group>"; };
 		31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIImageGalleryViewCell.xib; sourceTree = "<group>"; };
@@ -155,6 +167,14 @@
 		31AF7EEC21B58FC8009A841D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				319F698521B63C3800775E36 /* UICollectionViewLeftAlignedLayout.h */,
+				319F698721B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m */,
+				319F698421B63C3800775E36 /* YJTagCollectionViewCell.h */,
+				319F698821B63C3800775E36 /* YJTagCollectionViewCell.m */,
+				319F698921B63C3800775E36 /* YJTagCollectionViewCell.xib */,
+				319F698321B63C3700775E36 /* YJTagView.h */,
+				319F698A21B63C3800775E36 /* YJTagView.m */,
+				319F698621B63C3800775E36 /* YJTagViewProtocol.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +328,7 @@
 			files = (
 				31C2A7B821940EF900F7EBAA /* LaunchScreen.storyboard in Resources */,
 				3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */,
+				319F698D21B63C3800775E36 /* YJTagCollectionViewCell.xib in Resources */,
 				31FE758C21AF035600FF9155 /* XDDetailViewController.xib in Resources */,
 				31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */,
 				31C2A7B521940EF900F7EBAA /* Assets.xcassets in Resources */,
@@ -381,9 +402,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				31C2A7B021940EF700F7EBAA /* ViewController.m in Sources */,
+				319F698C21B63C3800775E36 /* YJTagCollectionViewCell.m in Sources */,
 				3169B89021A3C5AB0095A417 /* XDUploadViewController.m in Sources */,
 				31C2A7BB21940EF900F7EBAA /* main.m in Sources */,
 				31AF53BE21B03ED8007238FC /* UIImageGalleryViewCell.m in Sources */,
+				319F698B21B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m in Sources */,
+				319F698E21B63C3800775E36 /* YJTagView.m in Sources */,
 				31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */,
 				31C2A7C3219411A200F7EBAA /* XDNetworkManager.m in Sources */,
 				31D4DE8421A41B92008FDC34 /* XDImageUploadCollectionViewCell.m in Sources */,
