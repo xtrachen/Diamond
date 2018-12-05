@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XDInputTextView : UIView
+@property (nonatomic, strong) UITextField *textField;
 
 @end
 

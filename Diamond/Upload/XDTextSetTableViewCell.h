@@ -10,9 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol XDTextSetTableViewCellDelegate <NSObject>
+- (void)XDTextSetTableViewCellClicked:(id)sender;
+
+@end
+
 @interface XDTextSetTableViewCell : UITableViewCell
 @property (nonatomic, strong) IBOutlet UILabel *label;
 @property (nonatomic, strong) IBOutlet UITextField *textField;
+@property (nonatomic, weak) id<XDTextSetTableViewCellDelegate> delegate;
+
 
 
 

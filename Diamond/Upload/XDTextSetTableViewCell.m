@@ -21,4 +21,24 @@
     // Configure the view for the selected state
 }
 
+- (void)setDelegate:(id<XDTextSetTableViewCellDelegate>)delegate
+{
+    _delegate = delegate;
+    self.textField.userInteractionEnabled = NO;
+
+    UITapGestureRecognizer *tapRecognize = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
+    tapRecognize.numberOfTapsRequired = 1;
+    tapRecognize.delegate = self;
+    [tapRecognize setEnabled :YES];
+    [tapRecognize delaysTouchesBegan];
+    [tapRecognize cancelsTouchesInView];
+    [self addGestureRecognizer:tapRecognize];
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)recognizer
+{
+    [self.delegate XDTextSetTableViewCellClicked:self];
+}
+
+
 @end

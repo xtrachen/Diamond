@@ -11,6 +11,7 @@
 #import "XDNetworkManager.h"
 #import "XDTextSetTableViewCell.h"
 #import "XDTagSelectView.h"
+#import "XDInputTextView.h"
 
 #import <HXWeiboPhotoPicker/HXPhotoPicker.h>
 #import <Qiniu/QiniuSDK.h>
@@ -20,7 +21,8 @@
 @interface XDUploadViewController () <UITextViewDelegate,
 HXAlbumListViewControllerDelegate,
 XDImageUploadCollectionViewDelegate,
-XDTagSelectViewDelegate>
+XDTagSelectViewDelegate,
+XDTextSetTableViewCellDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 @property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
 @property (nonatomic, strong) IBOutlet UIView *priceWrapView;
@@ -40,6 +42,7 @@ XDTagSelectViewDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *typeLabel;
 
 @property (nonatomic, strong) XDTagSelectView *tagSelectView;
+@property (nonatomic, strong) XDInputTextView *inputTextView;
 
 @end
 
@@ -58,14 +61,20 @@ XDTagSelectViewDelegate>
     self.priceCell = [[[NSBundle mainBundle] loadNibNamed:@"XDTextSetTableViewCell" owner:self options:nil] lastObject];
     self.priceCell.label.text = @"价格";
     [self.priceCell setFrame:self.priceWrapView.bounds];
+    [self.priceCell setDelegate:self];
     [self.priceWrapView addSubview:self.priceCell];
+    
     
     // tag
     self.tagCell = [[[NSBundle mainBundle] loadNibNamed:@"XDTextSetTableViewCell" owner:self options:nil] lastObject];
     self.tagCell.label.text = @"标签";
-//    self.tagCell.textField.placeholder = @"点击选择标签";
+    [self.tagCell setDelegate:self];
     self.tagCell.frame = self.tagWrapView.bounds;
     [self.tagWrapView addSubview:self.tagCell];
+    
+    // keyboard
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
 }
 
@@ -359,5 +368,38 @@ XDTagSelectViewDelegate>
     }
 }
 
+- (void)XDTextSetTableViewCellClicked:(id)sender
+{
+    if (self.inputTextView) {
+        [self.inputTextView removeFromSuperview];
+        self.inputTextView = nil;
+    }
+    
+    self.inputTextView = [[XDInputTextView alloc] initWithFrame:CGRectMake(0, self.view.bottom-44, self.view.width, 44)];
+    [self.view addSubview:self.inputTextView];
+    [self.inputTextView.textField becomeFirstResponder];
+
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    //获取处于焦点中的view
+    CGRect kbY = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.inputTextView.top = self.view.height-kbY.size.height-44;
+    }];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    //获取键盘弹出的时间
+    double duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    //还原
+    [UIView animateWithDuration:duration animations:^{
+        self.view.transform = CGAffineTransformMakeTranslation(0, 0);
+    }];
+}
 
 @end
