@@ -22,7 +22,8 @@
 HXAlbumListViewControllerDelegate,
 XDImageUploadCollectionViewDelegate,
 XDTagSelectViewDelegate,
-XDTextSetTableViewCellDelegate>
+XDTextSetTableViewCellDelegate,
+XDInputTextViewDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 @property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
 @property (nonatomic, strong) IBOutlet UIView *priceWrapView;
@@ -377,8 +378,17 @@ XDTextSetTableViewCellDelegate>
     
     self.inputTextView = [[XDInputTextView alloc] initWithFrame:CGRectMake(0, self.view.bottom-44, self.view.width, 44)];
     [self.view addSubview:self.inputTextView];
-    [self.inputTextView.textField becomeFirstResponder];
 
+    
+    if ([sender isEqual:self.priceCell]) {
+        [self.inputTextView.textField setKeyboardType:UIKeyboardTypeNumberPad];
+        [self.inputTextView setType:XDInputTextViewType_Price];
+    } else if ([sender isEqual:self.tagCell]) {
+        [self.inputTextView setType:XDInputTextViewType_Tag];
+    }
+    
+    [self.inputTextView.textField becomeFirstResponder];
+    [self.inputTextView setDelegate:self];
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
@@ -398,8 +408,32 @@ XDTextSetTableViewCellDelegate>
     double duration = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     //还原
     [UIView animateWithDuration:duration animations:^{
-        self.view.transform = CGAffineTransformMakeTranslation(0, 0);
+        if (self.inputTextView) {
+            self.inputTextView.top = self.view.bottom;
+        }
+    } completion:^(BOOL finished) {
+        if (self.inputTextView) {
+            [self.inputTextView removeFromSuperview];
+            self.inputTextView = nil;
+        }
     }];
+}
+
+// XDInputTextViewDelegate
+- (void)XDInputTextViewDidFinish:(XDInputTextViewType)type str:(NSString *)str;
+{
+    switch (type) {
+        case XDInputTextViewType_Price: {
+            [self.priceCell.textField setText:str];
+        }
+            break;
+        case XDInputTextViewType_Tag: {
+            [self.tagCell.textField setText:str];
+        }
+        default:
+            break;
+    }
+    [self.inputTextView.textField endEditing:YES];
 }
 
 @end

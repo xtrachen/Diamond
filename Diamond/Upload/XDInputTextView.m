@@ -37,9 +37,14 @@
         self.button.backgroundColor = RGBCOLOR(161, 199, 166);
         self.button.layer.cornerRadius = 6;
         [self.button setTitle:@"确定" forState:UIControlStateNormal];
-        
+        [self.button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
+}
+
+- (void)buttonClicked
+{
+    [self.delegate XDInputTextViewDidFinish:self.type str:self.textField.text];
 }
 
 @end
