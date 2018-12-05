@@ -17,7 +17,10 @@
 
 
 
-@interface XDUploadViewController () <UITextViewDelegate,HXAlbumListViewControllerDelegate,XDImageUploadCollectionViewDelegate>
+@interface XDUploadViewController () <UITextViewDelegate,
+HXAlbumListViewControllerDelegate,
+XDImageUploadCollectionViewDelegate,
+XDTagSelectViewDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 @property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
 @property (nonatomic, strong) IBOutlet UIView *priceWrapView;
@@ -306,12 +309,11 @@
     [UIView animateWithDuration:0.3 animations:^{
        
         self.tagSelectView.top = self.view.height-self.tagSelectView.height;
-        
+        [self.tagSelectView setType:TagSelectViewSource_Category];
+        self.tagSelectView.delegate = self;
     } completion:^(BOOL finished) {
         ;
     }];
-    
-    
     
 }
 
@@ -320,7 +322,24 @@
     
 }
 
-
+- (void)XDTagSelectViewFinishSelected:(TagSelectViewSource)type str:(NSString *)str
+{
+    
+    if (self.tagSelectView) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.tagSelectView.top = self.view.bottom;
+        } completion:^(BOOL finished) {
+            [self.tagSelectView removeFromSuperview];
+            self.tagSelectView = nil;
+        }];
+    }
+    
+    if (type == TagSelectViewSource_Category) {
+        [self.categoryLabel setText:str];
+    } else if (type == TagSelectViewSource_Type) {
+        [self.typeLabel setText:str];
+    }
+}
 
 
 @end

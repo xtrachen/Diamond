@@ -10,8 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface XDTagSelectView : UIView
+typedef enum {
+    TagSelectViewSource_Category,
+    TagSelectViewSource_Type
+}TagSelectViewSource;
 
+
+@protocol XDTagSelectViewDelegate <NSObject>
+- (void)XDTagSelectViewFinishSelected:(TagSelectViewSource)type str:(NSString *)str;
+
+@end
+
+
+@interface XDTagSelectView : UIView
+@property (nonatomic, weak) id<XDTagSelectViewDelegate> delegate;
+@property (nonatomic, assign) TagSelectViewSource type;
 
 - (void)setupWith:(NSArray *)array;
 

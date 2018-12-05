@@ -14,6 +14,7 @@ static CGFloat kDefaultCellHeight = 24;
 
 @interface YJTagView ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
+
 @end
 
 @implementation YJTagView
@@ -143,5 +144,20 @@ static CGFloat kDefaultCellHeight = 24;
     }
     return _collectionView;
 }
+
+- (NSString *)getSelectedTagString
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for (YJTagCollectionViewCell *cell in [self.collectionView visibleCells]) {
+        if (cell.isSelected) {
+            [array addObject:cell.tagLabel.text];
+        }
+    }
+    
+    return [array componentsJoinedByString:@","];
+}
+
+
 
 @end

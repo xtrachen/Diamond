@@ -38,6 +38,7 @@
         [self.button setBackgroundColor:RGBCOLOR(161, 199, 166)];
         self.button.layer.cornerRadius = 5;
         self.button.clipsToBounds = YES;
+        [self.button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
         
         [self addSubview:self.button];
         
@@ -67,5 +68,12 @@
     [self.tagView reloadData];
 }
 
+- (void)buttonClicked
+{
+    NSString *str = [self.tagView getSelectedTagString];
+
+    [self.delegate XDTagSelectViewFinishSelected:self.type str:str];
+    
+}
 
 @end

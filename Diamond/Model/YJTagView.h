@@ -25,4 +25,7 @@
 
 - (void)reloadData;
 
+- (NSString *)getSelectedTagString;
+
+
 @end
