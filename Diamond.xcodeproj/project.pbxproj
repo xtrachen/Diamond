@@ -30,6 +30,7 @@
 		319F698C21B63C3800775E36 /* YJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F698821B63C3800775E36 /* YJTagCollectionViewCell.m */; };
 		319F698D21B63C3800775E36 /* YJTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319F698921B63C3800775E36 /* YJTagCollectionViewCell.xib */; };
 		319F698E21B63C3800775E36 /* YJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F698A21B63C3800775E36 /* YJTagView.m */; };
+		31A5EAB721B80FF80039845A /* XDInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A5EAB621B80FF80039845A /* XDInputTextView.m */; };
 		31AF53BE21B03ED8007238FC /* UIImageGalleryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */; };
 		31AF53BF21B03ED8007238FC /* UIImageGalleryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */; };
 		31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */; };
@@ -90,6 +91,8 @@
 		319F698821B63C3800775E36 /* YJTagCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJTagCollectionViewCell.m; sourceTree = "<group>"; };
 		319F698921B63C3800775E36 /* YJTagCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YJTagCollectionViewCell.xib; sourceTree = "<group>"; };
 		319F698A21B63C3800775E36 /* YJTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJTagView.m; sourceTree = "<group>"; };
+		31A5EAB521B80FF80039845A /* XDInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDInputTextView.h; sourceTree = "<group>"; };
+		31A5EAB621B80FF80039845A /* XDInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDInputTextView.m; sourceTree = "<group>"; };
 		31AF53BB21B03ED8007238FC /* UIImageGalleryViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImageGalleryViewCell.h; sourceTree = "<group>"; };
 		31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageGalleryViewCell.m; sourceTree = "<group>"; };
 		31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UIImageGalleryViewCell.xib; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */,
 				316FEECA21B6E3E1000C9DBF /* XDTagSelectView.h */,
 				316FEECB21B6E3E1000C9DBF /* XDTagSelectView.m */,
+				31A5EAB521B80FF80039845A /* XDInputTextView.h */,
+				31A5EAB621B80FF80039845A /* XDInputTextView.m */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				31598850219D8189009A764A /* XDLoginViewController.m in Sources */,
 				3169B88B21A3BE110095A417 /* XDSearchViewController.m in Sources */,
 				31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */,
+				31A5EAB721B80FF80039845A /* XDInputTextView.m in Sources */,
 				31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */,
 				31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */,
 				3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */,
