@@ -319,7 +319,25 @@ XDTagSelectViewDelegate>
 
 - (IBAction)typeButtonClicked:(id)sender
 {
+    if (self.tagSelectView) {
+        [self.tagSelectView removeFromSuperview];
+    }
     
+    NSArray *array = [NSArray arrayWithObjects:@"项链",@"手链",@"戒指",@"手镯",@"胸针",@"袖口",@"套装", nil];
+    
+    
+    self.tagSelectView  = [[XDTagSelectView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*3/4)];
+    [self.tagSelectView setupWith:array];
+    self.tagSelectView.backgroundColor = RGBCOLOR(245, 245, 245);
+    [self.view addSubview:self.tagSelectView];
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.tagSelectView.top = self.view.height-self.tagSelectView.height;
+        [self.tagSelectView setType:TagSelectViewSource_Type];
+        self.tagSelectView.delegate = self;
+    } completion:^(BOOL finished) {
+        ;
+    }];
 }
 
 - (void)XDTagSelectViewFinishSelected:(TagSelectViewSource)type str:(NSString *)str
