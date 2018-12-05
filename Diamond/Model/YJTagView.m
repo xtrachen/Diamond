@@ -89,8 +89,8 @@ static CGFloat kDefaultCellHeight = 24;
     if (self.themeColor) {
         cell.tagLabel.textColor = self.themeColor;
     }
-    CGFloat cornerRadius = self.tagCornerRadius;
-    cell.backgroundView = [self drawConnerView:cornerRadius rect:cell.bounds backgroudColor:cell.backgroundColor borderColor:cell.tagLabel.textColor];
+//    CGFloat cornerRadius = self.tagCornerRadius;
+//    cell.backgroundView = [self drawConnerView:cornerRadius rect:cell.bounds backgroudColor:cell.backgroundColor borderColor:cell.tagLabel.textColor];
     return cell;
 }
 

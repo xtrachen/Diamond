@@ -12,6 +12,7 @@
 
 @property (nonatomic,copy) NSString *content;
 @property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (nonatomic, assign) BOOL isSelected;
 
 + (CGSize) getSizeWithContent:(NSString *) content maxWidth:(CGFloat)maxWidth customHeight:(CGFloat)cellHeight;
 
