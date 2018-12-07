@@ -302,12 +302,19 @@ XDInputTextViewDelegate>
         NSLog(@"%@",errorMessage);
     }];
 }
-
-- (IBAction)cateButtonClicked:(id)sender
+// factory of tag select view
+- (XDTagSelectView *)createTagSelectViewWith:(NSArray *)array
 {
     if (self.tagSelectView) {
         [self.tagSelectView removeFromSuperview];
     }
+    
+}
+
+
+- (IBAction)cateButtonClicked:(id)sender
+{
+
     
     NSArray *array = [NSArray arrayWithObjects:@"蓝宝石",@"钻石",@"翡翠",@"红宝石",@"水晶",@"珍珠",@"珊瑚", nil];
     
@@ -324,7 +331,6 @@ XDInputTextViewDelegate>
     } completion:^(BOOL finished) {
         ;
     }];
-    
 }
 
 - (IBAction)typeButtonClicked:(id)sender
@@ -334,7 +340,6 @@ XDInputTextViewDelegate>
     }
     
     NSArray *array = [NSArray arrayWithObjects:@"项链",@"手链",@"戒指",@"手镯",@"胸针",@"袖口",@"套装", nil];
-    
     
     self.tagSelectView  = [[XDTagSelectView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*3/4)];
     [self.tagSelectView setupWith:array];
@@ -348,6 +353,40 @@ XDInputTextViewDelegate>
     } completion:^(BOOL finished) {
         ;
     }];
+}
+
+- (IBAction)colorButtonClicked:(id)sender
+{
+    
+}
+
+- (NSArray *)colorArrayWithCategory:(NSString *)category
+{
+
+    NSArray *array = nil;
+    
+    if ([category isEqualToString:@"蓝宝石"]) {
+        array = [NSArray arrayWithObjects:@"正阳绿",@"辣绿",@"祖母绿",@"清水",@"",@"",@"", nil];
+    } else if ([category isEqualToString:@"钻石"]) {
+        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+    } else if ([category isEqualToString:@"翡翠"]) {
+        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+    } else if ([category isEqualToString:@"红宝石"]) {
+        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+    } else if ([category isEqualToString:@"水晶"]) {
+        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+    } else if ([category isEqualToString:@"珍珠"]) {
+        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+    } else if ([category isEqualToString:@"珊瑚"]) {
+        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+    }
+    return array;
+}
+
+- (IBAction)weigthButtonClicked:(id)sender
+{
+
+    
 }
 
 - (void)XDTagSelectViewFinishSelected:(TagSelectViewSource)type str:(NSString *)str
