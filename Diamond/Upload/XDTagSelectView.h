@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef enum {
     TagSelectViewSource_Category,
-    TagSelectViewSource_Type
+    TagSelectViewSource_Type,
+    TagSelectViewSource_Color
 }TagSelectViewSource;
 
 

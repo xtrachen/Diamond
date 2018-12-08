@@ -302,6 +302,7 @@ XDInputTextViewDelegate>
         NSLog(@"%@",errorMessage);
     }];
 }
+
 // factory of tag select view
 - (XDTagSelectView *)createTagSelectViewWith:(NSArray *)array
 {
@@ -309,28 +310,32 @@ XDInputTextViewDelegate>
         [self.tagSelectView removeFromSuperview];
     }
     
+    self.tagSelectView  = [[XDTagSelectView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*3/4)];
+    [self.tagSelectView setupWith:array];
+    self.tagSelectView.backgroundColor = RGBCOLOR(245, 245, 245);
+
+    [self.view addSubview:self.tagSelectView];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.tagSelectView.top = self.view.height-self.tagSelectView.height;
+        self.tagSelectView.delegate = self;
+    } completion:^(BOOL finished) {
+        ;
+    }];
+
+    return self.tagSelectView;
 }
 
 
 - (IBAction)cateButtonClicked:(id)sender
 {
-
-    
     NSArray *array = [NSArray arrayWithObjects:@"蓝宝石",@"钻石",@"翡翠",@"红宝石",@"水晶",@"珍珠",@"珊瑚", nil];
-    
-    
-    self.tagSelectView  = [[XDTagSelectView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*3/4)];
-    [self.tagSelectView setupWith:array];
-    self.tagSelectView.backgroundColor = RGBCOLOR(245, 245, 245);
-    [self.view addSubview:self.tagSelectView];
-    [UIView animateWithDuration:0.3 animations:^{
-       
-        self.tagSelectView.top = self.view.height-self.tagSelectView.height;
-        [self.tagSelectView setType:TagSelectViewSource_Category];
-        self.tagSelectView.delegate = self;
-    } completion:^(BOOL finished) {
-        ;
-    }];
+
+    [self createTagSelectViewWith:array];
+
+    [self.tagSelectView setType:TagSelectViewSource_Category];
+
 }
 
 - (IBAction)typeButtonClicked:(id)sender
@@ -357,30 +362,34 @@ XDInputTextViewDelegate>
 
 - (IBAction)colorButtonClicked:(id)sender
 {
-    
+    NSArray *array =[self colorArrayWithCategory:self.categoryLabel.text];
+    if (array && [array count] > 0) {
+        [self createTagSelectViewWith:array];
+        [self.tagSelectView setType:TagSelectViewSource_Color];
+    }
 }
 
 - (NSArray *)colorArrayWithCategory:(NSString *)category
 {
-
     NSArray *array = nil;
     
     if ([category isEqualToString:@"蓝宝石"]) {
-        array = [NSArray arrayWithObjects:@"正阳绿",@"辣绿",@"祖母绿",@"清水",@"",@"",@"", nil];
+        array = [NSArray arrayWithObjects:@"皇家蓝",@"矢车菊蓝",@"孔雀蓝",@"蓝色",@"粉色",@"黄色",@"白色", nil];
     } else if ([category isEqualToString:@"钻石"]) {
-        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+        array = [NSArray arrayWithObjects:@"D",@"E",@"F",@"G",@"H",@"I-J",@"K-L", nil];
     } else if ([category isEqualToString:@"翡翠"]) {
-        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+        array = [NSArray arrayWithObjects:@"正阳绿",@"辣绿",@"祖母绿",@"晴水",@"蓝水",@"白色",@"飘花", nil];
     } else if ([category isEqualToString:@"红宝石"]) {
-        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+        array = [NSArray arrayWithObjects:@"鸽血红",@"正红",@"粉红", nil];
     } else if ([category isEqualToString:@"水晶"]) {
-        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+        array = [NSArray arrayWithObjects:@"紫色",@"黄色",@"白色",@"粉晶",@"幽灵水晶",@"茶晶",@"兔毛晶", nil];
     } else if ([category isEqualToString:@"珍珠"]) {
-        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+        array = [NSArray arrayWithObjects:@"白色",@"粉色",@"绿色",@"黑色",@"金色",@"灰色",@"银色", nil];
     } else if ([category isEqualToString:@"珊瑚"]) {
-        array = [NSArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"", nil];
+        array = [NSArray arrayWithObjects:@"牛血红",@"粉色",@"红色",@"白色", nil];
     }
     return array;
+    
 }
 
 - (IBAction)weigthButtonClicked:(id)sender
