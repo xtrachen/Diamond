@@ -41,6 +41,8 @@ XDInputTextViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
 @property (nonatomic, weak) IBOutlet UILabel *typeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *colorLabel;
+@property (nonatomic, weak) IBOutlet UILabel *weightLabel;
 
 @property (nonatomic, strong) XDTagSelectView *tagSelectView;
 @property (nonatomic, strong) XDInputTextView *inputTextView;
@@ -395,7 +397,19 @@ XDInputTextViewDelegate>
 - (IBAction)weigthButtonClicked:(id)sender
 {
 
+    if (self.inputTextView) {
+        [self.inputTextView removeFromSuperview];
+        self.inputTextView = nil;
+    }
     
+    self.inputTextView = [[XDInputTextView alloc] initWithFrame:CGRectMake(0, self.view.bottom-44, self.view.width, 44)];
+    [self.view addSubview:self.inputTextView];
+    
+    [self.inputTextView.textField setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.inputTextView setType:XDInputTextViewType_Weight];
+    
+    [self.inputTextView.textField becomeFirstResponder];
+    [self.inputTextView setDelegate:self];
 }
 
 - (void)XDTagSelectViewFinishSelected:(TagSelectViewSource)type str:(NSString *)str
@@ -410,10 +424,21 @@ XDInputTextViewDelegate>
         }];
     }
     
-    if (type == TagSelectViewSource_Category) {
-        [self.categoryLabel setText:str];
-    } else if (type == TagSelectViewSource_Type) {
-        [self.typeLabel setText:str];
+    switch (type) {
+        case TagSelectViewSource_Category: {
+            [self.categoryLabel setText:str];
+        }
+            break;
+        case TagSelectViewSource_Type: {
+            [self.typeLabel setText:str];
+        }
+            break;
+        case TagSelectViewSource_Color: {
+            [self.colorLabel setText:str];
+        }
+            break;
+        default:
+            break;
     }
 }
 
@@ -478,6 +503,11 @@ XDInputTextViewDelegate>
         case XDInputTextViewType_Tag: {
             [self.tagCell.textField setText:str];
         }
+            break;
+        case XDInputTextViewType_Weight: {
+            [self.weightLabel setText:str];
+        }
+            break;
         default:
             break;
     }

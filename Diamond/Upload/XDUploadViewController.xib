@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XDUploadViewController">
             <connections>
                 <outlet property="categoryLabel" destination="dRC-yO-PCQ" id="uqH-AR-XBp"/>
+                <outlet property="colorLabel" destination="kFl-nL-4kK" id="JBx-OM-t8B"/>
                 <outlet property="imgSelectWrapView" destination="n5L-23-r2N" id="dsb-cs-tV8"/>
                 <outlet property="priceWrapView" destination="lYJ-2z-MOR" id="WPL-Ty-lz6"/>
                 <outlet property="pubButton" destination="IRl-6V-arQ" id="WGL-iC-HaP"/>
@@ -21,6 +22,7 @@
                 <outlet property="titleField" destination="6RA-gd-bJs" id="tef-to-yTi"/>
                 <outlet property="typeLabel" destination="60Q-I5-wWv" id="wTK-YT-oc8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightLabel" destination="F60-Ze-UcS" id="QtX-NQ-LUJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
