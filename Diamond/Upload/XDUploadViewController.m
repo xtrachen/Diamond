@@ -12,6 +12,7 @@
 #import "XDTextSetTableViewCell.h"
 #import "XDTagSelectView.h"
 #import "XDInputTextView.h"
+#import "XDSizeSetView.h"
 
 #import <HXWeiboPhotoPicker/HXPhotoPicker.h>
 #import <Qiniu/QiniuSDK.h>
@@ -36,6 +37,7 @@ XDInputTextViewDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *titleField;
 @property (nonatomic, weak) IBOutlet UITextView *textView;
 
+
 @property (nonatomic, strong) XDTextSetTableViewCell *priceCell;
 @property (nonatomic, strong) XDTextSetTableViewCell *tagCell;
 
@@ -43,6 +45,14 @@ XDInputTextViewDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *typeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *colorLabel;
 @property (nonatomic, weak) IBOutlet UILabel *weightLabel;
+@property (nonatomic, weak) IBOutlet UILabel *sizeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *storageLabel;
+
+@property (nonatomic, assign) int length;
+@property (nonatomic, assign) int width;
+@property (nonatomic, assign) int height;
+
+@property (nonatomic, strong) XDSizeSetView *sizeSetView;
 
 @property (nonatomic, strong) XDTagSelectView *tagSelectView;
 @property (nonatomic, strong) XDInputTextView *inputTextView;
@@ -471,7 +481,12 @@ XDInputTextViewDelegate>
     CGFloat duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     [UIView animateWithDuration:duration animations:^{
-        self.inputTextView.top = self.view.height-kbY.size.height-44;
+        if (self.inputTextView) {
+            self.inputTextView.top = self.view.height-kbY.size.height-44;
+        }
+        if (self.sizeSetView) {
+            self.sizeSetView.top = self.view.height-kbY.size.height-44;
+        }
     }];
 }
 
@@ -484,10 +499,18 @@ XDInputTextViewDelegate>
         if (self.inputTextView) {
             self.inputTextView.top = self.view.bottom;
         }
+        
+        if (self.sizeSetView) {
+            self.sizeSetView.top = self.view.bottom;
+        }
     } completion:^(BOOL finished) {
         if (self.inputTextView) {
             [self.inputTextView removeFromSuperview];
             self.inputTextView = nil;
+        }
+        if (self.sizeSetView) {
+            [self.sizeSetView removeFromSuperview];
+            self.sizeSetView = nil;
         }
     }];
 }
@@ -508,10 +531,44 @@ XDInputTextViewDelegate>
             [self.weightLabel setText:str];
         }
             break;
+        case XDInputTextViewType_Storage: {
+            [self.storageLabel setText:str];
+        }
+            break;
         default:
             break;
     }
     [self.inputTextView.textField endEditing:YES];
+}
+
+- (IBAction)sizeButtonClicked:(id)sender
+{
+    if (self.sizeSetView) {
+        [self.sizeSetView removeFromSuperview];
+        self.sizeSetView = nil;
+    }
+    
+    self.sizeSetView = [[XDSizeSetView alloc] initWithFrame:CGRectMake(0, self.view.height-44, self.view.width, 44)];
+    [self.view addSubview:self.sizeSetView];
+}
+
+- (IBAction)storageButtonClicked:(id)sender
+{
+    
+    if (self.inputTextView) {
+        [self.inputTextView removeFromSuperview];
+        self.inputTextView = nil;
+    }
+    
+    self.inputTextView = [[XDInputTextView alloc] initWithFrame:CGRectMake(0, self.view.bottom-44, self.view.width, 44)];
+    [self.view addSubview:self.inputTextView];
+    
+    [self.inputTextView.textField setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.inputTextView setType:XDInputTextViewType_Storage];
+    
+    [self.inputTextView.textField becomeFirstResponder];
+    [self.inputTextView setDelegate:self];
+    
 }
 
 @end

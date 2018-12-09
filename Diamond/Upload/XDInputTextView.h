@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef enum {
     XDInputTextViewType_Price,
     XDInputTextViewType_Tag,
-    XDInputTextViewType_Weight
+    XDInputTextViewType_Weight,
+    XDInputTextViewType_Storage
 }XDInputTextViewType;
 
 @protocol XDInputTextViewDelegate <NSObject>
