@@ -27,8 +27,9 @@
         [self.label setFont:[UIFont systemFontOfSize:17]];
         [self.label setTextColor:RGBCOLOR(10, 10, 10)];
         
-        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(34, 0, self.width-10-10-24, 44)];
+        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(34, 13, self.width-10-10-24, 20)];
         [self.textField setKeyboardType:UIKeyboardTypeNumberPad];
+        self.textField.textColor = [UIColor lightGrayColor];
         [self addSubview:self.label];
         [self addSubview:self.textField];
     }
@@ -96,7 +97,12 @@
 
 - (void)buttonClicked
 {
-    
+    if ([self.item1.textField.text length] > 0 && [self.item1.textField.text length] && [self.item1.textField.text length] ) {
+        int length = [self.item1.textField.text intValue];
+        int width = [self.item2.textField.text intValue];
+        int height = [self.item3.textField.text intValue];
+        [self.delegate XDSizeSetViewSetFinish:length width:width height:height];
+    }
 }
 
 @end

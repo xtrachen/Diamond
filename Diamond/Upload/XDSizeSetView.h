@@ -10,11 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@protocol XDSizeSetViewDelegate <NSObject>
+- (void)XDSizeSetViewSetFinish:(int)length width:(int)width height:(int)height;
+
+@end
+
 @interface XDSizeSetView : UIView
 @property (nonatomic, assign) int length;
 @property (nonatomic, assign) int width;
 @property (nonatomic, assign) int height;
-
+@property (nonatomic, weak) id<XDSizeSetViewDelegate> delegate;
 
 @end
 
