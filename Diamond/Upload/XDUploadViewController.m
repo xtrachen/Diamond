@@ -24,7 +24,8 @@ HXAlbumListViewControllerDelegate,
 XDImageUploadCollectionViewDelegate,
 XDTagSelectViewDelegate,
 XDTextSetTableViewCellDelegate,
-XDInputTextViewDelegate>
+XDInputTextViewDelegate,
+XDSizeSetViewDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *textViewNoticeLabel;
 @property (nonatomic, strong) IBOutlet UIView *imgSelectWrapView;
 @property (nonatomic, strong) IBOutlet UIView *priceWrapView;
@@ -549,6 +550,7 @@ XDInputTextViewDelegate>
     }
     
     self.sizeSetView = [[XDSizeSetView alloc] initWithFrame:CGRectMake(0, self.view.height-44, self.view.width, 44)];
+    self.sizeSetView.delegate = self;
     [self.view addSubview:self.sizeSetView];
 }
 
@@ -569,6 +571,18 @@ XDInputTextViewDelegate>
     [self.inputTextView.textField becomeFirstResponder];
     [self.inputTextView setDelegate:self];
     
+}
+
+- (void)XDSizeSetViewSetFinish:(int)length width:(int)width height:(int)height
+{
+    self.length = length;
+    self.width = width;
+    self.height = height;
+    
+    NSString *str = [NSString stringWithFormat:@"%d,%d,%d(mm)",length,width,height];
+    [self.sizeLabel setText:str];
+    
+    [self.sizeSetView endEditing:YES];
 }
 
 @end
