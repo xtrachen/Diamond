@@ -15,7 +15,8 @@ typedef enum {
     XDInputTextViewType_Price,
     XDInputTextViewType_Tag,
     XDInputTextViewType_Weight,
-    XDInputTextViewType_Storage
+    XDInputTextViewType_Storage,
+    XDInputTextViewType_Region
 }XDInputTextViewType;
 
 @protocol XDInputTextViewDelegate <NSObject>

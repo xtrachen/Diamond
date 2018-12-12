@@ -48,6 +48,8 @@ XDSizeSetViewDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *weightLabel;
 @property (nonatomic, weak) IBOutlet UILabel *sizeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *storageLabel;
+@property (nonatomic, weak) IBOutlet UILabel *regionLabel;
+@property (nonatomic, weak) IBOutlet UILabel *goldLabel;
 
 @property (nonatomic, assign) int length;
 @property (nonatomic, assign) int width;
@@ -448,6 +450,10 @@ XDSizeSetViewDelegate>
             [self.colorLabel setText:str];
         }
             break;
+        case TagSelectViewSource_Gold: {
+            [self.goldLabel setText:str];
+        }
+            break;
         default:
             break;
     }
@@ -536,6 +542,10 @@ XDSizeSetViewDelegate>
             [self.storageLabel setText:str];
         }
             break;
+        case XDInputTextViewType_Region: {
+            [self.regionLabel setText:str];
+        }
+            break;
         default:
             break;
     }
@@ -583,6 +593,45 @@ XDSizeSetViewDelegate>
     [self.sizeLabel setText:str];
     
     [self.sizeSetView endEditing:YES];
+}
+
+- (IBAction)regionButtonClicked:(id)sender
+{
+    if (self.inputTextView) {
+        [self.inputTextView removeFromSuperview];
+        self.inputTextView = nil;
+    }
+    
+    self.inputTextView = [[XDInputTextView alloc] initWithFrame:CGRectMake(0, self.view.bottom-44, self.view.width, 44)];
+    [self.view addSubview:self.inputTextView];
+    
+    [self.inputTextView.textField setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.inputTextView setType:XDInputTextViewType_Region];
+    
+    [self.inputTextView.textField becomeFirstResponder];
+    [self.inputTextView setDelegate:self];
+}
+
+- (IBAction)goldButtonClicked:(id)sender
+{
+    if (self.tagSelectView) {
+        [self.tagSelectView removeFromSuperview];
+    }
+    
+    NSArray *array = [NSArray arrayWithObjects:@"18k白金",@"18k黄金",@"18k玫瑰金",@"14k金",@"铂金",@"银", nil];
+    
+    self.tagSelectView  = [[XDTagSelectView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.width*3/4)];
+    [self.tagSelectView setupWith:array];
+    self.tagSelectView.backgroundColor = RGBCOLOR(245, 245, 245);
+    [self.view addSubview:self.tagSelectView];
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        self.tagSelectView.top = self.view.height-self.tagSelectView.height;
+        [self.tagSelectView setType:TagSelectViewSource_Gold];
+        self.tagSelectView.delegate = self;
+    } completion:^(BOOL finished) {
+        ;
+    }];
 }
 
 @end
