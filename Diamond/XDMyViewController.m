@@ -119,8 +119,6 @@
     [vc setupWithInfo:detailInfo];
 
     [self.navigationController pushViewController:vc animated:YES];
-    
-    
 }
 
 @end

@@ -49,6 +49,10 @@
 		31FE758F21AF035600FF9155 /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE758B21AF035500FF9155 /* XDDetailViewController.m */; };
 		31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE759021AF052500FF9155 /* UIDetailImageTableViewCell.xib */; };
 		31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE759221AF052600FF9155 /* UIDetailImageTableViewCell.m */; };
+		3B7A964E21C54C7900DE53B6 /* XDDetailSingleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7A964C21C54C7900DE53B6 /* XDDetailSingleTableViewCell.m */; };
+		3B7A964F21C54C7900DE53B6 /* XDDetailSingleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7A964D21C54C7900DE53B6 /* XDDetailSingleTableViewCell.xib */; };
+		3B7A965321C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7A965121C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.m */; };
+		3B7A965421C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7A965221C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.xib */; };
 		3B9478AC21BD25E90057235B /* XDSizeSetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9478AB21BD25E90057235B /* XDSizeSetView.m */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +128,12 @@
 		31FE759021AF052500FF9155 /* UIDetailImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIDetailImageTableViewCell.xib; sourceTree = "<group>"; };
 		31FE759121AF052500FF9155 /* UIDetailImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDetailImageTableViewCell.h; sourceTree = "<group>"; };
 		31FE759221AF052600FF9155 /* UIDetailImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDetailImageTableViewCell.m; sourceTree = "<group>"; };
+		3B7A964B21C54C7900DE53B6 /* XDDetailSingleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDDetailSingleTableViewCell.h; sourceTree = "<group>"; };
+		3B7A964C21C54C7900DE53B6 /* XDDetailSingleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDDetailSingleTableViewCell.m; sourceTree = "<group>"; };
+		3B7A964D21C54C7900DE53B6 /* XDDetailSingleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDDetailSingleTableViewCell.xib; sourceTree = "<group>"; };
+		3B7A965021C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDDetailDoubleTableViewCell.h; sourceTree = "<group>"; };
+		3B7A965121C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDDetailDoubleTableViewCell.m; sourceTree = "<group>"; };
+		3B7A965221C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDDetailDoubleTableViewCell.xib; sourceTree = "<group>"; };
 		3B9478AA21BD25E90057235B /* XDSizeSetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSizeSetView.h; sourceTree = "<group>"; };
 		3B9478AB21BD25E90057235B /* XDSizeSetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSizeSetView.m; sourceTree = "<group>"; };
 		47D410365FC4C46A23000B27 /* Pods-Diamond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diamond.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diamond/Pods-Diamond.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +164,12 @@
 				31AF53BB21B03ED8007238FC /* UIImageGalleryViewCell.h */,
 				31AF53BC21B03ED8007238FC /* UIImageGalleryViewCell.m */,
 				31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */,
+				3B7A964B21C54C7900DE53B6 /* XDDetailSingleTableViewCell.h */,
+				3B7A964C21C54C7900DE53B6 /* XDDetailSingleTableViewCell.m */,
+				3B7A964D21C54C7900DE53B6 /* XDDetailSingleTableViewCell.xib */,
+				3B7A965021C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.h */,
+				3B7A965121C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.m */,
+				3B7A965221C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -363,9 +379,11 @@
 				31AF53BF21B03ED8007238FC /* UIImageGalleryViewCell.xib in Resources */,
 				3169B88221A3BDEB0095A417 /* XDMyViewController.xib in Resources */,
 				3169B88721A3BDFE0095A417 /* XDSettingViewController.xib in Resources */,
+				3B7A964F21C54C7900DE53B6 /* XDDetailSingleTableViewCell.xib in Resources */,
 				3169B88C21A3BE110095A417 /* XDSearchViewController.xib in Resources */,
 				31598851219D8189009A764A /* XDLoginViewController.xib in Resources */,
 				31D4DE8521A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib in Resources */,
+				3B7A965421C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.xib in Resources */,
 				31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */,
 				3159886D219DAE05009A764A /* XDProductListTableViewCell.xib in Resources */,
 				31C0606F21B54091008EC22B /* XDTextSetTableViewCell.xib in Resources */,
@@ -434,6 +452,7 @@
 				3169B89021A3C5AB0095A417 /* XDUploadViewController.m in Sources */,
 				31C2A7BB21940EF900F7EBAA /* main.m in Sources */,
 				31AF53BE21B03ED8007238FC /* UIImageGalleryViewCell.m in Sources */,
+				3B7A965321C54C8F00DE53B6 /* XDDetailDoubleTableViewCell.m in Sources */,
 				319F698B21B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				316FEED821B6EA6A000C9DBF /* UIView+Utils.m in Sources */,
 				319F698E21B63C3800775E36 /* YJTagView.m in Sources */,
@@ -453,6 +472,7 @@
 				31A5EAB721B80FF80039845A /* XDInputTextView.m in Sources */,
 				31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */,
 				31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */,
+				3B7A964E21C54C7900DE53B6 /* XDDetailSingleTableViewCell.m in Sources */,
 				3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */,
 				31598865219D9FA1009A764A /* XDUser.m in Sources */,
 			);
