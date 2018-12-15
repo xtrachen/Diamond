@@ -40,7 +40,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 3;
+    return 6;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -69,14 +69,37 @@
             return cell;
         }
             break;
+        case 3: {
+            XDDetailDoubleTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDDetailDoubleTableViewCell" owner:self options:nil] lastObject];
+            cell.leftNameLabel.text = @"尺寸";
+            cell.rightNameLabel.text = @"颜色";
+            cell.leftAttributeLabel.text = [NSString stringWithFormat:@"%d/%d/%d(mm)",self.detailInfo.length,self.detailInfo.width,self.detailInfo.height];
+            cell.rightAttributeLabel.text = self.detailInfo.color;
+            return cell;
+        }
+            break;
+        case 4: {
+            XDDetailDoubleTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDDetailDoubleTableViewCell" owner:self options:nil] lastObject];
+            cell.leftNameLabel.text = @"产地";
+            cell.rightNameLabel.text = @"用金";
+            cell.leftAttributeLabel.text = self.detailInfo.region;
+            cell.rightAttributeLabel.text = self.detailInfo.gold;
+            return cell;
+        }
+            break;
+        case 5: {
+            XDDetailDoubleTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDDetailDoubleTableViewCell" owner:self options:nil] lastObject];
+            cell.leftNameLabel.text = @"库存";
+//            cell.rightNameLabel.text = @"用金";
+            cell.leftAttributeLabel.text = [NSString stringWithFormat:@"%d",self.detailInfo.storage];//[NSString stringWithString:@"%d",self.detailInfo.storage];
+//            cell.rightAttributeLabel.text = self.detailInfo.gold;
+            return cell;
+        }
+            break;
         default:
             return [UITableViewCell new];
             break;
     }
-    
-    
-    
-
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,11 +108,11 @@
         case 0:
             return self.view.frame.size.width*3/4;
             break;
-        case 1: {
-            return 50;
-        }
-            break;
-        case 2: {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5: {
             return 50;
         }
             break;
