@@ -130,7 +130,7 @@ XDSizeSetViewDelegate>
 
 - (void)showAlertMessage:(NSString *)title message:(NSString *)str
 {
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请填写标题" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:title message:str preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"点击了取消");
     }];
@@ -152,10 +152,10 @@ XDSizeSetViewDelegate>
         return;
     }
     
-    if ([self.imageArray count] == 0) {
-        [self showAlertMessage:@"缺失内容" message:@"请至少选择一张图片"];
-        return;
-    }
+//    if ([self.imageArray count] == 0) {
+//        [self showAlertMessage:@"缺失内容" message:@"请至少选择一张图片"];
+//        return;
+//    }
     
 //    [self uploadImages];
     [self handleImageUploaded];
