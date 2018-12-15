@@ -9,8 +9,8 @@
 #import "XDDetailViewController.h"
 #import "UIDetailImageTableViewCell.h"
 #import "XDProductDetailInfo.h"
-
-
+#import "XDDetailDoubleTableViewCell.h"
+#import "XDDetailSingleTableViewCell.h"
 
 
 @interface XDDetailViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -40,23 +40,59 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 1;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    UIDetailImageTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"UIDetailImageTableViewCell" owner:self options:nil] lastObject];
     
-    [cell setupWith:self.detailInfo];
+    switch (indexPath.row) {
+        case 0: {
+            UIDetailImageTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"UIDetailImageTableViewCell" owner:self options:nil] lastObject];
+            [cell setupWith:self.detailInfo];
+            return cell;
+        }
+            break;
+        case 1: {
+            XDDetailSingleTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDDetailSingleTableViewCell" owner:self options:nil] lastObject];
+            [cell.nameLabel setText:@"价格"];
+            [cell.attributeLabel setText:[NSString stringWithFormat:@"%d",self.detailInfo.price]];
+            return cell;
+        }
+            break;
+        case 2: {
+            XDDetailDoubleTableViewCell *cell = [[[NSBundle mainBundle] loadNibNamed:@"XDDetailDoubleTableViewCell" owner:self options:nil] lastObject];
+            cell.leftNameLabel.text = @"种类";
+            cell.rightNameLabel.text = @"佩戴";
+            cell.leftAttributeLabel.text = self.detailInfo.category;
+            cell.rightAttributeLabel.text = self.detailInfo.ptype;
+            return cell;
+        }
+            break;
+        default:
+            return [UITableViewCell new];
+            break;
+    }
     
-    return cell;
+    
+    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
         case 0:
-            return self.view.frame.size.width*3/4;            
+            return self.view.frame.size.width*3/4;
+            break;
+        case 1: {
+            return 50;
+        }
+            break;
+        case 2: {
+            return 50;
+        }
+            break;
         default:
             return 0;
     }

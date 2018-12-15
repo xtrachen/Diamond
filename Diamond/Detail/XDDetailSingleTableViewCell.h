@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface XDDetailSingleTableViewCell : UITableViewCell
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *attributeLabel;
-
+@property (nonatomic, weak) IBOutlet UIView *line;
 
 @end
 
