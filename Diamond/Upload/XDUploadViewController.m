@@ -128,45 +128,37 @@ XDSizeSetViewDelegate>
     }];
 }
 
+- (void)showAlertMessage:(NSString *)title message:(NSString *)str
+{
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请填写标题" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"点击了取消");
+    }];
+    [actionSheet addAction:action1];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
 - (IBAction)pubButtonClicked:(id)sender
 {
     
     if ([self.titleField.text length] == 0) {
-        
-        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请填写标题" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"点击了取消");
-        }];
-        [actionSheet addAction:action1];
-
-        [self presentViewController:actionSheet animated:YES completion:nil];
-        
+        [self showAlertMessage:@"缺失内容" message:@"请填写标题"];
         return;
     }
     
     if ([self.textView.text length] == 0) {
-        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请填写描述内容" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"点击了取消");
-        }];
-        [actionSheet addAction:action1];
-        
-        [self presentViewController:actionSheet animated:YES completion:nil];
+        [self showAlertMessage:@"缺失内容" message:@"请填写描述内容"];
         return;
     }
     
     if ([self.imageArray count] == 0) {
-        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"缺失内容" message:@"请至少选择一张图片" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"点击了取消");
-        }];
-        [actionSheet addAction:action1];
-        
-        [self presentViewController:actionSheet animated:YES completion:nil];
+        [self showAlertMessage:@"缺失内容" message:@"请至少选择一张图片"];
         return;
     }
     
-    [self uploadImages];
+//    [self uploadImages];
+    [self handleImageUploaded];
     
 }
 
@@ -280,27 +272,27 @@ XDSizeSetViewDelegate>
     
     [dict setObject:self.titleField.text forKey:@"title"];
     [dict setObject:self.textView.text forKey:@"markdown"];
-    [dict setObject:@" " forKey:@"category"];
-    [dict setObject:@" " forKey:@"ptype"];
+    [dict setObject:self.categoryLabel.text forKey:@"category"];
+    [dict setObject:self.typeLabel.text forKey:@"ptype"];
     [dict setObject:[NSNumber numberWithInt:0] forKey:@"price"];
-    [dict setObject:@" " forKey:@"color"];
+    [dict setObject:self.colorLabel.text forKey:@"color"];
     
-    [dict setObject:[NSNumber numberWithInt:0] forKey:@"length"];
-    [dict setObject:[NSNumber numberWithInt:0] forKey:@"width"];
-    [dict setObject:[NSNumber numberWithInt:0] forKey:@"height"];
-    [dict setObject:@" " forKey:@"weight"];
+    [dict setObject:[NSNumber numberWithInt:self.length] forKey:@"length"];
+    [dict setObject:[NSNumber numberWithInt:self.width] forKey:@"width"];
+    [dict setObject:[NSNumber numberWithInt:self.height] forKey:@"height"];
+    [dict setObject:[NSNumber numberWithInt:[self.weightLabel.text intValue]] forKey:@"weight"];
 
     [dict setObject:[NSNumber numberWithDouble:0] forKey:@"lat"];
     [dict setObject:[NSNumber numberWithDouble:0] forKey:@"lng"];
     
     [dict setObject:@" " forKey:@"city"];
-    [dict setObject:@" " forKey:@"region"];
-    [dict setObject:@" " forKey:@"tag"];
+    [dict setObject:self.regionLabel.text forKey:@"region"];
+    [dict setObject:self.tagCell.textField.text forKey:@"tag"];
     [dict setObject:@" " forKey:@"sidestone"];
-    [dict setObject:@" " forKey:@"gold"];
+    [dict setObject:self.goldLabel.text forKey:@"gold"];
     [dict setObject:@" " forKey:@"designby"];
-    [dict setObject:[NSNumber numberWithInt:0] forKey:@"storage"];
-    [dict setObject:@" " forKey:@"store"];
+    [dict setObject:[NSNumber numberWithInt:[self.storageLabel.text intValue]] forKey:@"storage"];
+    [dict setObject:@"" forKey:@"store"];
     [dict setObject:@" " forKey:@"remarks"];
 
     NSString *imgStr =[self.uploadImageArray componentsJoinedByString:@","];
