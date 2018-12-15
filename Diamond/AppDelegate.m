@@ -86,13 +86,14 @@
     
     XDMyViewController *myVC = [[XDMyViewController alloc] initWithNibName:@"XDMyViewController" bundle:nil];
     myVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"xd_img_bottombar_my"] tag:3];
-    
+    UINavigationController *myNavi = [[UINavigationController alloc] initWithRootViewController:myVC];
+
     XDSettingViewController *settingVC = [[XDSettingViewController alloc] initWithNibName:@"XDSettingViewController" bundle:nil];
     settingVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:[UIImage imageNamed:@"xd_img_bottombar_setting"] tag:4];
 
     UITabBarController *tabbar = [[UITabBarController alloc] init];
 
-    tabbar.viewControllers = @[homeVC,searchVC,myVC,settingVC];
+    tabbar.viewControllers = @[homeVC,searchVC,myNavi,settingVC];
     
     [[UITabBar appearance] setBarTintColor:RGBCOLOR(169, 199, 161)];
     

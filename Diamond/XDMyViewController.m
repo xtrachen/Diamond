@@ -117,9 +117,10 @@
     
     XDDetailViewController *vc = [[XDDetailViewController alloc] initWithNibName:@"XDDetailViewController" bundle:nil];
     [vc setupWithInfo:detailInfo];
-    [self presentViewController:vc animated:YES completion:^{
-        ;
-    }];
+
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 @end
