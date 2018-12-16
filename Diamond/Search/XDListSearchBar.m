@@ -29,7 +29,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.backgroundColor = RGBCOLOR(245, 245, 245);
         self.button = [[UIButton alloc] initWithFrame:CGRectMake(self.width-15-60, 7, 60, 30)];
         [self.button addTarget:self action:@selector(buttonClicked) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.button];
@@ -39,9 +39,10 @@
         [self.button.titleLabel setTextColor:[UIColor whiteColor]];
         [self addSubview:self.button];
         
-        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(15, 7, self.width-30-60, 30)];
+        self.textField = [[UITextField alloc] initWithFrame:CGRectMake(15, 7, self.width-30-60-30, 30)];
         self.textField.placeholder = @"输入查找内容";
         self.textField.textColor = RGBCOLOR(161, 199, 166);
+        self.textField.borderStyle = UITextBorderStyleRoundedRect;
         [self addSubview:self.textField];
         
     }
@@ -53,6 +54,14 @@
     if ([self.textField.text length] > 0) {
         [self.delegate XDListSearchBarSearchWith:self.textField.text];
     }
+}
+
+- (void)setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    
+    [self.button setFrame:CGRectMake(self.width-15-60, 7, 60, 30)];
+    [self.textField setFrame:CGRectMake(15, 7, self.width-30-60-15, 30)];
 }
 
 @end

@@ -7,8 +7,12 @@
 //
 
 #import "XDSearchViewController.h"
+#import "XDListSearchBar.h"
 
-@interface XDSearchViewController ()
+@interface XDSearchViewController () <XDListSearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UIView *searchView;
+@property (nonatomic, strong) XDListSearchBar *searchBar;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,7 +20,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    self.searchBar = [[XDListSearchBar alloc] initWithFrame:self.searchView.bounds];
+    [self.searchView addSubview:self.searchBar];
+    [self.searchBar setDelegate:self];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.searchBar setFrame:self.searchView.bounds];
 }
 
 /*
@@ -28,5 +42,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [UITableViewCell new];
+}
+
+- (void)XDListSearchBarSearchWith:(NSString *)str
+{
+    
+}
+
 
 @end
