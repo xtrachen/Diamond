@@ -11,6 +11,7 @@
 #import "XDNetworkManager.h"
 #import "XDProductDetailInfo.h"
 #import "XDProductListTableViewCell.h"
+#import "XDDetailViewController.h"
 
 @interface XDSearchViewController () <XDListSearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UIView *searchView;
@@ -99,5 +100,14 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XDProductDetailInfo *detailInfo = [self.array objectAtIndex:indexPath.row];
+    
+    XDDetailViewController *vc = [[XDDetailViewController alloc] initWithNibName:@"XDDetailViewController" bundle:nil];
+    [vc setupWithInfo:detailInfo];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end
