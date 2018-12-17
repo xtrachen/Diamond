@@ -8,11 +8,15 @@
 
 #import "XDSearchViewController.h"
 #import "XDListSearchBar.h"
+#import "XDNetworkManager.h"
+#import "XDProductDetailInfo.h"
+#import "XDProductListTableViewCell.h"
 
 @interface XDSearchViewController () <XDListSearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UIView *searchView;
 @property (nonatomic, strong) XDListSearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *array;
 
 @end
 
@@ -24,6 +28,11 @@
     self.searchBar = [[XDListSearchBar alloc] initWithFrame:self.searchView.bounds];
     [self.searchView addSubview:self.searchBar];
     [self.searchBar setDelegate:self];
+    
+    self.array = [NSMutableArray array];
+    
+    [self.tableView registerClass:[XDProductListTableViewCell class] forCellReuseIdentifier:@"XDProductListTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"XDProductListTableViewCell" bundle:nil] forCellReuseIdentifier:@"XDProductListTableViewCell"];
 
 }
 
@@ -43,19 +52,51 @@
 }
 */
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.array count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [UITableViewCell new];
+    XDProductListTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"XDProductListTableViewCell" forIndexPath:indexPath];
+    
+    XDProductDetailInfo *info = [self.array objectAtIndex:indexPath.row];
+    [cell setupWith:info];
+    
+    return cell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 56;
 }
 
 - (void)XDListSearchBarSearchWith:(NSString *)str
 {
+    [self.array removeAllObjects];
     
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:str forKey:@"key_word"];
+    
+    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/search" parameters:dict progress:^(NSProgress * _Nullable progress) {
+        ;
+    } success:^(BOOL isSuccess, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+        
+        NSArray *array = [responseObject objectForKey:@"list"];
+        
+        if ([array isKindOfClass:[NSArray class]] && [array count] > 0) {
+            
+            for (NSDictionary *dict in array) {
+                XDProductDetailInfo *info = [XDProductDetailInfo infoFromDict:dict];
+                [self.array addObject:info];
+            }
+            [self.tableView reloadData];
+        }
+    } failure:^(NSString * _Nullable errorMessage) {
+        NSLog(@"%@",errorMessage);
+    }];
 }
 
 
