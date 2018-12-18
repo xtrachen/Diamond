@@ -92,5 +92,20 @@
 
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 56;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XDProductDetailInfo *detailInfo = [self.array objectAtIndex:indexPath.row];
+    
+    XDDetailViewController *vc = [[XDDetailViewController alloc] initWithNibName:@"XDDetailViewController" bundle:nil];
+    [vc setupWithInfo:detailInfo];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 @end
