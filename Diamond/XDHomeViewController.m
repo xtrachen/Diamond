@@ -10,6 +10,9 @@
 #import "XDUser.h"
 #import "XDNetworkManager.h"
 #import "XDProductDetailInfo.h"
+#import "XDProductListTableViewCell.h"
+#import "XDDetailViewController.h"
+#import "XDProductDetailInfo.h"
 
 
 @interface XDHomeViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -28,6 +31,11 @@
     self.array = [NSMutableArray array];
     [self queryEntryList:uid];
     [self queryUploadToken];
+    
+    
+    [self.tableView registerClass:[XDProductListTableViewCell class] forCellReuseIdentifier:@"XDProductListTableViewCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"XDProductListTableViewCell" bundle:nil] forCellReuseIdentifier:@"XDProductListTableViewCell"];
+    
 }
 
 /*
@@ -47,14 +55,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [UITableViewCell new];
+    XDProductListTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"XDProductListTableViewCell" forIndexPath:indexPath];
+    
+    XDProductDetailInfo *info = [self.array objectAtIndex:indexPath.row];
+    [cell setupWith:info];
+    
+    return cell;
 }
 
 - (void)queryEntryList:(NSString *)userId
 {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:userId,@"uid", nil];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:(int)[self.array count]],@"index",[NSNumber numberWithInt:20],@"count", nil];
     
-    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/entry" parameters:dict progress:^(NSProgress * _Nullable progress) {
+    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/plist" parameters:dict progress:^(NSProgress * _Nullable progress) {
         ;
     } success:^(BOOL isSuccess, id  _Nullable responseObject) {
         NSLog(@"%@",responseObject);
@@ -62,9 +75,7 @@
         NSArray *list = [responseObject objectForKey:@"list"];
         
         for (NSDictionary *dict in list) {
-            
             XDProductDetailInfo *detail = [XDProductDetailInfo infoFromDict:dict];
-            
             [self.array addObject:detail];
             
         }
