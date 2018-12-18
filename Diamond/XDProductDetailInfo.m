@@ -30,36 +30,26 @@
     
     detail.category = [dict objectForKey:@"category"];
     detail.ptype = [dict objectForKey:@"ptype"];
-    NSNumber *price = [dict objectForKey:@"price"];
-    if ([price isKindOfClass:[NSNumber class]]) {
-        detail.price = [price intValue];
-    }
+    
+    NSString *price = [dict objectForKey:@"price"];
+    detail.price = [price intValue];
+    
     detail.color = [dict objectForKey:@"color"];
 
-    NSNumber *length = [dict objectForKey:@"length"];
-    if ([length isKindOfClass:[NSNumber class]]) {
-        detail.length = [length intValue];
-    }
+    NSString *length = [dict objectForKey:@"length"];
+    detail.length = [length intValue];
 
-    NSNumber *width = [dict objectForKey:@"width"];
-    if ([width isKindOfClass:[NSNumber class]]) {
-        detail.width = [width intValue];
-    }
+    NSString *width = [dict objectForKey:@"width"];
+    detail.width = [width intValue];
     
-    NSNumber *height = [dict objectForKey:@"height"];
-    if ([height isKindOfClass:[NSNumber class]]) {
-        detail.height = [height intValue];
-    }
+    NSString *height = [dict objectForKey:@"height"];
+    detail.height = [height intValue];
     
-    NSNumber *lat = [dict objectForKey:@"lat"];
-    if ([lat isKindOfClass:[NSNumber class]]) {
-        detail.lat = [lat doubleValue];
-    }
+    NSString *lat = [dict objectForKey:@"lat"];
+    detail.lat = [lat doubleValue];
     
-    NSNumber *lng = [dict objectForKey:@"lnt"];
-    if ([lng isKindOfClass:[NSNumber class]]) {
-        detail.lng = [lng doubleValue];
-    }
+    NSString *lng = [dict objectForKey:@"lnt"];
+    detail.lng = [lng doubleValue];
     
     detail.city = [dict objectForKey:@"city"];
     detail.region = [dict objectForKey:@"region"];
@@ -68,10 +58,8 @@
     detail.gold = [dict objectForKey:@"gold"];
     detail.designBy = [dict objectForKey:@"designby"];
     
-    NSNumber *storage = [dict objectForKey:@"storage"];
-    if ([storage isKindOfClass:[NSNumber class]]) {
-        detail.storage = [storage intValue];
-    }
+    NSString *storage = [dict objectForKey:@"storage"];
+    detail.storage = [storage intValue];
     
     detail.store = [dict objectForKey:@"store"];
     detail.remarks = [dict objectForKey:@"remarks"];

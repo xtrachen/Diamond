@@ -274,7 +274,7 @@ XDSizeSetViewDelegate>
     [dict setObject:self.textView.text forKey:@"markdown"];
     [dict setObject:self.categoryLabel.text forKey:@"category"];
     [dict setObject:self.typeLabel.text forKey:@"ptype"];
-    [dict setObject:[NSNumber numberWithInt:0] forKey:@"price"];
+    [dict setObject:[NSNumber numberWithInt:[self.priceCell.textField.text intValue]] forKey:@"price"];
     [dict setObject:self.colorLabel.text forKey:@"color"];
     
     [dict setObject:[NSNumber numberWithInt:self.length] forKey:@"length"];
