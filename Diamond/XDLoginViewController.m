@@ -18,6 +18,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *phonefield;
 @property (nonatomic, weak) IBOutlet UITextField *pwdField;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
+@property (nonatomic, weak) IBOutlet UIButton *signupButton;
 
 @end
 
@@ -27,7 +28,8 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBar.hidden = YES;
-    self.loginButton.layer.cornerRadius = 3;
+    self.loginButton.layer.cornerRadius = 6;
+    self.signupButton.layer.cornerRadius = 6;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -110,6 +112,8 @@
     return NO;
 }
 
+- (IBAction)signupButtonClicked:(id)sender {
+}
 
 
 @end

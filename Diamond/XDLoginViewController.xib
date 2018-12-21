@@ -60,11 +60,27 @@
                         <action selector="loginButtonClicked:" destination="-1" eventType="touchUpInside" id="D0t-YT-ehl"/>
                     </connections>
                 </button>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5xL-of-cGL">
+                    <rect key="frame" x="274" y="76" width="60" height="30"/>
+                    <color key="backgroundColor" red="0.43137254899999999" green="0.58039215690000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5kN-3L-jPS"/>
+                        <constraint firstAttribute="width" constant="60" id="jQ9-dl-6O7"/>
+                    </constraints>
+                    <state key="normal" title="注册">
+                        <color key="titleColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="signupButtonClicked:" destination="-1" eventType="touchUpInside" id="0kT-6E-A24"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.63137254901960782" green="0.7803921568627451" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="5xL-of-cGL" secondAttribute="trailing" constant="41" id="5gY-4J-dPv"/>
                 <constraint firstAttribute="bottom" secondItem="ah2-Sa-o9S" secondAttribute="bottom" constant="166" id="7Pb-qU-THZ"/>
                 <constraint firstItem="vmd-Fh-Ly2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="71" id="7yh-eE-OEa"/>
+                <constraint firstItem="5xL-of-cGL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="DVT-dL-wHY"/>
                 <constraint firstAttribute="trailing" secondItem="ah2-Sa-o9S" secondAttribute="trailing" constant="71" id="cEC-wH-xTM"/>
                 <constraint firstAttribute="trailing" secondItem="vmd-Fh-Ly2" secondAttribute="trailing" constant="71" id="fFt-AQ-M27"/>
                 <constraint firstItem="FwA-YJ-xhQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="248" id="gSg-fj-LpA"/>

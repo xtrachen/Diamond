@@ -7,6 +7,7 @@
 //
 
 #import "XDSignupViewController.h"
+#import "XDTimeupButtonView.h"
 
 @interface XDSignupViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *phoneField;
@@ -14,13 +15,19 @@
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *verifyCodeField;
 @property (nonatomic, weak) IBOutlet UIView *timeupWrapperView;
-
+@property (nonatomic, strong) XDTimeupButtonView *timeupView;
 @end
 
 @implementation XDSignupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.timeupView = [[XDTimeupButtonView alloc] initWithFrame:self.timeupWrapperView.bounds];
+    [self.timeupWrapperView addSubview:self.timeupView];
+    
+
     // Do any additional setup after loading the view from its nib.
 }
 
