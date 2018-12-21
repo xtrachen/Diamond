@@ -9,6 +9,11 @@
 #import "XDSignupViewController.h"
 
 @interface XDSignupViewController ()
+@property (nonatomic, weak) IBOutlet UITextField *phoneField;
+@property (nonatomic, weak) IBOutlet UITextField *pwdField;
+@property (nonatomic, weak) IBOutlet UITextField *emailField;
+@property (nonatomic, weak) IBOutlet UITextField *verifyCodeField;
+
 
 @end
 
