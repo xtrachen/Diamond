@@ -45,6 +45,8 @@
 		31D4DE8021A419BC008FDC34 /* XDImageUploadCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4DE7F21A419BC008FDC34 /* XDImageUploadCollectionView.m */; };
 		31D4DE8421A41B92008FDC34 /* XDImageUploadCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */; };
 		31D4DE8521A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */; };
+		31ECE97A21CC95A300201C2C /* XDSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECE97821CC95A300201C2C /* XDSignupViewController.m */; };
+		31ECE97B21CC95A300201C2C /* XDSignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31ECE97921CC95A300201C2C /* XDSignupViewController.xib */; };
 		31FE758C21AF035600FF9155 /* XDDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE758621AF035400FF9155 /* XDDetailViewController.xib */; };
 		31FE758F21AF035600FF9155 /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE758B21AF035500FF9155 /* XDDetailViewController.m */; };
 		31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE759021AF052500FF9155 /* UIDetailImageTableViewCell.xib */; };
@@ -123,6 +125,9 @@
 		31D4DE8121A41B92008FDC34 /* XDImageUploadCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDImageUploadCollectionViewCell.h; sourceTree = "<group>"; };
 		31D4DE8221A41B92008FDC34 /* XDImageUploadCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDImageUploadCollectionViewCell.m; sourceTree = "<group>"; };
 		31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDImageUploadCollectionViewCell.xib; sourceTree = "<group>"; };
+		31ECE97721CC95A300201C2C /* XDSignupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSignupViewController.h; sourceTree = "<group>"; };
+		31ECE97821CC95A300201C2C /* XDSignupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSignupViewController.m; sourceTree = "<group>"; };
+		31ECE97921CC95A300201C2C /* XDSignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDSignupViewController.xib; sourceTree = "<group>"; };
 		31FE758621AF035400FF9155 /* XDDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDDetailViewController.xib; sourceTree = "<group>"; };
 		31FE758821AF035500FF9155 /* XDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDDetailViewController.h; sourceTree = "<group>"; };
 		31FE758B21AF035500FF9155 /* XDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDDetailViewController.m; sourceTree = "<group>"; };
@@ -286,6 +291,9 @@
 				3169B88921A3BE110095A417 /* XDSearchViewController.m */,
 				3169B88A21A3BE110095A417 /* XDSearchViewController.xib */,
 				3164B72C21AEFBF600921896 /* PrefixHeader.pch */,
+				31ECE97721CC95A300201C2C /* XDSignupViewController.h */,
+				31ECE97821CC95A300201C2C /* XDSignupViewController.m */,
+				31ECE97921CC95A300201C2C /* XDSignupViewController.xib */,
 			);
 			path = Diamond;
 			sourceTree = "<group>";
@@ -385,6 +393,7 @@
 			files = (
 				31C2A7B821940EF900F7EBAA /* LaunchScreen.storyboard in Resources */,
 				3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */,
+				31ECE97B21CC95A300201C2C /* XDSignupViewController.xib in Resources */,
 				319F698D21B63C3800775E36 /* YJTagCollectionViewCell.xib in Resources */,
 				31FE758C21AF035600FF9155 /* XDDetailViewController.xib in Resources */,
 				31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */,
@@ -486,6 +495,7 @@
 				31A5EAB721B80FF80039845A /* XDInputTextView.m in Sources */,
 				31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */,
 				31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */,
+				31ECE97A21CC95A300201C2C /* XDSignupViewController.m in Sources */,
 				3B7A964E21C54C7900DE53B6 /* XDDetailSingleTableViewCell.m in Sources */,
 				3159885C219D9CB3009A764A /* XDHomeViewController.m in Sources */,
 				31598865219D9FA1009A764A /* XDUser.m in Sources */,
