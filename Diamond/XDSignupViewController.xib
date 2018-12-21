@@ -14,6 +14,7 @@
                 <outlet property="emailField" destination="vC4-E2-Cnv" id="dSv-W4-2cY"/>
                 <outlet property="phoneField" destination="9cR-bT-uBp" id="7wb-IG-OKz"/>
                 <outlet property="pwdField" destination="zmX-Z6-Ry9" id="ZC9-sy-qtE"/>
+                <outlet property="timeupWrapperView" destination="FZ0-jS-EQm" id="kv6-O9-aYQ"/>
                 <outlet property="verifyCodeField" destination="rqG-Wr-VEg" id="3pX-Nb-Z0b"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -41,6 +42,9 @@
                             <color key="textColor" red="0.43137254899999999" green="0.58039215690000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="LJ2-pF-DEE"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -73,6 +77,9 @@
                             <color key="textColor" red="0.43137254899999999" green="0.58039215690000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Rci-3O-xVh"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,6 +113,9 @@
                             <color key="textColor" red="0.43137254899999999" green="0.58039215690000001" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="yyZ-qf-If5"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,6 +149,9 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="eaP-v9-rYH"/>
+                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZ0-jS-EQm">
                     <rect key="frame" x="264" y="299" width="60" height="30"/>

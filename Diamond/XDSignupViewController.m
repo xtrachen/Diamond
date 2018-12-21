@@ -13,7 +13,7 @@
 @property (nonatomic, weak) IBOutlet UITextField *pwdField;
 @property (nonatomic, weak) IBOutlet UITextField *emailField;
 @property (nonatomic, weak) IBOutlet UITextField *verifyCodeField;
-
+@property (nonatomic, weak) IBOutlet UIView *timeupWrapperView;
 
 @end
 
