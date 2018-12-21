@@ -35,6 +35,7 @@
 		31AF53BF21B03ED8007238FC /* UIImageGalleryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31AF53BD21B03ED8007238FC /* UIImageGalleryViewCell.xib */; };
 		31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */; };
 		31C0606F21B54091008EC22B /* XDTextSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */; };
+		31C1B6F421CD31B6006F68B3 /* XDTimeupButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C1B6F321CD31B6006F68B3 /* XDTimeupButtonView.m */; };
 		31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AC21940EF700F7EBAA /* AppDelegate.m */; };
 		31C2A7B021940EF700F7EBAA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C2A7AF21940EF700F7EBAA /* ViewController.m */; };
 		31C2A7B321940EF700F7EBAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31C2A7B121940EF700F7EBAA /* Main.storyboard */; };
@@ -107,6 +108,8 @@
 		31C0606B21B54091008EC22B /* XDTextSetTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDTextSetTableViewCell.h; sourceTree = "<group>"; };
 		31C0606C21B54091008EC22B /* XDTextSetTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDTextSetTableViewCell.m; sourceTree = "<group>"; };
 		31C0606D21B54091008EC22B /* XDTextSetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDTextSetTableViewCell.xib; sourceTree = "<group>"; };
+		31C1B6F221CD31B6006F68B3 /* XDTimeupButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDTimeupButtonView.h; sourceTree = "<group>"; };
+		31C1B6F321CD31B6006F68B3 /* XDTimeupButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDTimeupButtonView.m; sourceTree = "<group>"; };
 		31C2A7A821940EF700F7EBAA /* Diamond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diamond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C2A7AB21940EF700F7EBAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31C2A7AC21940EF700F7EBAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				319F698321B63C3700775E36 /* YJTagView.h */,
 				319F698A21B63C3800775E36 /* YJTagView.m */,
 				319F698621B63C3800775E36 /* YJTagViewProtocol.h */,
+				31C1B6F221CD31B6006F68B3 /* XDTimeupButtonView.h */,
+				31C1B6F321CD31B6006F68B3 /* XDTimeupButtonView.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				3169B88B21A3BE110095A417 /* XDSearchViewController.m in Sources */,
 				31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */,
 				31A5EAB721B80FF80039845A /* XDInputTextView.m in Sources */,
+				31C1B6F421CD31B6006F68B3 /* XDTimeupButtonView.m in Sources */,
 				31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */,
 				31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */,
 				31ECE97A21CC95A300201C2C /* XDSignupViewController.m in Sources */,
