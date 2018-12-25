@@ -157,8 +157,8 @@ XDSizeSetViewDelegate>
 //        return;
 //    }
     
-//    [self uploadImages];
-    [self handleImageUploaded];
+    [self uploadImages];
+//    [self handleImageUploaded];
     
 }
 
