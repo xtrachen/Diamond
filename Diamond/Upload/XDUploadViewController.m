@@ -250,10 +250,10 @@ XDSizeSetViewDelegate>
                 NSData *data = UIImageJPEGRepresentation(result, 0.8);
                 [upManager putData:data key:[NSString stringWithFormat:@"%@.jpg",uuid] token:token
                           complete: ^(QNResponseInfo *info, NSString *key, NSDictionary *resp) {
-                              NSLog(@"%@", info);
-                              NSLog(@"%@", resp);
+//                              NSLog(@"%@", info);
+//                              NSLog(@"%@", resp);
                               [self.uploadImageArray addObject:uuid];
-                              if (i == [weakself.imageArray count]-1) {
+                              if ([weakself.uploadImageArray count]==[weakself.imageArray count]) {
                                   [self handleImageUploaded];
                               }
                               
