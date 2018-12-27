@@ -597,7 +597,6 @@ XDSizeSetViewDelegate>
     self.inputTextView = [[XDInputTextView alloc] initWithFrame:CGRectMake(0, self.view.bottom-44, self.view.width, 44)];
     [self.view addSubview:self.inputTextView];
     
-    [self.inputTextView.textField setKeyboardType:UIKeyboardTypeNumberPad];
     [self.inputTextView setType:XDInputTextViewType_Region];
     
     [self.inputTextView.textField becomeFirstResponder];
