@@ -8,6 +8,7 @@
 
 #import "XDLoginViewController.h"
 #import "XDNetworkManager.h"
+#import "XDSignupViewController.h"
 
 #import "XDHomeViewController.h"
 #import "XDUser.h"
@@ -113,6 +114,16 @@
 }
 
 - (IBAction)signupButtonClicked:(id)sender {
+    
+    
+    XDSignupViewController *vc = [[XDSignupViewController alloc] initWithNibName:@"XDSignupViewController" bundle:nil];
+    
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+    
+    
+    
 }
 
 
