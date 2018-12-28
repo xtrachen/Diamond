@@ -50,7 +50,7 @@
     NSString *pwd = self.pwdField.text;
     
     
-    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:username,@"email",pwd,@"password", nil];
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:username,@"email",pwd,@"password",@"15300107488",@"cell", nil];
 
     
     [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/auth/login" parameters:dict progress:^(NSProgress * _Nullable progress) {
@@ -80,7 +80,6 @@
 
             
             [self.delegate XDLoginViewControllerLoginFinish];
-            
             
         }
         

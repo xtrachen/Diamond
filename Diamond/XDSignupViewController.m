@@ -40,7 +40,7 @@
 
 - (void)gotoSignup
 {
-    NSString *phone = self.pwdField.text;
+    NSString *phone = self.phoneField.text;
     NSString *pwd = self.pwdField.text;
     NSString *email = self.emailField.text;
     NSString *name = self.nameField.text;

@@ -36,7 +36,7 @@
     BOOL isLogin = [self loadSavedCookies];
     
     if (isLogin) {
-        [self XDLoginViewControllerLoginFinish];
+        [self doLoginInit];
     } else {
         XDLoginViewController *vc = [[XDLoginViewController alloc] init];
         vc.delegate = self;
@@ -74,8 +74,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-- (void)XDLoginViewControllerLoginFinish
+- (void)doLoginInit
 {
 
     XDHomeViewController *homeVC = [[XDHomeViewController alloc] initWithNibName:@"XDHomeViewController" bundle:nil];
@@ -92,20 +91,24 @@
     myVC.title = @"我的";
     UINavigationController *myNavi = [[UINavigationController alloc] initWithRootViewController:myVC];
     myNavi.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"xd_img_bottombar_my"] tag:3];
-
+    
     XDSettingViewController *settingVC = [[XDSettingViewController alloc] initWithNibName:@"XDSettingViewController" bundle:nil];
     settingVC.title = @"设置";
     UINavigationController *settingNavi = [[UINavigationController alloc] initWithRootViewController:settingVC];
     settingNavi.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"设置" image:[UIImage imageNamed:@"xd_img_bottombar_setting"] tag:4];
-
+    
     UITabBarController *tabbar = [[UITabBarController alloc] init];
-
+    
     tabbar.viewControllers = @[homeNavi,searchNavi,myNavi,settingNavi];
     
     [[UITabBar appearance] setBarTintColor:RGBCOLOR(169, 199, 161)];
     
     self.window.rootViewController = tabbar;
-    
+}
+
+- (void)XDLoginViewControllerLoginFinish
+{
+    [self doLoginInit];
     [self saveCookies];
 }
 
