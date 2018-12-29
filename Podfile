@@ -13,4 +13,5 @@ target 'Diamond' do
     pod 'Qiniu'
     pod 'SVProgressHUD'
     pod 'YYKit'
+    pod 'WechatOpenSDK'
 end
