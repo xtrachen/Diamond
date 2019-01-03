@@ -13,10 +13,13 @@
 #import "XDMyViewController.h"
 #import "XDSettingViewController.h"
 #import "XDUser.h"
+#import "WXApi.h"
+#import <UIImageView+WebCache.h>
 
 
 
-@interface AppDelegate () <XDLoginViewControllerDelegate>
+
+@interface AppDelegate () <XDLoginViewControllerDelegate,WXApiDelegate>
 
 @end
 
@@ -43,6 +46,10 @@
         UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:vc];
         self.window.rootViewController = rootNavi;
     }
+    
+    // start up weixin
+    [WXApi registerApp:@"wxb86be44e1ab23012" enableMTA:NO];
+
     
     return YES;
 }
@@ -122,6 +129,7 @@
     [defaults setObject:[[XDUser defaultManager] uid] forKey:@"uid.diamond"];
     [defaults synchronize];
 }
+
 // 合适的时机加载持久化后Cookie 一般都是app刚刚启动的时候
 - (BOOL)loadSavedCookies
 {
@@ -137,8 +145,74 @@
     } else {
         return NO;
     }
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (void)onReq:(BaseReq*)req
+{
     
 }
 
+- (void)onResp:(BaseResp*)resp
+{
+    //把返回的类型转换成与发送时相对于的返回类型,这里为SendMessageToWXResp
+    SendMessageToWXResp *sendResp = (SendMessageToWXResp *)resp;
+    
+    //使用UIAlertView 显示回调信息
+    NSString *str = [NSString stringWithFormat:@"%d",sendResp.errCode];
+    UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"回调信息" message:str delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil, nil];
+    [alertview show];
+//    WXSuccess           = 0,    /**< 成功    */
+//    WXErrCodeCommon     = -1,   /**< 普通错误类型    */
+//    WXErrCodeUserCancel = -2,   /**< 用户点击取消并返回    */
+//    WXErrCodeSentFail   = -3,   /**< 发送失败    */
+//    WXErrCodeAuthDeny   = -4,   /**< 授权失败    */
+//    WXErrCodeUnsupport  = -5,   /**< 微信不支持    */
+    
+}
+
+- (void)shareToWeixin:(NSString *)imageUrl text:(NSString *)text title:(NSString *)title
+{
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;//分享内容带图片和文字时必须为NO
+
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    
+    WXImageObject *imageObject = [WXImageObject object];
+
+    if (imageView.image != nil) {
+        NSData *data = UIImagePNGRepresentation(imageView.image);
+        imageObject.imageData = data;
+        
+    } else {
+        imageObject.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+    }
+
+//    UIImage *image = [UIImage imageNamed:@"opinion"];
+    
+    
+    WXMediaMessage *message = [WXMediaMessage message];
+//    [message setThumbImage:image];
+    message.mediaObject = imageObject;
+    //如果分享的内容包括文字和,这个时候的文字不能使用req.text属性来接收,必须使用下边的两个属性
+    message.title = title;
+    message.description = text;
+    req.message = message;
+    req.scene = WXSceneSession;//好友
+    //req.scene = WXSceneTimeline;//朋友圈
+    
+    [WXApi sendReq:req];
+    
+}
 
 @end

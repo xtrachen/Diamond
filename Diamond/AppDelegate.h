@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)shareToWeixin:(NSString *)imageUrl text:(NSString *)text title:(NSString *)title;
+
 
 @end
 
