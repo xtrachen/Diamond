@@ -180,38 +180,89 @@
     
 }
 
+#define BUFFER_SIZE 1024 * 100
 - (void)shareToWeixin:(NSString *)imageUrl text:(NSString *)text title:(NSString *)title
 {
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;//分享内容带图片和文字时必须为NO
-
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
-    
-    WXImageObject *imageObject = [WXImageObject object];
-
-    if (imageView.image != nil) {
-        NSData *data = UIImagePNGRepresentation(imageView.image);
-        imageObject.imageData = data;
-        
-    } else {
-        imageObject.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-    }
-
-//    UIImage *image = [UIImage imageNamed:@"opinion"];
     
     
     WXMediaMessage *message = [WXMediaMessage message];
-//    [message setThumbImage:image];
-    message.mediaObject = imageObject;
-    //如果分享的内容包括文字和,这个时候的文字不能使用req.text属性来接收,必须使用下边的两个属性
     message.title = title;
     message.description = text;
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    
+    
+
+    
+//    WXImageObject *imageObject = [WXImageObject object];
+    
+    if (imageView.image != nil) {
+        [message setThumbImage:imageView.image];
+
+//        NSData *data = UIImagePNGRepresentation(imageView.image);
+//        imageObject.imageData = data;
+        
+    } else {
+//        imageObject.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+    }
+    
+    WXAppExtendObject *ext = [WXAppExtendObject object];
+    ext.extInfo = @"<xml>extend info</xml>";
+    ext.url = @"https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8";
+    
+    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
+    memset(pBuffer, 0, BUFFER_SIZE);
+    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
+    free(pBuffer);
+    
+    ext.fileData = data;
+    
+    
+    message.mediaObject = ext;
+    
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
     req.message = message;
-    req.scene = WXSceneSession;//好友
-    //req.scene = WXSceneTimeline;//朋友圈
+    req.scene = WXSceneSession;
     
     [WXApi sendReq:req];
+    
+    
+    return ;
+    
+    
+    
+//    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+//    req.bText = NO;//分享内容带图片和文字时必须为NO
+//
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+//    [imageView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+//
+//    WXImageObject *imageObject = [WXImageObject object];
+//
+//    if (imageView.image != nil) {
+//        NSData *data = UIImagePNGRepresentation(imageView.image);
+//        imageObject.imageData = data;
+//
+//    } else {
+//        imageObject.imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+//    }
+//
+////    UIImage *image = [UIImage imageNamed:@"opinion"];
+//
+//
+//    WXMediaMessage *message = [WXMediaMessage message];
+////    [message setThumbImage:image];
+//    message.mediaObject = imageObject;
+//    //如果分享的内容包括文字和,这个时候的文字不能使用req.text属性来接收,必须使用下边的两个属性
+//    message.title = title;
+//    message.description = text;
+//    req.message = message;
+//    req.scene = WXSceneSession;//好友
+//    //req.scene = WXSceneTimeline;//朋友圈
+//
+//    [WXApi sendReq:req];
     
 }
 
