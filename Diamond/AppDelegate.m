@@ -211,12 +211,12 @@
     ext.extInfo = @"<xml>extend info</xml>";
     ext.url = @"https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8";
     
-    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
-    memset(pBuffer, 0, BUFFER_SIZE);
-    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
-    free(pBuffer);
-    
-    ext.fileData = data;
+//    Byte* pBuffer = (Byte *)malloc(BUFFER_SIZE);
+//    memset(pBuffer, 0, BUFFER_SIZE);
+//    NSData* data = [NSData dataWithBytes:pBuffer length:BUFFER_SIZE];
+//    free(pBuffer);
+//
+//    ext.fileData = data;
     
     
     message.mediaObject = ext;
