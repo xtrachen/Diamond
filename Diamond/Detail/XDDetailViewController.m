@@ -27,6 +27,8 @@
     
     [self.tableView registerClass:[UIDetailImageTableViewCell class] forCellReuseIdentifier:@"UIDetailImageTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"UIDetailImageTableViewCell" bundle:nil] forCellReuseIdentifier:@"UIDetailImageTableViewCell"];
+
+    [self initShareButton];
 }
 
 /*
@@ -137,8 +139,14 @@
     }
 }
 
-- (IBAction)shareButtonClicked:(id)sender
+- (void)initShareButton
 {
-    [self doShare];
+    UIImage *image = [UIImage imageNamed:@"xd_icon_detail_share"];
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(shareButtonClicked:)];
+    self.navigationItem.rightBarButtonItem = item;
 }
+
+
+
 @end
