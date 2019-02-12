@@ -139,6 +139,11 @@
     }
 }
 
+- (void)shareButtonClicked:(id)sender
+{
+    [self doShare];
+}
+
 - (void)initShareButton
 {
     UIImage *image = [UIImage imageNamed:@"xd_icon_detail_share"];
