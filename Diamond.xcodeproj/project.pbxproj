@@ -26,6 +26,8 @@
 		3169B89121A3C5AB0095A417 /* XDUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3169B88F21A3C5AB0095A417 /* XDUploadViewController.xib */; };
 		316FEECC21B6E3E1000C9DBF /* XDTagSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 316FEECB21B6E3E1000C9DBF /* XDTagSelectView.m */; };
 		316FEED821B6EA6A000C9DBF /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 316FEED721B6EA6A000C9DBF /* UIView+Utils.m */; };
+		31830B6B221AB652000EB465 /* XDSettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31830B69221AB652000EB465 /* XDSettingTableViewCell.m */; };
+		31830B6C221AB652000EB465 /* XDSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31830B6A221AB652000EB465 /* XDSettingTableViewCell.xib */; };
 		319F698B21B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F698721B63C3800775E36 /* UICollectionViewLeftAlignedLayout.m */; };
 		319F698C21B63C3800775E36 /* YJTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F698821B63C3800775E36 /* YJTagCollectionViewCell.m */; };
 		319F698D21B63C3800775E36 /* YJTagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319F698921B63C3800775E36 /* YJTagCollectionViewCell.xib */; };
@@ -92,6 +94,9 @@
 		316FEECB21B6E3E1000C9DBF /* XDTagSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDTagSelectView.m; sourceTree = "<group>"; };
 		316FEED621B6EA6A000C9DBF /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
 		316FEED721B6EA6A000C9DBF /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		31830B68221AB652000EB465 /* XDSettingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSettingTableViewCell.h; sourceTree = "<group>"; };
+		31830B69221AB652000EB465 /* XDSettingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSettingTableViewCell.m; sourceTree = "<group>"; };
+		31830B6A221AB652000EB465 /* XDSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDSettingTableViewCell.xib; sourceTree = "<group>"; };
 		319F698321B63C3700775E36 /* YJTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTagView.h; sourceTree = "<group>"; };
 		319F698421B63C3800775E36 /* YJTagCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJTagCollectionViewCell.h; sourceTree = "<group>"; };
 		319F698521B63C3800775E36 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
@@ -231,6 +236,9 @@
 				319F698621B63C3800775E36 /* YJTagViewProtocol.h */,
 				31C1B6F221CD31B6006F68B3 /* XDTimeupButtonView.h */,
 				31C1B6F321CD31B6006F68B3 /* XDTimeupButtonView.m */,
+				31830B68221AB652000EB465 /* XDSettingTableViewCell.h */,
+				31830B69221AB652000EB465 /* XDSettingTableViewCell.m */,
+				31830B6A221AB652000EB465 /* XDSettingTableViewCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -400,6 +408,7 @@
 				3159885D219D9CB3009A764A /* XDHomeViewController.xib in Resources */,
 				31ECE97B21CC95A300201C2C /* XDSignupViewController.xib in Resources */,
 				319F698D21B63C3800775E36 /* YJTagCollectionViewCell.xib in Resources */,
+				31830B6C221AB652000EB465 /* XDSettingTableViewCell.xib in Resources */,
 				31FE758C21AF035600FF9155 /* XDDetailViewController.xib in Resources */,
 				31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */,
 				31C2A7B521940EF900F7EBAA /* Assets.xcassets in Resources */,
@@ -490,6 +499,7 @@
 				3B9478AC21BD25E90057235B /* XDSizeSetView.m in Sources */,
 				316FEECC21B6E3E1000C9DBF /* XDTagSelectView.m in Sources */,
 				3169B88121A3BDEB0095A417 /* XDMyViewController.m in Sources */,
+				31830B6B221AB652000EB465 /* XDSettingTableViewCell.m in Sources */,
 				3169B88621A3BDFE0095A417 /* XDSettingViewController.m in Sources */,
 				3B2724AF21C5F6BC00D6F53F /* XDListSearchBar.m in Sources */,
 				31FE758F21AF035600FF9155 /* XDDetailViewController.m in Sources */,

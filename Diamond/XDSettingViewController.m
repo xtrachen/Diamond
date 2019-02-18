@@ -7,8 +7,10 @@
 //
 
 #import "XDSettingViewController.h"
+#import "XDSettingTableViewCell.h"
 
-@interface XDSettingViewController ()
+@interface XDSettingViewController () <UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,8 +18,49 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = RGBCOLOR(235, 235, 235);
     // Do any additional setup after loading the view from its nib.
+    
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"XDSettingTableViewCell" bundle:nil] forCellReuseIdentifier:@"XDSettingTableViewCell"];
+
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.width, 30)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    XDSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XDSettingTableViewCell"];
+    [cell setTitleText:@"退出登陆"];
+    
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 
 /*
 #pragma mark - Navigation
