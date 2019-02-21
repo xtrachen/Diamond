@@ -79,9 +79,7 @@
             [self.array addObject:detail];
             
         }
-        
         [self.tableView reloadData];
-        
     } failure:^(NSString * _Nullable errorMessage) {
         NSLog(@"%@",errorMessage);
     }];

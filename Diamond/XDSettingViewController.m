@@ -8,6 +8,7 @@
 
 #import "XDSettingViewController.h"
 #import "XDSettingTableViewCell.h"
+#import "XDNetworkManager.h"
 
 @interface XDSettingViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -63,7 +64,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    ;
+    [self goLogout];
 }
 
 /*
@@ -75,5 +76,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)goLogout
+{
+    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/auth/logout" parameters:nil progress:^(NSProgress * _Nullable progress) {
+        ;
+    } success:^(BOOL isSuccess, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSString * _Nullable errorMessage) {
+        NSLog(@"%@",errorMessage);
+    }];
+}
 
 @end

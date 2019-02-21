@@ -50,6 +50,7 @@
     // start up weixin
     [WXApi registerApp:@"wxb86be44e1ab23012" enableMTA:NO];
 
+//    [NSNotificationCenter defaultCenter] addObserver:self selector:@selector(<#selector#>) name:<#(nullable NSNotificationName)#> object:<#(nullable id)#>
     
     return YES;
 }
@@ -118,8 +119,6 @@
     [self doLoginInit];
     [self saveCookies];
 }
-
-
 
 - (void)saveCookies
 {
@@ -264,6 +263,14 @@
 //
 //    [WXApi sendReq:req];
     
+}
+
+- (void)handleLogout
+{
+    XDLoginViewController *vc = [[XDLoginViewController alloc] init];
+    vc.delegate = self;
+    UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = rootNavi;
 }
 
 @end
