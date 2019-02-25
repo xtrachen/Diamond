@@ -86,6 +86,8 @@
     } failure:^(NSString * _Nullable errorMessage) {
         NSLog(@"%@",errorMessage);
     }];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"NTF_DIDRCIEVE_LOGOUT" object:nil];
 }
 
 @end

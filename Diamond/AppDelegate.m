@@ -50,7 +50,7 @@
     // start up weixin
     [WXApi registerApp:@"wxb86be44e1ab23012" enableMTA:NO];
 
-//    [NSNotificationCenter defaultCenter] addObserver:self selector:@selector(<#selector#>) name:<#(nullable NSNotificationName)#> object:<#(nullable id)#>
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogout) name:@"NTF_DIDRCIEVE_LOGOUT" object:nil];
     
     return YES;
 }
@@ -124,7 +124,7 @@
 {
     NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject: cookiesData forKey:@"diamond.xtra.com"];
+    [defaults setObject:cookiesData forKey:@"diamond.xtra.com"];
     [defaults setObject:[[XDUser defaultManager] uid] forKey:@"uid.diamond"];
     [defaults synchronize];
 }
@@ -144,6 +144,14 @@
     } else {
         return NO;
     }
+}
+
+- (void)removeCookies
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"diamond.xtra.com"];
+    [defaults removeObjectForKey:@"uid.diamond"];
+    [defaults synchronize];
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
@@ -267,6 +275,7 @@
 
 - (void)handleLogout
 {
+    [self removeCookies];
     XDLoginViewController *vc = [[XDLoginViewController alloc] init];
     vc.delegate = self;
     UINavigationController *rootNavi = [[UINavigationController alloc] initWithRootViewController:vc];
