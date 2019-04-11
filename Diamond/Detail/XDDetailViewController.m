@@ -133,7 +133,7 @@
 {
     if ([self.detailInfo.imageArray count] > 0) {
         NSString *imageId = [self.detailInfo.imageArray firstObject];
-        NSString *urlStr = [NSString stringWithFormat:@"http://img.ndmcj.com/%@.jpg",imageId];
+        NSString *urlStr = [NSString stringWithFormat:@"http://img.xtra.net.cn/%@.jpg",imageId];
         AppDelegate * appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         [appDelegate shareToWeixin:urlStr text:@"我在Diamond找到好货快来查看" title:@"好物分享"];
     }

@@ -102,7 +102,7 @@
     NSMutableArray *imgArray = [NSMutableArray array];
     // www.ndmcj.com.qiniudns.com
     for (NSString *imageId in detail.imageArray) {
-        NSString *urlStr = [NSString stringWithFormat:@"http://img.ndmcj.com/%@.jpg",imageId];
+        NSString *urlStr = [NSString stringWithFormat:@"http://img.xtra.ent.cn/%@.jpg",imageId];
         [imgArray addObject:urlStr];
     }
     self.imageArray = imgArray;

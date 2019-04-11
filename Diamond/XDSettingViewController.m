@@ -46,15 +46,27 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    XDSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XDSettingTableViewCell"];
-    [cell setTitleText:@"退出登陆"];
-    
-    return cell;
+    switch (indexPath.row) {
+        case 0: {
+            XDSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XDSettingTableViewCell"];
+            [cell setTitleText:@"退出登陆"];
+            return cell;
+        }
+            break;
+        case 1: {
+            XDSettingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"XDSettingTableViewCell"];
+            [cell setTitleText:@"验证邮箱"];
+            return cell;
+        }
+        default:
+            return [XDSettingTableViewCell new];
+            break;
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -64,7 +76,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    [self goLogout];
+    switch (indexPath.row) {
+        case 0: {
+            [self goLogout];
+        }
+            break;
+        case 1: {
+            [self getEmailCode];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 /*
@@ -88,6 +111,19 @@
     }];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NTF_DIDRCIEVE_LOGOUT" object:nil];
+}
+
+- (void)getEmailCode
+{
+    //ios/getemailcode
+    
+    [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/getemailcode" parameters:nil progress:^(NSProgress * _Nullable progress) {
+        ;
+    } success:^(BOOL isSuccess, id  _Nullable responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSString * _Nullable errorMessage) {
+        NSLog(@"%@",errorMessage);
+    }];
 }
 
 @end

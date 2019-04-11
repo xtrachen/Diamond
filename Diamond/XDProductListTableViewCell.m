@@ -36,8 +36,7 @@
 {
     
     if (info.imageArray && [info.imageArray count] > 0) {
-        NSString *urlStr = [NSString stringWithFormat:@"http://img.ndmcj.com/%@.jpg?imageMogr2/thumbnail/200x200!",[info.imageArray firstObject]];
-        [self.icon sd_setImageWithURL:[NSURL URLWithString:urlStr]];
+        NSString *urlStr = [NSString stringWithFormat:@"http://img.xtra.net.cn/%@.jpg?imageMogr2/thumbnail/200x200!",[info.imageArray firstObject]];        [self.icon sd_setImageWithURL:[NSURL URLWithString:urlStr]];
     }
     [self.label1 setText:info.title];
     [self.label2 setText:info.markdown];
