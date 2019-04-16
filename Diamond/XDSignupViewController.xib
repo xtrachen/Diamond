@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XDSignupViewController">
             <connections>
+                <outlet property="cancelButton" destination="NEg-3n-DUj" id="d2w-Rb-Lue"/>
                 <outlet property="emailField" destination="vC4-E2-Cnv" id="dSv-W4-2cY"/>
                 <outlet property="nameField" destination="Oxe-hi-9h0" id="wdE-cX-Lqq"/>
                 <outlet property="phoneField" destination="9cR-bT-uBp" id="7wb-IG-OKz"/>
@@ -209,6 +210,20 @@
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="584-BD-agD"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-3n-DUj">
+                    <rect key="frame" x="24" y="40" width="49" height="30"/>
+                    <color key="backgroundColor" red="0.3294117647" green="0.53333333329999999" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="49" id="rrc-1t-QhE"/>
+                        <constraint firstAttribute="height" constant="30" id="yfl-0n-Tex"/>
+                    </constraints>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="cancelClicked:" destination="-1" eventType="touchUpInside" id="KJZ-mi-nOR"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.63137254899999995" green="0.78039215689999997" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -220,10 +235,12 @@
                 <constraint firstItem="dz7-5O-46B" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="51" id="Gne-gF-Q2o"/>
                 <constraint firstItem="FZ0-jS-EQm" firstAttribute="leading" secondItem="rqG-Wr-VEg" secondAttribute="trailing" constant="4" id="S3g-8Z-ekd"/>
                 <constraint firstItem="FZ0-jS-EQm" firstAttribute="top" secondItem="dz7-5O-46B" secondAttribute="bottom" constant="15" id="Syx-7u-Buo"/>
+                <constraint firstItem="NEg-3n-DUj" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="TKN-fu-wKx"/>
                 <constraint firstItem="8Tc-Z5-GH9" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="51" id="Wzr-AM-Q0h"/>
                 <constraint firstItem="vlp-Ey-2SX" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="51" id="Xm2-E7-g1y"/>
                 <constraint firstItem="vlp-Ey-2SX" firstAttribute="top" secondItem="8Tc-Z5-GH9" secondAttribute="bottom" constant="10" id="Yn0-8Z-Coa"/>
                 <constraint firstItem="OQ0-Dt-RU6" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="81" id="aDT-ab-Jlu"/>
+                <constraint firstItem="NEg-3n-DUj" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="24" id="eop-cJ-rKr"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="FZ0-jS-EQm" secondAttribute="trailing" constant="51" id="grY-Oc-WgO"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="dz7-5O-46B" secondAttribute="trailing" constant="51" id="hHd-Md-ExB"/>
                 <constraint firstItem="tQu-iA-WGb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="44" id="hdf-50-kbD"/>
