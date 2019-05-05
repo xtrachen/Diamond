@@ -8,7 +8,7 @@
 
 #import "XDListSearchBar.h"
 
-@interface XDListSearchBar ()
+@interface XDListSearchBar () <UITextFieldDelegate>
 @property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) UIButton *button;
 
@@ -43,6 +43,8 @@
         self.textField.placeholder = @"输入查找内容";
         self.textField.textColor = RGBCOLOR(161, 199, 166);
         self.textField.borderStyle = UITextBorderStyleRoundedRect;
+        self.textField.returnKeyType = UIReturnKeySearch;
+        self.textField.delegate = self;
         [self addSubview:self.textField];
         
     }
@@ -62,6 +64,16 @@
     
     [self.button setFrame:CGRectMake(self.width-15-60, 7, 60, 30)];
     [self.textField setFrame:CGRectMake(15, 7, self.width-30-60-15, 30)];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;   // return NO to not change text
+{
+    if ([string isEqualToString:@"\n"]) {
+        [self endEditing:YES];
+        [self.delegate XDListSearchBarSearchWith:textField.text];
+        return NO;
+    }
+    return YES;
 }
 
 @end
