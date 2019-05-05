@@ -30,6 +30,17 @@
 
     self.array = [NSMutableArray array];
     
+    
+//    UIBarButtonItem *rightNaviItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xd_img_product_add"] style:UIBarButtonItemStylePlain target:self action:@selector(addButtonClicked:)];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+    [imgView setImage:[UIImage imageNamed:@"xd_img_product_add"]];
+    UIBarButtonItem *rightNaviItem = [[UIBarButtonItem alloc] initWithCustomView:imgView];
+    
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addButtonClicked:)];
+    [imgView addGestureRecognizer:tapGR];
+    
+    self.navigationItem.rightBarButtonItem = rightNaviItem;
 
 }
 

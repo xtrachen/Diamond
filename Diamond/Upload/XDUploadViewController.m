@@ -123,6 +123,7 @@ XDSizeSetViewDelegate>
 */
 - (IBAction)cancelButtonClicked:(id)sender
 {
+    [self.view endEditing:YES];
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];
@@ -240,7 +241,6 @@ XDSizeSetViewDelegate>
             NSString *uuid = [responseObject objectForKey:@"uuid"];
             
             if (token && uuid) {
-                
                 
                 QNConfiguration *config = [QNConfiguration build:^(QNConfigurationBuilder *builder) {
                     builder.zone = [QNFixedZone zone2];
