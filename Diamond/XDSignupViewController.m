@@ -20,6 +20,7 @@
 @property (nonatomic, weak) IBOutlet UIView *timeupWrapperView;
 @property (nonatomic, strong) XDTimeupButtonView *timeupView;
 @property (nonatomic, weak) IBOutlet UIButton *signupButton;
+@property (nonatomic, weak) IBOutlet UIButton *cancelButton;
 
 
 @end
@@ -34,6 +35,7 @@
     
     
     self.signupButton.layer.cornerRadius = 6.0;
+    self.cancelButton.layer.cornerRadius = 6.0;
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -95,6 +97,12 @@
 - (IBAction)signupButtonClicked:(id)sender
 {
     [self gotoSignup];
+}
+
+- (IBAction)cancelClicked:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 @end

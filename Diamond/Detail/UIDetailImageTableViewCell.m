@@ -73,6 +73,7 @@
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flow];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.collectionView.backgroundColor = [UIColor clearColor];
 
     [self.collectionView registerClass:[UIImageGalleryViewCell class] forCellWithReuseIdentifier:@"UIImageGalleryViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"UIImageGalleryViewCell" bundle:nil] forCellWithReuseIdentifier:@"UIImageGalleryViewCell"];
@@ -102,7 +103,7 @@
     NSMutableArray *imgArray = [NSMutableArray array];
     // www.ndmcj.com.qiniudns.com
     for (NSString *imageId in detail.imageArray) {
-        NSString *urlStr = [NSString stringWithFormat:@"http://img.xtra.ent.cn/%@.jpg",imageId];
+        NSString *urlStr = [NSString stringWithFormat:@"http://img.xtra.net.cn/%@.jpg",imageId];
         [imgArray addObject:urlStr];
     }
     self.imageArray = imgArray;
