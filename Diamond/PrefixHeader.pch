@@ -21,6 +21,7 @@
 #define MLScreenHeight    CGRectGetHeight([[[UIApplication sharedApplication].delegate window] bounds])
 
 #import "UIView+Utils.h"
+#import "NSObject+XDDictionaryAdapter.h"
 
 
 #endif /* PrefixHeader_pch */

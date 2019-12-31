@@ -13,5 +13,6 @@ target 'Diamond' do
     pod 'Qiniu'
     pod 'SVProgressHUD'
     pod 'YYKit'
-    pod 'WechatOpenSDK'
+    pod 'WechatOpenSDK','1.8.3'
+    pod 'Toast'
 end

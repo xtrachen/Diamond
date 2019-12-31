@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,6 +50,7 @@
 		31D4DE8521A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D4DE8321A41B92008FDC34 /* XDImageUploadCollectionViewCell.xib */; };
 		31ECE97A21CC95A300201C2C /* XDSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31ECE97821CC95A300201C2C /* XDSignupViewController.m */; };
 		31ECE97B21CC95A300201C2C /* XDSignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31ECE97921CC95A300201C2C /* XDSignupViewController.xib */; };
+		31FAB03023BB0AAA00AE9F63 /* NSObject+XDDictionaryAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FAB02F23BB0AAA00AE9F63 /* NSObject+XDDictionaryAdapter.m */; };
 		31FE758C21AF035600FF9155 /* XDDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE758621AF035400FF9155 /* XDDetailViewController.xib */; };
 		31FE758F21AF035600FF9155 /* XDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FE758B21AF035500FF9155 /* XDDetailViewController.m */; };
 		31FE759321AF052600FF9155 /* UIDetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31FE759021AF052500FF9155 /* UIDetailImageTableViewCell.xib */; };
@@ -136,6 +137,8 @@
 		31ECE97721CC95A300201C2C /* XDSignupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDSignupViewController.h; sourceTree = "<group>"; };
 		31ECE97821CC95A300201C2C /* XDSignupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XDSignupViewController.m; sourceTree = "<group>"; };
 		31ECE97921CC95A300201C2C /* XDSignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XDSignupViewController.xib; sourceTree = "<group>"; };
+		31FAB02E23BB0AAA00AE9F63 /* NSObject+XDDictionaryAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+XDDictionaryAdapter.h"; sourceTree = "<group>"; };
+		31FAB02F23BB0AAA00AE9F63 /* NSObject+XDDictionaryAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+XDDictionaryAdapter.m"; sourceTree = "<group>"; };
 		31FE758621AF035400FF9155 /* XDDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDDetailViewController.xib; sourceTree = "<group>"; };
 		31FE758821AF035500FF9155 /* XDDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDDetailViewController.h; sourceTree = "<group>"; };
 		31FE758B21AF035500FF9155 /* XDDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDDetailViewController.m; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 			children = (
 				316FEED621B6EA6A000C9DBF /* UIView+Utils.h */,
 				316FEED721B6EA6A000C9DBF /* UIView+Utils.m */,
+				31FAB02E23BB0AAA00AE9F63 /* NSObject+XDDictionaryAdapter.h */,
+				31FAB02F23BB0AAA00AE9F63 /* NSObject+XDDictionaryAdapter.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -436,22 +441,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Diamond/Pods-Diamond-resources.sh",
-				"${PODS_ROOT}/HXWeiboPhotoPicker/微博照片选择/HXWeiboPhotoPicker/HXWeiboPhotoPicker.bundle",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Diamond/Pods-Diamond-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HXWeiboPhotoPicker.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Diamond/Pods-Diamond-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Diamond/Pods-Diamond-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Diamond/Pods-Diamond-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		882D912FD2783534D9545059 /* [CP] Check Pods Manifest.lock */ = {
@@ -508,6 +506,7 @@
 				3169B88B21A3BE110095A417 /* XDSearchViewController.m in Sources */,
 				31C2A7AD21940EF700F7EBAA /* AppDelegate.m in Sources */,
 				31A5EAB721B80FF80039845A /* XDInputTextView.m in Sources */,
+				31FAB03023BB0AAA00AE9F63 /* NSObject+XDDictionaryAdapter.m in Sources */,
 				31C1B6F421CD31B6006F68B3 /* XDTimeupButtonView.m in Sources */,
 				31C0606E21B54091008EC22B /* XDTextSetTableViewCell.m in Sources */,
 				31FE759421AF052600FF9155 /* UIDetailImageTableViewCell.m in Sources */,
@@ -658,7 +657,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U58RB22LH9;
+				DEVELOPMENT_TEAM = 2T3AD2R9P4;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Diamond/PrefixHeader.pch";
 				INFOPLIST_FILE = Diamond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -678,7 +677,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U58RB22LH9;
+				DEVELOPMENT_TEAM = 2T3AD2R9P4;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Diamond/PrefixHeader.pch";
 				INFOPLIST_FILE = Diamond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

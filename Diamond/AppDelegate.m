@@ -49,6 +49,7 @@
     
     // start up weixin
     [WXApi registerApp:@"wxb86be44e1ab23012" enableMTA:NO];
+    
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleLogout) name:@"NTF_DIDRCIEVE_LOGOUT" object:nil];
     

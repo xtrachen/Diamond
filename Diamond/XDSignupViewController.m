@@ -9,6 +9,7 @@
 #import "XDSignupViewController.h"
 #import "XDTimeupButtonView.h"
 #import "XDNetworkManager.h"
+#import "UIView+Toast.h"
 
 
 @interface XDSignupViewController ()
@@ -58,20 +59,27 @@
     [dict setObject:email forKey:@"email"];
     [dict setObject:name forKey:@"name"];
     
-
+    [self.view endEditing:YES];
+    
     [[XDNetworkManager defaultManager] sendRequestMethod:HTTPMethodGET serverUrl:@"http://www.xtra.ltd:8888" apiPath:@"/ios/signup" parameters:dict progress:^(NSProgress * _Nullable progress) {
         ;
     } success:^(BOOL isSuccess, id  _Nullable responseObject) {
-        [self dismissViewControllerAnimated:YES completion:^{
-            ;
-        }];
+        
+        BOOL success = [responseObject boolForKey:@"success" defaultValue:NO];
+        if (!success) {
+            NSString *em = [responseObject stringForKey:@"em" defaultValue:@""];
+            [self.view makeToast:em];
+        } else {
+            [self dismissViewControllerAnimated:YES completion:^{
+            }];
+        }
+
     } failure:^(NSString * _Nullable errorMessage) {
-        [self dismissViewControllerAnimated:YES completion:^{
-            ;
-        }];
+//        [self dismissViewControllerAnimated:YES completion:^{
+//            ;
+//        }];
     }];
 }
-
 
 - (void)showAlertMessage:(NSString *)title message:(NSString *)str
 {
